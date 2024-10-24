@@ -1,9 +1,9 @@
 {
-  "name": "building.robinvanderknaap.dev",
+  "name": "baneblogs",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "hugo server --disableFastRender --ignoreCache --noHTTPCache --buildDrafts --cleanDestinationDir",
+    "start": "hugo server --bind 0.0.0.0 --disableFastRender --ignoreCache --noHTTPCache --buildDrafts --cleanDestinationDir",
     "hugo": "hugo",
     "hugo:build": "hugo --minify && pagefind --site public",
     "pagefind": "pagefind --site public --output-subdir ../static/pagefind"

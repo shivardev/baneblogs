@@ -1,6 +1,6 @@
 baseURL: https://building.robinvanderknaap.dev/
 languageCode: en-us
-title: building.robinvanderknaap.dev
+title: Bane Blogs
 module:
    hugoVersion:
     extended: true

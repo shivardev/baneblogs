@@ -8,10 +8,10 @@ Public repository containing the end result of my blog article [Everything I lea
 Clone repository
 
 ```
-git clone git@github.com:robinvanderknaap/building.robinvanderknaap.dev.git
+git clone git@github.com:robinvanderknaap/baneblogs.git
 ```
 
-or [download source code](https://github.com/robinvanderknaap/building.robinvanderknaap.dev/archive/refs/heads/main.zip) and unpack.
+or [download source code](https://github.com/robinvanderknaap/baneblogs/archive/refs/heads/main.zip) and unpack.
 
 From the root folder of the source code install dependencies
 ```

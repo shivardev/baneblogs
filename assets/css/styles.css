@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body {
+  background-color: #000000; /* Example for dark background */
+  color: white; /* Example for dark text */
+}
 @supports (overflow-wrap: anywhere) {
   .break-anywhere {
     overflow-wrap: anywhere;

@@ -1,0 +1,43 @@
+<!-- Image Grid -->
+<div class="p-1">
+    <img class="w-full h-full object-cover cursor-pointer" src='{{ .Get "url" }}' alt="Flower" onclick='showModal()' />
+</div>
+
+<!-- The Modal -->
+<div id="modal" class="hidden fixed top-0 left-0 z-80 w-screen h-screen bg-black/70 flex justify-center items-center"
+    onclick="closeModal(event)">
+
+    <!-- The close button -->
+    <button class="fixed z-1000 top-6 right-8 text-white text-5xl font-bold focus:outline-none"
+        onclick="closeModal(event)">&times;</button>
+
+    <!-- A big image will be displayed here -->
+    <img id="modal-img" class="max-w-[90vw] max-h-[90vh] object-cover" />
+</div>
+
+<script>
+    // Get the modal by id
+    var modal = document.getElementById("modal");
+    var modalImg = document.getElementById("modal-img");
+    var url = `{{ .Params.url }}`
+    // Show modal function
+    function showModal() {
+        modal.classList.remove('hidden');
+        modalImg.src = url;
+    }
+
+    // Close modal function
+    function closeModal(event) {
+        // Check if the click is outside the image
+        if (event.target === modal || event.target.tagName === 'BUTTON') {
+            modal.classList.add('hidden');
+        }
+    }
+</script>
+
+<style>
+    /* Optional: Add some styles for a better appearance */
+    #modal {
+        transition: opacity 0.3s ease;
+    }
+</style>
