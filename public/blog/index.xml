@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bane Blogs</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content on Bane Blogs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Robin van der Knaap @ 2024</copyright>
+    <lastBuildDate>Tue, 03 Sep 2024 16:09:45 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lorem Ipsum</title>
+      <link>http://localhost:1313/blog/lorem-ipsum/</link>
+      <pubDate>Tue, 03 Sep 2024 16:09:45 +0200</pubDate>
+      <guid>http://localhost:1313/blog/lorem-ipsum/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum magna eu ornare luctus. Morbi in hendrerit lacus, ut malesuada ligula. Vivamus id rhoncus nibh, eget tempus felis. Morbi vel eros a nibh viverra mollis. Donec euismod vehicula nulla quis luctus. Nullam non cursus est. Quisque eu nibh in est lacinia blandit. Cras feugiat et mi at iaculis. Aliquam sagittis sapien ac purus vestibulum, vel porttitor dolor aliquam. Suspendisse consequat metus at risus varius, faucibus ultrices erat accumsan.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OPT STUDENT REPORTING GUIDE – NORTHWEST MISSOURI STATE UNIVERSITY</title>
+      <link>http://localhost:1313/blog/opt-reporting-northwest-missouri/</link>
+      <pubDate>Tue, 03 Sep 2024 16:09:45 +0200</pubDate>
+      <guid>http://localhost:1313/blog/opt-reporting-northwest-missouri/</guid>
+      <description>&lt;h3 id=&#34;things-to-keep-before-we-proceed&#34;&gt;Things to keep before we proceed&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Sevis portal – login info&lt;/li&gt;&#xA;&lt;li&gt;University IIC portal login information&lt;/li&gt;&#xA;&lt;li&gt;An offer letter – what are you doing here if you don’t have one?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The joining date mentioned in the offer letter is crucial. For instance, if your joining date is October 1st, you have a window of 10 days after the joining date to update the SEVIS portal, until October 10th. If you miss this deadline, there’s no need to worry. Our university will take care of the SEVIS update process.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Syntax Highlighting</title>
+      <link>http://localhost:1313/blog/syntax-highlighting/</link>
+      <pubDate>Mon, 02 Sep 2024 16:13:30 +0200</pubDate>
+      <guid>http://localhost:1313/blog/syntax-highlighting/</guid>
+      <description>&lt;p&gt;This is a shell command&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34; title=&#34;shell&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is some HTML&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34; title=&#34;./index.html&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;main&amp;#34;&lt;/span&gt;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;div&lt;/span&gt;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

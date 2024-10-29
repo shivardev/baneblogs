@@ -121,4 +121,4 @@ There will be An auto-generated email should be received to your personal email 
 Northwest Missouri State University requires us to update our employment details in the sevis portal as well. 
 
 If you have already updated  the sevis portal for the employment section, reply to the Auto-generated email such as this “ I have updated my employment in sevis portal”
-{{< warning text="Make sure you check your emails regularly. Personally, it took almost me 25 days. I submitted my initial reporting on Nov 1st and got my I20 Pickup email on Nov 27th. This process takes time be patient.">}}
+{{< warning text="Make sure you check your emails regularly. Personally, it took me 25 days. I submitted my initial reporting on Nov 1st and got my I20 Pickup email on Nov 27th. This process takes time be patient.">}}

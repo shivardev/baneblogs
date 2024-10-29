@@ -2,6 +2,7 @@
 title: 'About'
 description: 'About me'
 type: 'about'
+draft: 'true'
 ---
 ### TL;DR
 I'm a full stack software developer with almost 20 years of experience. I'm the lead developer and co-owner of the [Communicatie Cockpit](https://communicatie-cockpit.nl). My current stack is Typescript, Node.js, Angular, PostgreSQL and Kubernetes.
