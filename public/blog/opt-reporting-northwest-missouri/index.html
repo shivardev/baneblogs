@@ -1,6 +1,13 @@
 <!DOCTYPE html>
+<script>
+  function removeLoading() {
+    const loader = document.getElementById('loader')
+    loader.style.display = 'none'
+    console.log('loaded')
+  }
+</script>
 <html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta author="Robin van der Knaap">
@@ -17,9 +24,9 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <meta property="og:url" content="http://localhost:1313/blog/opt-reporting-northwest-missouri/">
+  <meta property="og:url" content="https://building.robinvanderknaap.dev/blog/opt-reporting-northwest-missouri/">
   <meta property="og:site_name" content="Bane Blogs">
-  <meta property="og:title" content="OPT STUDENT REPORTING GUIDE – NORTHWEST MISSOURI STATE UNIVERSITY">
+  <meta property="og:title" content="OPT REPORTING – NORTHWEST MISSOURI STATE UNIVERSITY">
   <meta property="og:description" content="Step-by-step clear guide regarding how to opt report to the IIC portal at Northwest Missouri State University after getting an offer letter.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -35,7 +42,7 @@
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="OPT STUDENT REPORTING GUIDE – NORTHWEST MISSOURI STATE UNIVERSITY">
+  <meta name="twitter:title" content="OPT REPORTING – NORTHWEST MISSOURI STATE UNIVERSITY">
   <meta name="twitter:description" content="Step-by-step clear guide regarding how to opt report to the IIC portal at Northwest Missouri State University after getting an offer letter.">
 
   
@@ -43,13 +50,23 @@
   
   
   
-  <link href="/css/styles.css" rel="stylesheet">
+      
+  
+  <link href="/css/styles.min.557c03c62e8708e3a13943e6a624fdb61e725a8cd4f59bbfe3269ea17be1f706.css" rel="stylesheet">
   <link rel="stylesheet" href="/pagefind/pagefind-ui.css">
 </head>
 
-  <body class=" text-black antialiased dark:bg-gray-950 dark:text-white flex">
-    <section class="xl:max-w-5xl min-h-dvh mx-auto px-4 xl:px-0 flex flex-col grow">
-      <header class="flex items-center justify-between py-3 sm:py-10">
+
+<body onload="removeLoading()" class=" text-black antialiased dark:bg-gray-950 dark:text-white flex">
+  <div id="loader">
+    <div>
+      <img id="imgLoad" src="/logo.png" style="height: 100px;" width="100px">
+    </div>
+
+  </div>
+
+  <section class="xl:max-w-5xl min-h-dvh mx-auto px-4 xl:px-0 flex flex-col grow">
+    <header class="flex items-center justify-between py-3 sm:py-10">
   <div>
     <a aria-label="baneblogs" href="/">
       <div class="flex items-center justify-between">
@@ -64,9 +81,8 @@
     </a>
   </div>
   <nav class="flex items-center space-x-4 leading-5 sm:space-x-6">
-    <a class="hidden font-medium text-gray-900 dark:text-gray-100 hover:text-accent-500 sm:block" href="/blog">Blog</a>
-    <a class="hidden font-medium text-gray-900 dark:text-gray-100 hover:text-accent-500 sm:block" href="/tools">Tools</a>
-    <a class="hidden font-medium text-gray-900 dark:text-gray-100 hover:text-accent-500 sm:block" href="/about">About</a>
+    <a class="hidden font-medium text-gray-900 dark:text-gray-100 hover:text-accent-500 sm:block" href="/blog">Posts</a>
+    <a target="_blank" class="hidden font-medium text-gray-900 dark:text-gray-100 hover:text-accent-500 sm:block" href="https://blazingbane.com">About</a>
     <button class="hover:text-accent-500" aria-label="Search" data-micromodal-trigger="search-modal">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
@@ -95,13 +111,13 @@
   </nav>
 </header>
 
-      <main class="grow">
+    <main class="grow">
 
    <div class="mt-16 mb-20">
     <img class="mx-auto max-w-96 max-h-56" src="https://blogs.blazingbane.com/wp-content/uploads/2023/12/nwmissouri.webp" alt="Header image">
   </div>
 
-<h1 class="text-3xl lg:text-4xl font-righteous mb-8 text-center break-anywhere">OPT STUDENT REPORTING GUIDE – NORTHWEST MISSOURI STATE UNIVERSITY</h1>
+<h1 class="text-3xl lg:text-4xl font-righteous mb-8 text-center break-anywhere">OPT REPORTING – NORTHWEST MISSOURI STATE UNIVERSITY</h1>
 <h2 class="text-center lg:text-lg font-mono font-medium text-gray-500 dark:text-gray-400 mb-8">September 03, 2024</h2>
 <div class="flex flex-row justify-center">
   
@@ -122,11 +138,12 @@
 <p>The joining date mentioned in the offer letter is crucial. For instance, if your joining date is October 1st, you have a window of 10 days after the joining date to update the SEVIS portal, until October 10th. If you miss this deadline, there’s no need to worry. Our university will take care of the SEVIS update process.</p>
 </blockquote>
 <h3 id="keep-note-of-this-information">Keep note of this information</h3>
-<pre><code>Job Role
-Company name
-Company Address
-EIN
-</code></pre>
+<ul>
+<li>Job Role</li>
+<li>Company name</li>
+<li>Company Address</li>
+<li>EIN</li>
+</ul>
 <p>In case you don’t have the EIN number it’s alright as it’s not mandatory to submit. Yet it is better to contact the HR department of the company so that they will give me all the information regarding the EIN.</p>
 <h2 id="navigating-to-iic-portal">Navigating to IIC Portal</h2>
 <p>Open University IIC portal. For Northwest Missouri State University</p>
@@ -137,7 +154,7 @@ EIN
 <p>You will be greeted with a similar-looking site.
 
 <div class="p-1">
-    <img class="w-full h-full object-cover cursor-pointer" src='https://img.perceptpixel.com/kzrjrvuf/opt-reporting/1.png' alt="Flower" onclick='showModal()' />
+    <img loading="lazy" class="w-full h-full object-cover cursor-pointer" src='https://img.perceptpixel.com/kzrjrvuf/opt-reporting/1.png' alt="Flower" onclick='showModal()' />
 </div>
 
 
@@ -149,7 +166,7 @@ EIN
         onclick="closeModal(event)">&times;</button>
 
     
-    <img id="modal-img" class="max-w-[90vw] max-h-[90vh] object-cover" />
+    <img id="modal-img" loading="lazy" class="max-w-[90vw] max-h-[90vh] object-cover" />
 </div>
 
 <script>
@@ -220,17 +237,30 @@ if you did everything right you should be facing a website with loads of buttons
 <h2 id="what-now">What now?</h2>
 <p>There will be An auto-generated email should be received to your personal email ( or the mail you have used to create the IIC portal account ) which means the submission has been completed. you would probably wont receive any more information but hand tight the process has been started.</p>
 <p>Northwest Missouri State University requires us to update our employment details in the sevis portal as well.</p>
-<p>If you have already updated  the sevis portal for the employment section, reply to the Auto-generated email such as this “ I have updated my employment in sevis portal”
-<p class="text-red-500">
-Make sure you check your emails regularly. Personally, it took me 25 days. I submitted my initial reporting on Nov 1st and got my I20 Pickup email on Nov 27th. This process takes time be patient.
-</p></p>
+<p>If you have already updated  the sevis portal for the employment section, reply to the Auto-generated email such as this “ I have updated my employment in sevis portal”</p>
+<div class="w-fit mx-auto">
+    <div class="flex flex-row px-5 rounded-lg shadow bg-yellow-200 items-center">
+        <div>
+            <svg class="w-fit h-6 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path d="M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z" />
+            </svg>
+        </div>
+        <div class="ml-3">
+            <p class="mt-2 text-base text-black leading-relaxed">Make sure you check your emails regularly. Personally, it took me 25 days. I submitted my initial reporting on Nov 1st and got my I20 Pickup email on Nov 27th. This process takes time be patient.</p>
+        </div>
+    </div>
+</div>
+
 
   </article>
 </div>
 </main>
-      <footer>
-  <div class="mt-16 flex flex-col items-center">
-    <p class="mb-8">I am dedicated to sharing the knowledge and insights I have acquired through personal experiences on this blog. I hope you find value in these lessons, and I encourage you to share them with those who may benefit from the content.</p>
+    <footer>
+  <div class="mt-16 flex flex-col items-center bottom-">
+    <p class="mb-8">I am dedicated to sharing the knowledge and insights I have acquired through personal experiences on
+      this blog. I hope you find value in these lessons, and I encourage you to share them with those who may benefit
+      from the content.</p>
     <nav class="mb-3 flex space-x-4">
   <a class="text-sm transition" target="_blank" rel="noopener noreferrer" href="https://github.com/shivardev">
     <span class="sr-only">GitHub</span>
@@ -256,11 +286,11 @@ Make sure you check your emails regularly. Personally, it took me 25 days. I sub
     </div>
   </div>
 </footer>
-
-    </section>
-    
-    <aside class="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-900 hidden xl:block">
-      <nav class="p-8 overflow-y-scroll hide-scrollbar max-h-screen [&_a]:text-primary-500 [&_nav]:leading-loose [&_li_li]:ps-4 [&_li]:truncate hover:[&_a]:text-accent-500 sticky top-0">
+  </section>
+  
+  <aside class="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-900 hidden xl:block">
+    <nav
+      class="p-8 overflow-y-scroll hide-scrollbar max-h-screen [&_a]:text-primary-500 [&_nav]:leading-loose [&_li_li]:ps-4 [&_li]:truncate hover:[&_a]:text-accent-500 sticky top-0">
       <h2 class="text-xl font-semibold">Contents</h2>
       <nav id="TableOfContents">
   <ul>
@@ -284,9 +314,9 @@ Make sure you check your emails regularly. Personally, it took me 25 days. I sub
     <li><a href="#what-now">What now?</a></li>
   </ul>
 </nav>
-      </nav>
-    </aside>
-    <div id="search-modal" aria-hidden="true" class="hidden">
+    </nav>
+  </aside>
+  <div id="search-modal" aria-hidden="true" class="hidden">
   <div tabindex="-1" data-micromodal-close class="absolute inset-0 bg-opacity-60 bg-black flex items-center justify-center">
     <div role="dialog" aria-modal="true" aria-labelledby="search-title" class="w-full sm:w-3/4 xl:w-1/3 bg-white dark:bg-slate-800 p-5 rounded-lg max-h-[80vh] overflow-y-auto" >
       <header class="flex justify-between mb-6">
@@ -302,5 +332,6 @@ Make sure you check your emails regularly. Personally, it took me 25 days. I sub
 <script src="/js/bundle.min.43bb055da83cdcf5b7e3ecb96e2b5d6156887447ec357c5e7577ad2a1998d316.js" integrity="sha256-Q7sFXag83PW34&#43;y5bitdYVaIdEfsNXxedXetKhmY0xY=" defer></script>
 <script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
 
-  </body>
+</body>
+
 </html>

@@ -11,7 +11,6 @@ module:
      - source: hugo_stats.json
        target: assets/watching/hugo_stats.json
 build:
-  writestats: true
   cachebusters:
   - source: assets/watching/hugo_stats\.json
     target: styles\.css
@@ -28,6 +27,9 @@ markup:
     startLevel: 2
     endLevel: 6
     ordered: false
+  goldmark:
+    renderer:
+      unsafe: true
 taxonomies:
   tag: tags
 outputs:

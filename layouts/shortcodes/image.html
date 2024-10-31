@@ -1,6 +1,6 @@
 <!-- Image Grid -->
 <div class="p-1">
-    <img class="w-full h-full object-cover cursor-pointer" src='{{ .Get "url" }}' alt="Flower" onclick='showModal()' />
+    <img loading="lazy" class="w-full h-full object-cover cursor-pointer" src='{{ .Get "url" }}' alt="Flower" onclick='showModal()' />
 </div>
 
 <!-- The Modal -->
@@ -12,7 +12,7 @@
         onclick="closeModal(event)">&times;</button>
 
     <!-- A big image will be displayed here -->
-    <img id="modal-img" class="max-w-[90vw] max-h-[90vh] object-cover" />
+    <img id="modal-img" loading="lazy" class="max-w-[90vw] max-h-[90vh] object-cover" />
 </div>
 
 <script>

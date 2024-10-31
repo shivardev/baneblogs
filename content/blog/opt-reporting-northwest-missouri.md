@@ -1,5 +1,5 @@
 ---
-title: 'OPT STUDENT REPORTING GUIDE – NORTHWEST MISSOURI STATE UNIVERSITY'
+title: 'OPT REPORTING – NORTHWEST MISSOURI STATE UNIVERSITY'
 date: 2024-09-03T16:09:45+02:00
 draft: false
 category:
@@ -28,10 +28,10 @@ showTOC: true
 
 ### Keep note of this information
 
-    Job Role
-    Company name
-    Company Address
-    EIN
+- Job Role
+- Company name
+- Company Address
+- EIN
 
 In case you don’t have the EIN number it’s alright as it’s not mandatory to submit. Yet it is better to contact the HR department of the company so that they will give me all the information regarding the EIN.
 
@@ -121,4 +121,5 @@ There will be An auto-generated email should be received to your personal email 
 Northwest Missouri State University requires us to update our employment details in the sevis portal as well. 
 
 If you have already updated  the sevis portal for the employment section, reply to the Auto-generated email such as this “ I have updated my employment in sevis portal”
-{{< warning text="Make sure you check your emails regularly. Personally, it took me 25 days. I submitted my initial reporting on Nov 1st and got my I20 Pickup email on Nov 27th. This process takes time be patient.">}}
+
+{{< warning >}}Make sure you check your emails regularly. Personally, it took me 25 days. I submitted my initial reporting on Nov 1st and got my I20 Pickup email on Nov 27th. This process takes time be patient.{{< /warning >}}

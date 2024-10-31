@@ -1,7 +1,7 @@
 ---
 title: 'Syntax Highlighting'
 date: 2024-09-02T16:13:30+02:00
-draft: false
+draft: true
 tags:
 description: Demonstration of syntax highlighting with Hugo
 image:
