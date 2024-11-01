@@ -1,7 +1,7 @@
 {{ define "main" }}
 <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
   {{ range .Pages }}
-  <li class="h-fit overflow-hidden">
+  <li class="overflow-hidden"style="height:700px">
     <a href="{{ .RelPermalink }}">
       <div class="bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-700"
         style="box-shadow: 0px 0px 40px rgba(29, 58, 83, 0.15);">
@@ -10,7 +10,7 @@
           <img class="rounded-t-lg" src="{{ .Params.image}}" alt="Header image">
         </div>
         {{ end }}
-        <div class="p-5">
+        <div class="p-5 h-56 ">
           <div class="overflow-clip">
             <h2 class="mb-2 text-xl text-gray-900 dark:text-white font-righteous">{{ .LinkTitle }}</h2>
             <p class=" line-clamp-3 mb-3 font-normal text-gray-700 dark:text-gray-400">{{ .Description }}</p>

@@ -1,6 +1,6 @@
 ---
 date : '2024-10-30T21:54:27-04:00'
-draft : true
+draft : false
 title : 'Essential Documents B1 B2 Tourist Visa Interview'
 category:
   - experience
@@ -65,7 +65,9 @@ if you are here for the Graduation invitation letter template download from belo
 
 {{< warning >}}After completion of the biometrics process, we will now have a stamped document with various pen marks 🖊️, ticks ✔️, and stamps. These papers are required for the next interview process; please don’t lose them or 🗑️ trash them. THEY ARE VERY IMPORTANT keep them safe.{{< /warning >}}
 
-### List of documents required for B1/B2 Visa Interview – but not limited to
+### List of documents required for B1/B2 Visa Interview
+
+> but not limited to
 
 1. #### All documents which are used for the Biometricsd
 
@@ -93,7 +95,7 @@ if you are here for the Graduation invitation letter template download from belo
 
 {{< buttons type="download" url="/graduation-invitation-letter-template.docx" >}}
 
-3. #### Documents required by the applicant – or parents / siblings
+3. #### Documents required by parents / siblings
 
     - Financial documents
         - Occupation based documents like

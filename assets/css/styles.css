@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-blue: #3498db;
+  --primary-blue-hover: #5dbdfd;
+  --font-size: 16px;
+}
+
 body {
   background-color: #000000;
   /* Example for dark background */
