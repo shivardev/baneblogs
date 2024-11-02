@@ -1,13 +1,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
   <meta author="blazingbane">
   <title>{{ .Site.Title }}</title>
-  <meta name="description" content="{{ .Description | default "Blazing Bane blogs" }}">
+  <meta name="description" content="{{ .Description | default " Blazing Bane blogs" }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  {{/*  Content-Security-Policy: default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; base-uri 'none'; frame-ancestors 'none'; form-action none;  */}}
+  {{/* Content-Security-Policy: default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; base-uri
+  'none'; frame-ancestors 'none'; form-action none; */}}
 
   <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
   <!-- favicons -->
@@ -21,13 +21,23 @@
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
   {{ with .OutputFormats.Get "rss" -}}
-    {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+  {{ printf `
+  <link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
   {{ end }}
   {{ $options := dict "inlineImports" true }}
   {{ $styles := resources.Get "css/styles.css" }}
-  {{ $styles = $styles  | css.PostCSS $options }}
+  {{ $styles = $styles | css.PostCSS $options }}
   {{ if hugo.IsProduction }}
-      {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+  {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
   {{ end }}
   <link href="{{ $styles.RelPermalink }}" rel="stylesheet">
+  {{/* pagefind-ui */}}
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <div id="search"></div>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#search", showSubResults: true });
+    });
+  </script>
 </head>

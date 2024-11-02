@@ -29,3 +29,9 @@ Visit [http:localhost:1313](http://localhost:1313)
 You should install the following extensions to assist you during development:
 - [Tailwind CSS Intellisense extension](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 - [Hugo language and syntax support extension](https://marketplace.visualstudio.com/items?itemName=budparr.language-hugo-vscode)
+
+## To generate pagefind
+
+``` bash
+npx -y pagefind --site public --serve
+```

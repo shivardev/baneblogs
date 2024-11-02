@@ -1,30 +1,66 @@
 {{ define "main" }}
-<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-  {{ range .Pages }}
-  <li class="overflow-hidden"style="height:700px">
-    <a href="{{ .RelPermalink }}">
-      <div class="bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-700"
-        style="box-shadow: 0px 0px 40px rgba(29, 58, 83, 0.15);">
-        {{ if .Params.image }}
-        <div class="p-5 h-56 flex align-middle justify-center rounded-t-lg">
-          <img class="rounded-t-lg" src="{{ .Params.image}}" alt="Header image">
-        </div>
-        {{ end }}
-        <div class="p-5 h-56 ">
-          <div class="overflow-clip">
-            <h2 class="mb-2 text-xl text-gray-900 dark:text-white font-righteous">{{ .LinkTitle }}</h2>
-            <p class=" line-clamp-3 mb-3 font-normal text-gray-700 dark:text-gray-400">{{ .Description }}</p>
+<div>
+  <style>
+    .each-blog {
+      height: auto;
+    }
+
+    @media (min-width:320px) {
+      /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    }
+
+    @media (min-width:480px) {
+      /* smartphones, Android phones, landscape iPhone */
+      .each-blog {
+        height: auto;
+      }
+    }
+
+    @media (min-width:600px) {
+      /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    }
+
+    @media (min-width:801px) {
+      /* tablet, landscape iPad, lo-res laptops ands desktops */
+    }
+
+    @media (min-width:1025px) {
+
+      /* big landscape tablets, laptops, and desktops */
+      .each-blog {
+        height: 700px;
+      }
+    }
+  </style>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+    {{ range .Pages }}
+    <li class="overflow-hidden each-blog">
+      <a href="{{ .RelPermalink }}">
+        <div class="bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-700"
+          style="box-shadow: 0px 0px 40px rgba(29, 58, 83, 0.15);">
+          {{ if .Params.image }}
+          <div class="p-5 h-56 flex align-middle justify-center rounded-t-lg">
+            <img class="rounded-t-lg" src="{{ .Params.image}}" alt="Header image">
+          </div>
+          {{ end }}
+          <div class="p-5 h-56 ">
+            <div class="overflow-clip">
+              <h2 class="mb-2 text-xl text-gray-900 dark:text-white font-righteous">{{ .LinkTitle }}</h2>
+              <p class=" line-clamp-3 mb-3 font-normal text-gray-700 dark:text-gray-400">{{ .Description }}</p>
+            </div>
+          </div>
+          {{/* Add tags */}}
+          <div class="mx-3 flex flex-row justify-start">
+            {{ range .Params.category }}
+            <div
+              class="mx-3 text-center px-2 py-1 bg-slate-500 lg:text-md font-mono font-medium text-white-500 dark:text-white-400 mb-8">
+              {{ . }}</div>
+            {{ end }}
           </div>
         </div>
-        {{/*  Add tags  */}}
-        <div class="mx-3 flex flex-row justify-start">
-          {{ range .Params.category }}
-            <div class="mx-3 text-center px-2 py-1 bg-slate-500 lg:text-md font-mono font-medium text-white-500 dark:text-white-400 mb-8">{{ . }}</div>
-          {{ end }}
-        </div>
-      </div>
-    </a>
-  </li>
-  {{ end }}
-</ul>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
 {{ end }}
