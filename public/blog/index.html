@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script>
+<script>
   function removeLoading() {
     const loader = document.getElementById('loader')
     loader.style.display = 'none'
@@ -10,6 +10,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta author="blazingbane">
   <title>Bane Blogs</title>
   <meta name="description" content=" Blazing Bane blogs">
@@ -26,7 +27,7 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <meta property="og:url" content="http://localhost:1313/blog/">
+  <meta property="og:url" content="https://building.robinvanderknaap.dev/blog/">
   <meta property="og:site_name" content="Bane Blogs">
   <meta property="og:title" content="Blogs">
   <meta property="og:locale" content="en_us">
@@ -37,22 +38,19 @@
   <meta name="twitter:title" content="Blogs">
 
   
-  <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/blog/index.xml" title="Bane Blogs">
+  <link rel="alternate" type="application/rss+xml" href="https://building.robinvanderknaap.dev/blog/index.xml" title="Bane Blogs">
   
   
   
   
   
-  <link href="/css/styles.css" rel="stylesheet">
+  
+  
+  <link href="/css/styles.min.4447167fc3b6a97c2a7a0f12622c91cdf580a6b94be4310d4f36b6c9c3c173cc.css" rel="stylesheet">
   
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
   <script src="/pagefind/pagefind-ui.js"></script>
-  <div id="search"></div>
-  <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      new PagefindUI({ element: "#search", showSubResults: true });
-    });
-  </script>
+
 </head>
 
 <body onload="removeLoading()" class=" text-black antialiased dark:bg-gray-950 dark:text-white flex">
@@ -64,6 +62,7 @@
   </div>
 
   <section class="xl:max-w-5xl min-h-dvh mx-auto px-4 xl:px-0 flex flex-col grow">
+
     <header class="flex items-center justify-between py-3 sm:py-10">
   <div>
     <a aria-label="baneblogs" href="/">
@@ -89,6 +88,7 @@
     <a class="hidden font-medium text-gray-900 dark:text-gray-100 hover:text-accent-500 sm:block" href="/blog">Posts</a>
     <a target="_blank" class="hidden font-medium text-gray-900 dark:text-gray-100 hover:text-accent-500 sm:block"
       href="https://blazingbane.com">About</a>
+
     <button class="hover:text-accent-500" aria-label="Search" data-micromodal-trigger="search-modal">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
         class="h-6 w-6">
@@ -156,6 +156,33 @@
   <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
     
     <li class="overflow-hidden each-blog">
+      <a href="/blog/cheap-us-cellular-services/">
+        <div class="bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-700"
+          style="box-shadow: 0px 0px 40px rgba(29, 58, 83, 0.15);">
+          
+          <div class="p-5 h-56 flex align-middle justify-center rounded-t-lg">
+            <img class="rounded-t-lg" src="https://img.perceptpixel.com/blazing-kzrjrvuf/CheapUSFeature.png" alt="Header image">
+          </div>
+          
+          <div class="p-5 h-56 ">
+            <div class="overflow-clip">
+              <h2 class="mb-2 text-xl text-gray-900 dark:text-white font-righteous">Cheap US cellular network SIM carriers 0$ /Month🔥</h2>
+              <p class=" line-clamp-3 mb-3 font-normal text-gray-700 dark:text-gray-400">I have found some cheap worthy cellular providers here in US. each plan starting from 0$ , 5$ or 10$ max plans. includes VOIP and network.</p>
+            </div>
+          </div>
+          
+          <div class="mx-3 flex flex-row justify-start">
+            
+            <div
+              class="mx-3 text-center px-2 py-1 bg-slate-500 lg:text-md font-mono font-medium text-white-500 dark:text-white-400 mb-8">
+              cheap</div>
+            
+          </div>
+        </div>
+      </a>
+    </li>
+    
+    <li class="overflow-hidden each-blog">
       <a href="/blog/essential-documents-b1-b2-tourist-visa-interview/">
         <div class="bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-700"
           style="box-shadow: 0px 0px 40px rgba(29, 58, 83, 0.15);">
@@ -217,25 +244,6 @@
       </a>
     </li>
     
-    <li class="overflow-hidden each-blog">
-      <a href="/blog/syntax-highlighting/">
-        <div class="bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-700"
-          style="box-shadow: 0px 0px 40px rgba(29, 58, 83, 0.15);">
-          
-          <div class="p-5 h-56 ">
-            <div class="overflow-clip">
-              <h2 class="mb-2 text-xl text-gray-900 dark:text-white font-righteous">Syntax Highlighting</h2>
-              <p class=" line-clamp-3 mb-3 font-normal text-gray-700 dark:text-gray-400">Demonstration of syntax highlighting with Hugo</p>
-            </div>
-          </div>
-          
-          <div class="mx-3 flex flex-row justify-start">
-            
-          </div>
-        </div>
-      </a>
-    </li>
-    
   </ul>
 </div>
 </main>
@@ -283,7 +291,7 @@
     </div>
   </div>
 </div>
-<script src="/js/bundle.min.194b02190e6083e1ca4129bf0fdef3f5768c0e02f5e2c53471d799030c7ef305.js" integrity="sha256-GUsCGQ5gg&#43;HKQSm/D97z9XaMDgL14sU0cdeZAwx&#43;8wU=" defer></script>
+<script src="/js/bundle.min.95afa4c0a9ff3abc62c53b3879b308ad80b22ca8a6a3db758b0739d1a26f2454.js" integrity="sha256-la&#43;kwKn/OrxixTs4ebMIrYCyLKimo9t1iwc50aJvJFQ=" defer></script>
 
 </body>
 

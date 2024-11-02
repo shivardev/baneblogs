@@ -1,0 +1,13 @@
+{
+  "watch": [
+    "content",
+    "layouts",
+    "assets"
+  ],
+  "ignore": [
+    "/public",
+    ".hugo_build.lock"
+  ],
+  "delay": 10000,
+  "exec": "hugo"
+}

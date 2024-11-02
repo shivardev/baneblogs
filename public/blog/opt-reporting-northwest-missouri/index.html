@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script>
+<script>
   function removeLoading() {
     const loader = document.getElementById('loader')
     loader.style.display = 'none'
@@ -10,6 +10,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta author="blazingbane">
   <title>Bane Blogs</title>
   <meta name="description" content="Step-by-step clear guide regarding how to opt report to the IIC portal at Northwest Missouri State University after getting an offer letter.">
@@ -26,7 +27,7 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <meta property="og:url" content="http://localhost:1313/blog/opt-reporting-northwest-missouri/">
+  <meta property="og:url" content="https://building.robinvanderknaap.dev/blog/opt-reporting-northwest-missouri/">
   <meta property="og:site_name" content="Bane Blogs">
   <meta property="og:title" content="OPT REPORTING – NORTHWEST MISSOURI STATE UNIVERSITY">
   <meta property="og:description" content="Step-by-step clear guide regarding how to opt report to the IIC portal at Northwest Missouri State University after getting an offer letter.">
@@ -52,16 +53,13 @@
   
   
   
-  <link href="/css/styles.css" rel="stylesheet">
+  
+  
+  <link href="/css/styles.min.4447167fc3b6a97c2a7a0f12622c91cdf580a6b94be4310d4f36b6c9c3c173cc.css" rel="stylesheet">
   
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
   <script src="/pagefind/pagefind-ui.js"></script>
-  <div id="search"></div>
-  <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      new PagefindUI({ element: "#search", showSubResults: true });
-    });
-  </script>
+
 </head>
 
 <body onload="removeLoading()" class=" text-black antialiased dark:bg-gray-950 dark:text-white flex">
@@ -73,6 +71,7 @@
   </div>
 
   <section class="xl:max-w-5xl min-h-dvh mx-auto px-4 xl:px-0 flex flex-col grow">
+
     <header class="flex items-center justify-between py-3 sm:py-10">
   <div>
     <a aria-label="baneblogs" href="/">
@@ -98,6 +97,7 @@
     <a class="hidden font-medium text-gray-900 dark:text-gray-100 hover:text-accent-500 sm:block" href="/blog">Posts</a>
     <a target="_blank" class="hidden font-medium text-gray-900 dark:text-gray-100 hover:text-accent-500 sm:block"
       href="https://blazingbane.com">About</a>
+
     <button class="hover:text-accent-500" aria-label="Search" data-micromodal-trigger="search-modal">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
         class="h-6 w-6">
@@ -171,7 +171,7 @@
 <p>You will be greeted with a similar-looking site.
 
 <div class="p-1">
-    <img loading="lazy" class="w-full h-full object-cover cursor-pointer" src='https://img.perceptpixel.com/kzrjrvuf/opt-reporting/1.png' alt="Flower" onclick='showModal()' />
+    <img loading="lazy" class="w-1.5 sm:w-1.5 sm:h-full h-1.5 object-cover cursor-pointer" src='https://img.perceptpixel.com/kzrjrvuf/opt-reporting/1.png' alt="Flower" onclick='showModal()' />
 </div>
 
 
@@ -190,11 +190,10 @@
     
     var modal = document.getElementById("modal");
     var modalImg = document.getElementById("modal-img");
-    var url = "https:\/\/img.perceptpixel.com\/kzrjrvuf\/opt-reporting\/1.png"
+    var url = 'https:\/\/img.perceptpixel.com\/kzrjrvuf\/opt-reporting\/1.png'
     
     function showModal() {
-        modal.classList.remove('hidden');
-        modalImg.src = url;
+        window.open(url, '_blank');
     }
 
     
@@ -306,8 +305,7 @@ if you did everything right you should be facing a website with loads of buttons
   </section>
   
   <aside class="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-900 hidden xl:block">
-    <nav
-    style="width: 350px;"
+    <nav style="width: 350px;"
       class=" p-8 overflow-y-scroll hide-scrollbar max-h-screen [&_a]:text-primary-500 [&_nav]:leading-loose [&_li_li]:ps-4 [&_li]:truncate hover:[&_a]:text-accent-500 sticky top-0">
       <h2 class="text-xl font-semibold">Contents</h2>
       <nav id="TableOfContents">
@@ -334,6 +332,7 @@ if you did everything right you should be facing a website with loads of buttons
 </nav>
     </nav>
   </aside>
+
   <div id="search-modal" aria-hidden="true" class="hidden">
   <div tabindex="-1" data-micromodal-close class="absolute inset-0 bg-opacity-60 bg-black flex items-center justify-center">
     <div role="dialog" aria-modal="true" aria-labelledby="search-title" class="w-full sm:w-3/4 xl:w-1/3 bg-white dark:bg-slate-800 p-5 rounded-lg max-h-[80vh] overflow-y-auto" >
@@ -347,7 +346,7 @@ if you did everything right you should be facing a website with loads of buttons
     </div>
   </div>
 </div>
-<script src="/js/bundle.min.194b02190e6083e1ca4129bf0fdef3f5768c0e02f5e2c53471d799030c7ef305.js" integrity="sha256-GUsCGQ5gg&#43;HKQSm/D97z9XaMDgL14sU0cdeZAwx&#43;8wU=" defer></script>
+<script src="/js/bundle.min.95afa4c0a9ff3abc62c53b3879b308ad80b22ca8a6a3db758b0739d1a26f2454.js" integrity="sha256-la&#43;kwKn/OrxixTs4ebMIrYCyLKimo9t1iwc50aJvJFQ=" defer></script>
 
 </body>
 

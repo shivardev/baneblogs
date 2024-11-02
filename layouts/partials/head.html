@@ -1,6 +1,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta author="blazingbane">
   <title>{{ .Site.Title }}</title>
   <meta name="description" content="{{ .Description | default " Blazing Bane blogs" }}">
@@ -34,10 +35,5 @@
   {{/* pagefind-ui */}}
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
   <script src="/pagefind/pagefind-ui.js"></script>
-  <div id="search"></div>
-  <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      new PagefindUI({ element: "#search", showSubResults: true });
-    });
-  </script>
+
 </head>

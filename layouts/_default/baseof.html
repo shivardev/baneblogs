@@ -18,6 +18,7 @@
   </div>
 
   <section class="xl:max-w-5xl min-h-dvh mx-auto px-4 xl:px-0 flex flex-col grow">
+
     {{ partial "header.html" . }}
     <main class="grow">
       {{- block "main" . -}}{{- end -}}
@@ -26,15 +27,16 @@
   </section>
   {{ if .Params.showTOC }}
   <aside class="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-900 hidden xl:block">
-    <nav
-    style="width: 350px;"
+    <nav style="width: 350px;"
       class=" p-8 overflow-y-scroll hide-scrollbar max-h-screen [&_a]:text-primary-500 [&_nav]:leading-loose [&_li_li]:ps-4 [&_li]:truncate hover:[&_a]:text-accent-500 sticky top-0">
       <h2 class="text-xl font-semibold">Contents</h2>
       {{ .TableOfContents }}
     </nav>
   </aside>
+
   {{ end }}
   {{- partial "search.html" . -}}
+  
   {{ partial "scripts.html" . }}
 </body>
 

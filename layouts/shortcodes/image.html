@@ -1,6 +1,6 @@
 <!-- Image Grid -->
 <div class="p-1">
-    <img loading="lazy" class="w-full h-full object-cover cursor-pointer" src='{{ .Get "url" }}' alt="Flower" onclick='showModal()' />
+    <img loading="lazy" class="w-1.5 sm:w-1.5 sm:h-full h-1.5 object-cover cursor-pointer" src='{{ .Get "url" }}' alt="Flower" onclick='showModal()' />
 </div>
 
 <!-- The Modal -->
@@ -19,11 +19,10 @@
     // Get the modal by id
     var modal = document.getElementById("modal");
     var modalImg = document.getElementById("modal-img");
-    var url = "{{ .Params.url }}"
+    var url = '{{ .Get "url" }}'
     // Show modal function
     function showModal() {
-        modal.classList.remove('hidden');
-        modalImg.src = url;
+        window.open(url, '_blank');
     }
 
     // Close modal function
