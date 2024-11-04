@@ -14,7 +14,7 @@ tags:
   - internation student
   - telugu
 description: Step-by-step clear guide regarding how to opt report to the IIC portal at Northwest Missouri State University after getting an offer letter.
-image: 'https://blogs.blazingbane.com/wp-content/uploads/2023/12/nwmissouri.webp'
+image: 'https://i.ibb.co/fMd5m7q/northwest-missouri-state-university-logo-usa.jpg'
 showTOC: true
 ---
 

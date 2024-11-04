@@ -8,6 +8,6 @@
     "/public",
     ".hugo_build.lock"
   ],
-  "delay": 10000,
-  "exec": "hugo"
+  "delay": 20000,
+  "exec": "hugo build"
 }

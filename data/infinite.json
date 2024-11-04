@@ -1,0 +1,46 @@
+[
+    {
+      "name": "Youtube",
+      "image": "https://www.freeiconspng.com/uploads/logo-youtube-png-clipart-11.png",
+      "contents": "Live stream games and post offline videos",
+      "link": "https://www.youtube.com/channel/UCPFM_Ug62Ei3CUfvquG4KOg"
+    },
+    
+    {
+      "name": "Memes",
+      "image": "https://www.svgrepo.com/show/452229/instagram-1.svg",
+      "contents": "Post memes and also react to them live!",
+      "link": "https://www.instagram.com/_balebanjara_/"
+    },
+    {
+      "name": "Memes",
+      "image": "https://www.svgrepo.com/show/452229/instagram-1.svg",
+      "contents": "Gaming reels which are funny and best clips!",
+      "link": "https://www.instagram.com/blazing_bane/"
+    },
+    {
+      "name": "Github",
+      "image": "/assets/github.svg",
+      "contents": "All my projects of different variety",
+      "link": "https://github.com/shivardev"
+    },
+    {
+      "name": "Guru Shots",
+      "contents": "Participate in Photography challenges. Veteran Level😎",
+      "image": "https://play-lh.googleusercontent.com/Gy5evbZJrvFQTTyLP3FUSHal1HTmIRLvF5QAHL5MubzbTzu6ZOAfHoNFWJv5i12xeTE",
+      "link": "https://gurushots.com/kondashivaradhan007"
+    },
+    {
+      "name": "Pexels",
+      "contents": "Photos captured with 📸 Canon m50 mark ii",
+      "image": "https://forcreators.com/wp-content/uploads/2021/03/Pexels-logo-600x600.png",
+      "link": "https://www.pexels.com/@blazingbane/"
+    },
+    {
+      "name": "Who am I?",
+      "image": "https://images.pexels.com/users/avatars/49914472/shivaradhan-konda-964.jpeg?auto=compress&fit=crop&h=130&w=130&dpr=1",
+      "contents": "Wanna know more about me?",
+      "link": "https://shivardev.github.io/"
+    }
+  ]
+  

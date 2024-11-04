@@ -4,7 +4,7 @@
     <img class="mx-auto max-w-96 max-h-56" src="{{ .Params.image}}" alt="Header image">
   </div>
 {{ end }}
-<h1 class="text-3xl lg:text-4xl font-righteous mb-8 text-center break-anywhere">{{ .Page.Title }}</h1>
+<h1 class="text-3xl lg:text-4xl font-righteous mb-8 text-center break-anywhere text-wrap">{{ .Page.Title }}</h1>
 <h2 class="text-center lg:text-lg font-mono font-medium text-gray-500 dark:text-gray-400 mb-8">{{ time.Format "January 02, 2006" .Page.Date }}</h2>
 <div class="flex flex-row justify-center">
   {{ range .Params.category }}
