@@ -35,3 +35,9 @@ You should install the following extensions to assist you during development:
 ``` bash
 npx -y pagefind --site public --serve
 ```
+
+#### Blogs directory was not rendering because of the following mistake,
+
+If we want to add a new homepage for a directory, we need to create a new file named `_index.md` in that directory.
+
+For example, if we want to add a new homepage for `blog` directory, we need to create a new file named `_index.md` in `blog` directory.
