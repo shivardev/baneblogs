@@ -32,7 +32,10 @@
   {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
   {{ end }}
   <link href="{{ $styles.RelPermalink }}" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="global.css">
+  {{ $globalcss := resources.Get "css/asset-global.css" }}
+  <link href="{{ $globalcss.RelPermalink }}" type="text/css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="/global.css">
   {{/* pagefind-ui */}}
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
   <script src="/pagefind/pagefind-ui.js"></script>
