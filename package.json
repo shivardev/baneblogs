@@ -6,7 +6,7 @@
     "start": "hugo server --bind 0.0.0.0 --disableFastRender --ignoreCache --noHTTPCache --buildDrafts --cleanDestinationDir",
     "hugo": "hugo",
     "hugo:build": "hugo --minify && pagefind --site public",
-    "deploy": "npx hugo build && npx -y pagefind --site public",
+    "deploy": "hugo build && npx -y pagefind --site public",
     "pagefind": "pagefind --site public --output-subdir ../static/pagefind"
   },
   "hugo-bin": {
