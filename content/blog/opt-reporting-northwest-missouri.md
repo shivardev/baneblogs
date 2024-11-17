@@ -16,6 +16,7 @@ tags:
 description: Step-by-step clear guide regarding how to opt report to the IIC portal at Northwest Missouri State University after getting an offer letter.
 image: 'https://i.ibb.co/fMd5m7q/northwest-missouri-state-university-logo-usa.jpg'
 showTOC: true
+uuid: "71cb892f-1463-4483-9d07-647958c1b703"
 ---
 
 ### Things to keep before we proceed

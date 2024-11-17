@@ -1,11 +1,129 @@
+
 {{ define "main" }}
 {{ if .Params.image }}
    <div class="mt-16 mb-20">
     <img class="mx-auto max-w-96 max-h-56" src="{{ .Params.image}}" alt="Header image">
   </div>
 {{ end }}
+
 <h1 class="text-3xl lg:text-4xl font-righteous mb-8 text-center break-anywhere text-wrap">{{ .Page.Title }}</h1>
-<h2 class="text-center lg:text-lg font-mono font-medium text-gray-500 dark:text-gray-400 mb-8">{{ time.Format "January 02, 2006" .Page.Date }}</h2>
+<div class="badge" href="#">
+  <p id="viewcount" style="font-size:18x">10</p>
+  <span></span>
+</div>
+
+<style>
+  .badge {
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    text-decoration: none;
+    padding: 8px 16px;
+    color: white;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  
+    border-radius: 999px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    user-select: none;
+  }
+  
+  .badge span {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -12px;
+    right: -2px;
+    transform: rotate(-20deg);
+    filter: blur(0.5px);
+  }
+  
+  .badge span:before,
+  .badge span:after {
+    content: "";
+    position: absolute;
+  }
+  
+  .badge span:before {
+    width: 1px;
+    height: 100%;
+    left: 12px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    );
+  }
+  
+  .badge span:after {
+    width: 100%;
+    height: 1px;
+    top: 12px;
+    background: linear-gradient(
+      to left,
+      transparent,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    );
+  }
+  
+  .badge:hover span:after {
+    display: block;
+    animation: rotate 3s ease-in-out; /* Adjust timing as needed */
+  }
+  .badge:hover span::before {
+    display: block;
+    animation: rotate 3s ease-in-out; /* Adjust timing as needed */
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.8);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  
+  .badge:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(105, 106, 111, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border-radius: 999px;
+  }
+  
+  .inspired {
+    position: absolute;
+    bottom: 8%;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .inspired:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+</style>
+<h2 class="text-center lg:text-lg font-mono font-medium text-gray-500 dark:text-gray-400 mb-8 mt-4">{{ time.Format "January 02, 2006" .Page.Date }}</h2>
 <div class="flex flex-row justify-center">
   {{ range .Params.category }}
     <div class="mx-3 text-center px-2 py-1 bg-slate-500 lg:text-lg font-mono font-medium text-white-500 dark:text-white-400 mb-8">{{ . }}</div>
@@ -16,4 +134,91 @@
     {{ .Content }}
   </article>
 </div>
+<script>
+  const endpoint = "https://server.blazingbane.com";
+  url = endpoint + "/views"; // API URL
+  const uuid = "{{ .Params.uuid }}";       // Unique identifier for the blog post
+  const viewCountKey = `view_count_${uuid}`; // Unique key for each post in Local Storage
+  console.log(uuid);
+  let requestType = 'POST';
+  
+  function animateCount(start, end, element, duration) {
+    const stepTime = 50;  // Time between each step (ms)
+    const steps = duration / stepTime;  // Total number of steps for the animation
+    let currentStep = 0;
+  
+    function updateCount() {
+      currentStep++;
+      const progress = currentStep / steps;
+      const currentValue = Math.round(start + (end - start) * progress);
+      
+      // Update the element with the current value
+      element.innerHTML = `<strong>${currentValue}</strong>👀`;
+  
+      if (currentStep < steps) {
+        requestAnimationFrame(updateCount); // Continue the animation until it's done
+      }
+    }
+  
+    requestAnimationFrame(updateCount);
+  }
+  
+  function sendPostRequest() {
+    // Check if this UUID has already been counted for views in Local Storage
+    if (localStorage.getItem(viewCountKey)) {
+      console.log("View count already recorded for this post.");
+      url = endpoint + "/getviews";  // Switch to get views API
+    }
+  
+    const data = {
+      uuid: uuid,
+      url: url
+    };
+  
+    const xhr = new XMLHttpRequest();
+    xhr.open(requestType, url, true); 
+    xhr.setRequestHeader("Content-Type", "application/json");
+  
+    // Timeout setup
+    const timeout = 2000; // 2 seconds timeout
+    const timeoutId = setTimeout(() => {
+      xhr.abort();  // Abort the request if it takes longer than the timeout
+      console.log("Request timed out");
+    }, timeout);
+  
+    xhr.onload = function () {
+      clearTimeout(timeoutId); // Clear timeout if the request completes in time
+      if (xhr.status === 200) {
+        console.log("Request successful:", xhr.responseText);
+  
+        // Assuming the response contains a 'count' field
+        const response = JSON.parse(xhr.responseText);  // Parse the JSON response
+        const count = response || 0;  // Safely get the 'count' or default to 0
+        console.log(response);
+  
+        // Get the element where the view count will be displayed
+        const viewCountElement = document.getElementById("viewcount");
+  
+        // Animate the count from current value to the new count
+        const currentCount = parseInt(viewCountElement.innerText.replace(/\D/g, '')) || 0; // Get current count, default to 0 if not found
+        animateCount(currentCount, count, viewCountElement, 1000); // 1000 ms for the animation duration
+  
+        // Store the flag in Local Storage to avoid counting again
+        localStorage.setItem(viewCountKey, 'counted');
+      } else {
+        console.log("Request failed with status:", xhr.status);
+        document.getElementById("viewcount").innerText = 'Error loading view count.☹️';
+      }
+    };
+  
+    xhr.onerror = function () {
+      clearTimeout(timeoutId); // Clear timeout in case of request error
+      console.error("Request error");
+      document.getElementById("viewcount").innerText = 'Error loading view count.☹️';
+    };
+  
+    xhr.send(JSON.stringify(data));
+  }
+  sendPostRequest()
+</script>
 {{ end }}

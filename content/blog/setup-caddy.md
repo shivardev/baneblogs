@@ -14,6 +14,7 @@ tags:
 description: A simple guide to setup Caddy with HTTPS in 2Min 🚀 (Windows) for your personal website. Quick and easy setup.
 image: 'https://i.ibb.co/Xbq1d4V/Listen-in-your-PC.png'
 showTOC: true
+uuid: "5a60574e-408b-45a4-b750-cb6b115a30f4"
 ---
 ### Introduction
 

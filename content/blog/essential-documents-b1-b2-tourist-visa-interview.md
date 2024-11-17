@@ -16,6 +16,7 @@ tags:
 description: The blog post comprehensively outlines the essential documents required for a B1/B2 tourist visa interview.
 image: 'https://i.ibb.co/K022pNz/Visa-Image.png'
 showTOC: true
+uuid: "c06d84a0-4567-438e-82eb-12b5ea226dc9"
 ---
 
 <iframe class="w-full" height="315" src="https://www.youtube.com/embed/zElr2PP9eok?si=DZkVum_p4rAhkJmM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

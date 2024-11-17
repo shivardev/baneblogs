@@ -41,3 +41,33 @@
     margin-top: 10px;
     width: 220px;
 }
+
+.hide-mobile{
+    display: block;
+}
+
+
+/* Desktop Styles */
+@media screen and (min-width: 1024px) {
+    .hide-mobile{
+        display: block;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+    body {
+        background-color: #eaeaea;
+    }
+
+    .container {
+        width: 85%;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 767px) {
+    .hide-mobile{
+        display: none;
+    }
+}

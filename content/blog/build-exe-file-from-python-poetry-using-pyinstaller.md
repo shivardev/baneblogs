@@ -7,6 +7,8 @@ tags: [coding, developer, python, poetry, pyinstaller, auto-py-to-exe, tkinter]
 description: "Learn how to convert your Python application with Poetry dependencies and Tkinter UI into a Windows executable using auto-py-to-exe. This step-by-step guide simplifies the process of packaging your Python project for distribution. Poetry plugin to build and/or bundle executable binaries with PyInstaller."
 image: "https://i.ibb.co/z4CbvnQ/Python-to-Exe.png"
 showTOC: true
+uuid: "0884673f-6e3f-482e-95ff-2ab8e02c9323"
+
 ---
 
 ### Introduction

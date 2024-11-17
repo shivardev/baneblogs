@@ -7,6 +7,7 @@ tags: [cheap, cellular, sim card, free, tello, textnow, hello mobile, voip]
 description: I have found some cheap worthy cellular providers here in US. each plan starting from 0$ , 5$ or 10$ max plans. includes VOIP and network.
 image: https://img.perceptpixel.com/blazing-kzrjrvuf/CheapUSFeature.png
 showTOC: true
+uuid: "8dd48aa7-195b-45d1-a262-21fc674fa54f"
 ---
 
 ### Introduction

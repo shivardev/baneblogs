@@ -1,0 +1,45 @@
+<script>
+  // Define the uuid and the data you want to send
+  const url = "http://localhost:6767/view"; 
+  const uuid = "{{ .Params.uuid }}"; 
+  console.log(uuid)
+  // Create a function to send the POST request
+  function sendPostRequest() {
+    // Create the data object to send in the request body
+    const data = {
+      uuid: uuid,
+      url: url
+    };
+
+    // Create a new XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+
+    // Configure the request: POST method and the URL
+    xhr.open("POST", url, true);  // Replace with your server URL
+
+    // Set the request header to indicate that you're sending JSON data
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    // Define what happens when the request is successful
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        // Handle success
+        console.log("Request successful:", xhr.responseText);
+      } else {
+        // Handle failure
+        console.log("Request failed with status:", xhr.status);
+      }
+    };
+
+    // Define what happens if there's an error with the request
+    xhr.onerror = function () {
+      console.error("Request error");
+    };
+
+    // Convert the data object to JSON and send the request
+    xhr.send(JSON.stringify(data));
+  }
+
+  // Call the function to send the POST request
+  sendPostRequest();
+</script>
