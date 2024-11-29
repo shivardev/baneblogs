@@ -46,12 +46,7 @@
       ]
     }
   ],
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "content",
-      "path": "[[workspace]]/D:/coding/Blogs/content"
-    }
-  ],
+  "frontMatter.content.pageFolders": [],
   "frontMatter.git.enabled": true,
   "frontMatter.content.publicFolder": "static",
   "frontMatter.framework.id": "hugo",
