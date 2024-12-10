@@ -3,7 +3,7 @@ date: 2024-11-29T01:17:45.441Z
 category:
     - streaming
     - content creation
-draft: true
+draft: false
 tags:
     - android
     - streaming
@@ -11,8 +11,8 @@ tags:
     - guide
     - how to
 description: I found a possbible way to use my Android smartphone as a streaming PC. I will write about it here.
-image: https://i.ibb.co/0b2b1tB/Android-as-Streaming-PC.png
-title: How to use Android smartphone as a streaming PC (Android)
+image: https://i.ibb.co/Gv5dfXL/android-as-streaming-pc.png
+title: How to use Android smartphone as a streaming PC
 showTOC: true
 uuid: fdd682b9-d546-42e3-ab41-23a30b170078
 ---
