@@ -1,6 +1,7 @@
 baseURL: https://building.robinvanderknaap.dev/
 languageCode: en-us
 title: Bane Blogs
+theme: ["hugo-admonitions"]
 module:
    hugoVersion:
     extended: true

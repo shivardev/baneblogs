@@ -1,0 +1,20 @@
+# theme.yaml configuration file
+
+name: Display Callouts
+license: MIT
+licenselink: https://github.com/kkkzoz/hugo-admonitions/blob/master/LICENSE
+description: Hugo theme component to display simple and clean callouts.
+homepage: https://github.com/kkkzoz/hugo-admonitions
+tags:
+  - component
+  - callout
+  - notice
+features:
+  - nicely display notices
+  - easy to use
+  - dark mode support
+min_version: 0.40.0
+
+author:
+  name: KKKZOZ
+  homepage: https://blog.kkkzoz.top

@@ -42,6 +42,26 @@
           "title": "Categories",
           "name": "categories",
           "type": "categories"
+        },
+        {
+          "title": "category",
+          "name": "category",
+          "type": "categories"
+        },
+        {
+          "title": "image",
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "title": "showTOC",
+          "name": "showTOC",
+          "type": "boolean"
+        },
+        {
+          "title": "uuid",
+          "name": "uuid",
+          "type": "string"
         }
       ]
     }

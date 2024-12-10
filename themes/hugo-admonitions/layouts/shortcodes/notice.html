@@ -1,0 +1,306 @@
+{{/* Available notice types: info, notify, success, warning, danger, error, task, tip, abstract, conclusion, memo, question, quote, example, experiment, goal, code, idea */}}
+{{- $noticeType := .Get 0 | default "note" -}}
+{{- $title := .Get 1 | default ($noticeType | title) -}}
+
+{{/* Workaround markdownify inconsistency for single/multiple paragraphs */}}
+{{- $raw := .Inner -}}
+
+{{/* Load the css if it's the first time */}}
+{{- if not ($.Page.Scratch.Get "notice-style-loaded-flag") -}}
+<style type="text/css">
+    /* 基础变量定义 */
+    .notice {
+        --notice-bg: #ffffff;
+        --notice-text: #000000;
+        --notice-code-bg: #f5f5f5;
+        --notice-code-text: #24292e;
+        --notice-blockquote-border: #e0e0e0;
+        --notice-shadow: rgba(0, 0, 0, 0.12);
+        --notice-header-border: rgba(0, 0, 0, 0.1);
+
+        margin: 1rem 0;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px var(--notice-shadow);
+        transition: all 0.3s ease;
+    }
+
+    /* 深色模式变量 */
+    @media (prefers-color-scheme: dark) {
+        .notice {
+            --notice-bg: #1D1E20;
+            --notice-text: #cdd6f4;
+            --notice-code-bg: #313244;
+            --notice-code-text: #cdd6f4;
+            --notice-blockquote-border: #45475a;
+            --notice-shadow: rgba(0, 0, 0, 0.5);
+            --notice-header-border: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    /* 网站手动切换的深色模式 */
+    body.dark .notice {
+        --notice-bg: #1D1E20;
+        --notice-text: #cdd6f4;
+        --notice-code-bg: #313244;
+        --notice-code-text: #cdd6f4;
+        --notice-blockquote-border: #45475a;
+        --notice-shadow: rgba(0, 0, 0, 0.5);
+        --notice-header-border: rgba(255, 255, 255, 0.1);
+    }
+
+    .notice-header {
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        border-bottom: 1px solid var(--notice-header-border);
+        font-size: 1.1rem;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .notice-header svg {
+        width: 1.1em;
+        height: 1.1em;
+        margin-right: 0.5rem;
+        fill: currentColor;
+    }
+
+    .notice-content {
+        padding: 1rem;
+        background-color: var(--notice-bg);
+        color: var(--notice-text);
+        border-radius: 0 0 4px 4px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .notice-content p {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .notice-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .notice-content ul,
+    .notice-content ol {
+        margin: 0 0 0.5rem 0;
+        padding-left: 1.2rem;
+        color: var(--notice-text);
+    }
+
+    .notice-content ul:last-child,
+    .notice-content ol:last-child {
+        margin-bottom: 0;
+    }
+
+    .notice-content blockquote {
+        margin: 0 0 0.5rem 0;
+        padding-left: 1rem;
+        border-left: 3px solid var(--notice-blockquote-border);
+        color: var(--notice-text);
+    }
+
+    .notice-content blockquote:last-child {
+        margin-bottom: 0;
+    }
+
+    .notice-content code {
+        background-color: var(--notice-code-bg);
+        color: var(--notice-code-text);
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 0.9em;
+    }
+
+    /* Info */
+    .notice.info {
+        background: transparent;
+        border-left: 4px solid #04a5e5;
+    }
+    .notice.info .notice-header {
+        background: rgba(4, 165, 229, 0.1);
+        color: #04a5e5;
+    }
+
+    /* Notify */
+    .notice.notify {
+        background: transparent;
+        border-left: 4px solid #1e66f5;
+    }
+    .notice.notify .notice-header {
+        background: rgba(30, 102, 245, 0.1);
+        color: #1e66f5;
+    }
+
+    /* Success */
+    .notice.success {
+        background: transparent;
+        border-left: 4px solid #40a02b;
+    }
+    .notice.success .notice-header {
+        background: rgba(64, 160, 43, 0.1);
+        color: #40a02b;
+    }
+
+    /* Warning */
+    .notice.warning {
+        background: transparent;
+        border-left: 4px solid #df8e1d;
+    }
+    .notice.warning .notice-header {
+        background: rgba(223, 142, 29, 0.1);
+        color: #df8e1d;
+    }
+
+    /* Danger */
+    .notice.danger {
+        background: transparent;
+        border-left: 4px solid #fe640b;
+    }
+    .notice.danger .notice-header {
+        background: rgba(254, 100, 11, 0.1);
+        color: #fe640b;
+    }
+
+    /* Error */
+    .notice.error {
+        background: transparent;
+        border-left: 4px solid #d20f39;
+    }
+    .notice.error .notice-header {
+        background: rgba(210, 15, 57, 0.1);
+        color: #d20f39;
+    }
+
+    /* Task */
+    .notice.task {
+        background: transparent;
+        border-left: 4px solid #8839ef;
+    }
+    .notice.task .notice-header {
+        background: rgba(136, 57, 239, 0.1);
+        color: #8839ef;
+    }
+
+    /* Tip */
+    .notice.tip {
+        background: transparent;
+        border-left: 4px solid #179299;
+    }
+    .notice.tip .notice-header {
+        background: rgba(23, 146, 153, 0.1);
+        color: #179299;
+    }
+
+    /* Abstract */
+    .notice.abstract {
+        background: transparent;
+        border-left: 4px solid #209fb5;
+    }
+    .notice.abstract .notice-header {
+        background: rgba(32, 159, 181, 0.1);
+        color: #209fb5;
+    }
+
+    /* Conclusion */
+    .notice.conclusion {
+        background: transparent;
+        border-left: 4px solid #dd7878;
+    }
+    .notice.conclusion .notice-header {
+        background: rgba(221, 120, 120, 0.1);
+        color: #dd7878;
+    }
+
+    /* Memo */
+    .notice.memo {
+        background: transparent;
+        border-left: 4px solid #e64553;
+    }
+    .notice.memo .notice-header {
+        background: rgba(230, 69, 83, 0.1);
+        color: #e64553;
+    }
+
+    /* Question */
+    .notice.question {
+        background: transparent;
+        border-left: 4px solid #179299;
+    }
+    .notice.question .notice-header {
+        background: rgba(23, 146, 153, 0.1);
+        color: #179299;
+    }
+
+    /* Quote */
+    .notice.quote {
+        background: transparent;
+        border-left: 4px solid #7287fd;
+    }
+    .notice.quote .notice-header {
+        background: rgba(114, 135, 253, 0.1);
+        color: #7287fd;
+    }
+
+    /* Example */
+    .notice.example {
+        background: transparent;
+        border-left: 4px solid #dc8a78;
+    }
+    .notice.example .notice-header {
+        background: rgba(220, 138, 120, 0.1);
+        color: #dc8a78;
+    }
+
+    /* Experiment */
+    .notice.experiment {
+        background: transparent;
+        border-left: 4px solid #dc8a78;
+    }
+    .notice.experiment .notice-header {
+        background: rgba(220, 138, 120, 0.1);
+        color: #dc8a78;
+    }
+
+    /* Goal */
+    .notice.goal {
+        background: transparent;
+        border-left: 4px solid #e64553;
+    }
+    .notice.goal .notice-header {
+        background: rgba(230, 69, 83, 0.1);
+        color: #e64553;
+    }
+
+    /* Code */
+    .notice.code {
+        background: transparent;
+        border-left: 4px solid #7287fd;
+    }
+    .notice.code .notice-header {
+        background: rgba(114, 135, 253, 0.1);
+        color: #7287fd;
+    }
+
+    /* Idea */
+    .notice.idea {
+        background: transparent;
+        border-left: 4px solid #df8e1d;
+    }
+    .notice.idea .notice-header {
+        background: rgba(223, 142, 29, 0.1);
+        color: #df8e1d;
+    }
+</style>
+{{- $.Page.Scratch.Set "notice-style-loaded-flag" true -}}
+{{- end -}}
+
+<div class="notice {{ $noticeType }}">
+    <div class="notice-header">
+        {{- partial (printf "icons/%s.svg" $noticeType) . -}}
+        {{ $title }}
+    </div>
+    <div class="notice-content">
+        {{ $raw | markdownify }}
+    </div>
+</div>
