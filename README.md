@@ -41,3 +41,10 @@ npx -y pagefind --site public --serve
 If we want to add a new homepage for a directory, we need to create a new file named `_index.md` in that directory.
 
 For example, if we want to add a new homepage for `blog` directory, we need to create a new file named `_index.md` in `blog` directory.
+
+### To Deploy
+Once all changes are added run 
+
+```bash
+npm run deploy
+``` 

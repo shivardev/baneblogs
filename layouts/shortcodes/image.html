@@ -1,42 +1,47 @@
-<!-- Image Grid -->
 <div class="p-1">
-    <img loading="lazy" class="w-1.5 sm:w-1.5 sm:h-full h-1.5 object-cover cursor-pointer" src='{{ .Get "url" }}' alt="Img could not load" onclick='showModal()' />
+    <img loading="lazy" class="w-1.5 sm:w-1.5 sm:h-full h-1.5 object-cover cursor-pointer" src='{{ .Get "url" }}'
+        alt="Img could not load" onclick="showModal(this)" />
 </div>
 
-<!-- The Modal -->
-<div id="modal" class="hidden fixed top-0 left-0 z-80 w-screen h-screen bg-black/70 flex justify-center items-center"
+<div id="modal" style="z-index: 10000;" class="hidden fixed top-0 left-0 w-screen h-screen bg-black/70 flex justify-center items-center"
     onclick="closeModal(event)">
 
-    <!-- The close button -->
     <button class="fixed z-1000 top-6 right-8 text-white text-5xl font-bold focus:outline-none"
         onclick="closeModal(event)">&times;</button>
 
-    <!-- A big image will be displayed here -->
     <img id="modal-img" loading="lazy" class="max-w-[90vw] max-h-[90vh] object-cover" />
 </div>
 
 <script>
-    // Get the modal by id
     var modal = document.getElementById("modal");
     var modalImg = document.getElementById("modal-img");
-    var url = '{{ .Get "url" }}'
-    // Show modal function
-    function showModal() {
-        window.open(url, '_blank');
+
+    function showModal(imgElement) {
+        var url = imgElement.src;
+        window.open(url,'_blank')
+        {{/*  modalImg.src = url; }}
+        {{/*  modal.classList.remove('hidden');    */}}
     }
 
-    // Close modal function
     function closeModal(event) {
-        // Check if the click is outside the image
         if (event.target === modal || event.target.tagName === 'BUTTON') {
-            modal.classList.add('hidden');
+            modal.classList.add('hidden');  
         }
     }
 </script>
 
 <style>
-    /* Optional: Add some styles for a better appearance */
+ 
     #modal {
         transition: opacity 0.3s ease;
+    }
+
+    #modal-img {
+        transition: transform 0.3s ease;
+    }
+
+    #modal:hover #modal-img {
+        transform: scale(1.05);
+      
     }
 </style>

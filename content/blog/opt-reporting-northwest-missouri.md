@@ -25,7 +25,9 @@ uuid: "71cb892f-1463-4483-9d07-647958c1b703"
 - University IIC portal login information
 - An offer letter – what are you doing here if you don’t have one?
 
-> The joining date mentioned in the offer letter is crucial. For instance, if your joining date is October 1st, you have a window of 10 days after the joining date to update the SEVIS portal, until October 10th. If you miss this deadline, there’s no need to worry. Our university will take care of the SEVIS update process.
+{{< notice warning >}}
+The joining date mentioned in the offer letter is crucial. For instance, if your joining date is October 1st, you have a window of 10 days after the joining date to update the SEVIS portal, until October 10th. If you miss this deadline, there’s no need to worry. Our university will take care of the SEVIS update process.
+{{< /notice >}}
 
 ### Keep note of this information
 
@@ -91,7 +93,9 @@ Here we have to give a justification stating why the Job is relevant to the cour
 
 If you are lazy edit this. Please don’t copy-paste directly 😠
 
-My master's in Applied Computer Science has equipped me with a specialized skill set and knowledge directly relevant to various professional roles and industries. The courses I completed during my academic program have honed my expertise in areas such as programming, data analysis, and software development. This knowledge not only prepares me for specific professions but also offers a solid foundation for gaining practical, real-world experience. It enables me to bridge the gap between theory and application, making me well-suited for careers in technology, data analysis, software development, and related fields where the skills acquired during my studies directly translate into valuable contributions.```
+```json {title="Text"}
+My master's in Applied Computer Science has equipped me with a specialized skill set and knowledge directly relevant to various professional roles and industries. The courses I completed during my academic program have honed my expertise in areas such as programming, data analysis, and software development. This knowledge not only prepares me for specific professions but also offers a solid foundation for gaining practical, real-world experience. It enables me to bridge the gap between theory and application, making me well-suited for careers in technology, data analysis, software development, and related fields where the skills acquired during my studies directly translate into valuable contributions.
+```
 
 After this click NEXT and there will be a questionnaire section.
 ### Section 3 – Questionnaire
@@ -123,4 +127,6 @@ Northwest Missouri State University requires us to update our employment details
 
 If you have already updated  the sevis portal for the employment section, reply to the Auto-generated email such as this “ I have updated my employment in sevis portal”
 
-{{< warning >}}Make sure you check your emails regularly. Personally, it took me 25 days. I submitted my initial reporting on Nov 1st and got my I20 Pickup email on Nov 27th. This process takes time be patient.{{< /warning >}}
+{{< notice warning >}}
+Make sure you check your emails regularly. Personally, it took me 25 days. I submitted my initial reporting on Nov 1st and got my I20 Pickup email on Nov 27th. This process takes time be patient.
+{{< /notice >}}
