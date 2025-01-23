@@ -138,6 +138,7 @@
   const endpoint = "https://server.blazingbane.com";
   url = endpoint + "/views"; // API URL
   const uuid = "{{ .Params.uuid }}";       // Unique identifier for the blog post
+  const pageTitle = "{{ .Page.Title }}"
   const viewCountKey = `view_count_${uuid}`; // Unique key for each post in Local Storage
   console.log(uuid);
   let requestType = 'POST';
@@ -172,7 +173,7 @@
   
     const data = {
       uuid: uuid,
-      url: url
+      pageTitle:pageTitle
     };
   
     const xhr = new XMLHttpRequest();
