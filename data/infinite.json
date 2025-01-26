@@ -1,26 +1,26 @@
 [
     {
       "name": "Youtube",
-      "image": "https://www.freeiconspng.com/uploads/logo-youtube-png-clipart-11.png",
+      "image": "https://i.ibb.co/ZX4X6BQ/youtube-logo.png",
       "contents": "Live stream games and post offline videos",
       "link": "https://www.youtube.com/channel/UCPFM_Ug62Ei3CUfvquG4KOg"
     },
     
     {
       "name": "Memes",
-      "image": "https://www.svgrepo.com/show/452229/instagram-1.svg",
+      "image": "/svg/instagram.svg",
       "contents": "Post memes and also react to them live!",
       "link": "https://www.instagram.com/_balebanjara_/"
     },
     {
       "name": "Memes",
-      "image": "https://www.svgrepo.com/show/452229/instagram-1.svg",
+      "image": "/svg/instagram.svg",
       "contents": "Gaming reels which are funny and best clips!",
       "link": "https://www.instagram.com/blazing_bane/"
     },
     {
       "name": "Github",
-      "image": "/assets/github.svg",
+      "image": "/images/github-logo.png",
       "contents": "All my projects of different variety",
       "link": "https://github.com/shivardev"
     },
