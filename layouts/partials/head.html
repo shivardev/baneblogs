@@ -34,7 +34,8 @@
   <link href="{{ $styles.RelPermalink }}" rel="stylesheet">
   {{ $globalcss := resources.Get "css/asset-global.css" }}
   <link href="{{ $globalcss.RelPermalink }}" type="text/css" rel="stylesheet">
-
+  {{ $tailwindcss := resources.Get "css/tailwind.css" }}
+  <link href="{{ $tailwindcss.RelPermalink }}" type="text/css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/global.css">
   {{/* pagefind-ui */}}
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
