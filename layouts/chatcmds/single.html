@@ -1,0 +1,12 @@
+
+{{ define "main" }}
+<div>
+   <h1 class="text-3xl sm:text-5xl font-righteous mt-2 sm:mt-8 mb-8">List of commands to use while I live stream on YouTube</h1>
+   <hr class="mb-8">
+   <div class="flex flex-col md:flex-row md:items-start md:justify-between">
+     <article class="flex-grow md:pl-8 prose dark:prose-invert lg:prose-xl prose-a:text-accent-500" data-pagefind-body>
+       {{- .Content -}}
+     </article>
+   </div>
+ </div>
+{{ end }}
