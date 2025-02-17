@@ -48,3 +48,8 @@ Once all changes are added run
 ```bash
 npm run deploy
 ``` 
+
+
+### Important links
+- [Get Time stamps for the blogs](https://www.unixtimestamp.com/)
+- [Generate UUID for unique blog ID](https://www.uuidgenerator.net/) 
