@@ -1,6 +1,6 @@
 ---
-date : '2025-02-17T22:28:05+00'
-draft : true
+date : '2025-02-17'
+draft : false
 title : "How and When to Collect a Family Member or Friend's Passport After a Visa Interview: Required Documents & Process"
 category: [Visa]
 tags: [passport, visa, collect,guide]
