@@ -4,8 +4,8 @@ draft : false
 title : "How and When to Collect a Family Member or Friend's Passport After a Visa Interview: Required Documents & Process"
 category: [Visa]
 tags: [passport, visa, collect,guide]
-description: "Learn how to convert your Python application with Poetry dependencies and Tkinter UI into a Windows executable using auto-py-to-exe. This step-by-step guide simplifies the process of packaging your Python project for distribution. Poetry plugin to build and/or bundle executable binaries with PyInstaller."
-image: "https://i.ibb.co/z4CbvnQ/Python-to-Exe.png"
+description: "A guide for people who wants to pickup a passport of someone else, This post has all document which are required to pick passport along with instructions on how to fill it with a real worl example. "
+image: "https://i.ibb.co/VYnBNS4c/passport-pickup.png"
 showTOC: true
 uuid: "5f8edf17-2fbf-4d40-8c8a-53ef76af6ba5"
 ---
