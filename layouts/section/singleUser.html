@@ -1,0 +1,128 @@
+{{ define "main" }}
+{{- .Content }}
+<div x-data="{
+    userId: null,        
+    userData: {},         
+    fetchUserData() {   
+        const urlParams = new URLSearchParams(window.location.search);
+        this.userId = urlParams.get('userId');  // Get the userId from the URL
+        console.log('User ID:', this.userId);
+        if (this.userId) {
+            fetch(`https://streaming.blazingbane.com/user/${this.userId}`)  
+                .then(response => response.json())
+                .then(data => {
+                    this.userData = data;  // Store the response in userData
+                    console.log('User data:', data);
+                })
+                .catch(error => {
+                    console.error('Error fetching user data:', error);
+                    this.userData = { error: 'Error fetching user data' };
+                });
+        } else {
+            console.log('No userId found in URL');
+            this.userData = { error: 'No userId in URL' };
+        }
+    }
+}" x-init="fetchUserData()">
+    {{/* <div x-show="userData && !userData.error">
+        <h3 x-text="userData.UserName"></h3>
+        <img :src="userData.ProfilePic" alt="Profile Picture" style="width: 200px; height: 200px;">
+        <p x-text="'Points: ' + userData.Points"></p>
+        <p x-text="'JoinedDate: ' + userData.JoinedDate"></p>
+        <p x-text="'FirstVideoLink: ' + userData.FirstVideoLink"></p>
+        <p x-text="'LastVideoLink: ' + userData.LastVideoLink"></p>
+        <p x-text="'LastComment: ' + userData.LastComment"></p>
+        <p x-text="'LastSeen: ' + userData.LastSeen"></p>
+
+        <!-- Add more fields here based on the data structure returned by your API -->
+    </div> */}}
+    <div class="user-banner">
+        <div class="profile-header">
+            <!-- Profile Picture -->
+            <img :src="userData.ProfilePic" :alt="userData.UserName" class="profile-pic" />
+            <div class="profile-info">
+                <h2 style="color: rgb(23, 21, 31);" x-text="userData.UserName"></h2>
+                <p>Points: <span x-text="userData.Points"></span>💲</p>
+                <p>Joined: <span x-text="formatDate(userData.JoinedDate)"></span></p>
+                <p>Last Comment: <span x-text="userData.LastComment"></span></p>
+            </div>
+        </div>
+
+        <!-- YouTube Video Section -->
+        <div class="video-section">
+            <div class="video">
+                <h3>First live stream</h3>
+                <iframe :src="'https://www.youtube.com/embed/' + userData.FirstVideoLink" frameborder="0"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video">
+                <h3>Last comment was left on this live stream</h3>
+                <iframe :src="'https://www.youtube.com/embed/' + userData.LastVideoLink" frameborder="0"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .user-banner {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f4f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-right: 20px;
+        border: 3px solid #ddd;
+    }
+
+    .profile-info {
+        max-width: 500px;
+    }
+
+    .profile-info h2 {
+        font-size: 2em;
+        margin: 0;
+    }
+
+    .profile-info p {
+        font-size: 1.2em;
+        margin: 5px 0;
+        color: #555;
+    }
+
+    .video-section {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .video {
+        color: black;
+        flex: 1;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        width: fit-content;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    video iframe {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+</style>
+{{ end }}

@@ -1,0 +1,278 @@
+{{ define "main" }}
+{{- .Content }}
+<script>
+
+</script>
+<div class="ml-3">
+    <p class="text-base text-black leading-relaxed" style="color: white;">
+        Click here for live streaming related content <a href="/chatcmds" style="color: #800000;">Chat Commands</a>
+    </p>
+</div>
+
+
+<!-- Search Bar Section -->
+<section class="search-section">
+    <h2>Search Users</h2>
+
+    <!-- Users List -->
+    <div x-data="{
+        users: [],               // All fetched users
+        filteredUsers: [],       // Filtered list based on search
+        topViewers: [],          // Top viewers based on points
+        newestViewers: [],       // Newest viewers based on JoinedDate
+        oldestViewers: [],       // Oldest viewers based on JoinedDate
+        searchQuery: '',         // Search query input
+        loading: true,           // Loading state
+    
+        // Fetch users from the API
+        getAllUsers() {
+            fetch('https://streaming.blazingbane.com/allusers')  // Change this URL to your actual API endpoint
+                .then(response => response.json())
+                .then(data => {
+                    this.users = data;  // Store the fetched users
+                    this.filteredUsers = data;  // Initially show all users
+                    this.topViewers = this.getTopViewers(data);  // Get top viewers
+                    this.newestViewers = this.getNewestViewers(data);  // Get newest viewers
+                    this.oldestViewers = this.getOldestViewers(data);  // Get oldest viewers
+                    this.loading = false;  // Hide loading state
+                })
+                .catch(error => {
+                    console.error('Error fetching user data:', error);
+                    this.filteredUsers = [];
+                    this.loading = false;
+                });
+        },
+    
+        // Search users based on query
+        search() {
+            if (this.searchQuery === '') {
+                this.filteredUsers = this.users;  // Show all users if search is empty
+            } else {
+                this.filteredUsers = this.users.filter(user =>
+                    user.UserName.toLowerCase().includes(this.searchQuery.toLowerCase())
+                );
+            }
+        },
+    
+        // Get top 5 viewers based on points
+        getTopViewers(users) {
+            return users
+                .sort((a, b) => b.Points - a.Points)  // Sort users by points in descending order
+                .slice(0, 5);  // Limit to top 5
+        },
+    
+        // Get the 5 newest viewers based on JoinedDate
+        getNewestViewers(users) {
+            return users
+                .sort((a, b) => b.JoinedDate - a.JoinedDate)  // Sort by JoinedDate in descending order (newest first)
+                .slice(0, 5);  // Limit to top 5
+        },
+    
+        // Get the 5 oldest viewers based on JoinedDate
+        getOldestViewers(users) {
+            return users
+                .sort((a, b) => a.JoinedDate - b.JoinedDate)  // Sort by JoinedDate in ascending order (oldest first)
+                .slice(0, 5);  // Limit to top 5
+        }
+     
+    }" x-init="getAllUsers()">
+
+        <!-- Search Bar -->
+        <div class="search-bar-container">
+            <input type="text" style="color: black;text-align: center;" x-model="searchQuery" @input="search" placeholder="Search by username...">
+        </div>
+
+        <!-- Loading State -->
+        <div x-show="loading">Loading...</div>
+
+        <!-- Top Viewers Section -->
+        <h2>Top Viewers (By Points)</h2>
+        <div class="user-list">
+            <template x-for="user in topViewers" :key="user.UserId">
+                <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId"  target="_blank">
+                    <div class="user-card">
+                        <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
+                        <div>
+                            <h3 x-text="user.UserName"></h3>
+                            <p>Points: <span x-text="user.Points"></span></p>
+                        </div>
+                    </div>
+                </a>
+            </template>
+        </div>
+
+        <!-- Newest Viewers Section -->
+        <h2>New Users</h2>
+        <div class="user-list">
+            <template x-for="user in newestViewers" :key="user.UserId">
+                <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId" target="_blank">
+                    <div class="user-card">
+                        <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
+                        <div>
+                            <h3 x-text="user.UserName"></h3>
+                            <p>Joined: <span x-text="formatDate(user.JoinedDate)"></span></p>
+                        </div>
+                    </div>
+                </a>
+            </template>
+        </div>
+
+        <!-- Oldest Viewers Section -->
+        <h2>Old Users</h2>
+        <div class="user-list">
+            <template x-for="user in oldestViewers" :key="user.UserId">
+                <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId" target="_blank">
+                    <div class="user-card">
+                        <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
+                        <div>
+                            <h3 x-text="user.UserName"></h3>
+                            <p>Joined: <span x-text="formatDate(user.JoinedDate)"></span></p>
+                        </div>
+                    </div>
+                </a>
+            </template>
+        </div>
+        <!-- Search Bar -->
+        <div class="search-bar-container">
+            <input type="text" placeholder="Search by username..." id="search-bar" x-model="searchQuery"
+                @input="search">
+        </div>
+        <!-- Display filtered user list -->
+        <div class="user-list" id="user-list">
+            <template x-for="user in filteredUsers" :key="user.UserId">
+                <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId"
+                    style="display:relative;width: fit-content;" target="_blank">
+                    <div class="user-card" style=" background-color: white;color: black;
+        width: 250px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <div>
+                            <img :src="user.ProfilePic" alt="UserIcon" style="border-radius:25px; height:50px; width:50px;">
+                            <div>
+                                <h3 style="text-overflow: ellipsis;overflow: hidden;
+white-space: nowrap;
+" x-text="user.UserName"></h3>
+                                <p>Points: <span x-text="user.Points"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </template>
+        </div>
+    </div>
+</section>
+
+<!-- Include Alpine.js -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+
+<style>
+    .badge-container {
+        margin: 20px;
+        text-align: center;
+    }
+
+    .text-link {
+        text-decoration: underline;
+        padding: 10px 20px;
+        color: rgb(238, 168, 168);
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .badge:hover {
+        background-color: #0056b3;
+    }
+
+    /* Top Viewers Section */
+    .top-viewers {
+        padding: 40px 20px;
+        background-color: #f4f4f4;
+    }
+
+    .top-viewers h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .viewer-cards-container {
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        padding: 10px 0;
+    }
+
+    .viewer-cards {
+        display: flex;
+        gap: 20px;
+    }
+
+    .viewer-card {
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        text-align: center;
+    }
+
+    .viewer-card img {
+        width: 100%;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .viewer-card h3 {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .viewer-card p {
+        color: #555;
+    }
+
+    /* Search Bar Section */
+    .search-section {
+        padding: 40px 20px;
+    }
+
+    .search-section h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .search-bar-container {
+        display: flex;
+        color:black;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    #search-bar {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .user-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+
+
+    .user-card h3 {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .user-card p {
+        color: #555;
+    }
+</style>
+{{ end }}
