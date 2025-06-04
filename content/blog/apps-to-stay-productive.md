@@ -1,9 +1,8 @@
 ---
 date: 2025-06-02T01:17:45.441Z
 category:
-    - productivity
-    - well-being
-    - distraction
+    - productive
+    - wellbeing
 draft: false
 tags:
     - apps
