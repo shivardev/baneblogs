@@ -21,8 +21,8 @@ uuid: c2746cb2-f0b3-45c1-896e-0a22ac157d34
 
 List of android free apps which I use regularly to keep up with my productivity expectations. These apps help me remind, track and restrict my distraction and regular doom scrolling issue.  
 
-### 1) [Stay free](https://play.google.com/store/apps/details?id=com.burockgames.timeclocker&hl=en_US)
-
+### 1) [Ascent](https://play.google.com/store/apps/details?id=com.ascent&hl=en_US&pli=1)
+Ascent: screen time & offtime
 We often feel upset about wasting time on phone, In my case after work I feel to use my phone for a bit ( 10 min max ) but I sit on it for almost an hour!. Which is frustrating and costs my productivity.  I wanted an App which could remind me every 10/15 min in a particular app on my phone Let's say YouTube / Instagram so that I can save some time. As soon as I open an App it wants me to set a time limit ( we can set no limit ). BONUS - It will not let me watch Reels and other vertical format videos which is a BLESSING!!
 
 ### 2) [Structured](https://play.google.com/store/apps/details?id=io.unorderly.structured&hl=en_US)
