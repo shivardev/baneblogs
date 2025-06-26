@@ -12,7 +12,6 @@
 
 <!-- Search Bar Section -->
 <section class="search-section">
-    <h2>Search Users</h2>
 
     <!-- Users List -->
     <div x-data="{
@@ -77,10 +76,6 @@
      
     }" x-init="getAllUsers()">
 
-        <!-- Search Bar -->
-        <div class="search-bar-container">
-            <input type="text" style="color: black;text-align: center;" x-model="searchQuery" @input="search" placeholder="Search by username...">
-        </div>
 
         <!-- Loading State -->
         <div x-show="loading">Loading...</div>

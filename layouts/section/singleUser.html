@@ -22,20 +22,11 @@
             console.log('No userId found in URL');
             this.userData = { error: 'No userId in URL' };
         }
+    },
+    get cmdKeys() {
+        return this.userData.CmdStats ? Object.keys(this.userData.CmdStats) : [];
     }
 }" x-init="fetchUserData()">
-    {{/* <div x-show="userData && !userData.error">
-        <h3 x-text="userData.UserName"></h3>
-        <img :src="userData.ProfilePic" alt="Profile Picture" style="width: 200px; height: 200px;">
-        <p x-text="'Points: ' + userData.Points"></p>
-        <p x-text="'JoinedDate: ' + userData.JoinedDate"></p>
-        <p x-text="'FirstVideoLink: ' + userData.FirstVideoLink"></p>
-        <p x-text="'LastVideoLink: ' + userData.LastVideoLink"></p>
-        <p x-text="'LastComment: ' + userData.LastComment"></p>
-        <p x-text="'LastSeen: ' + userData.LastSeen"></p>
-
-        <!-- Add more fields here based on the data structure returned by your API -->
-    </div> */}}
     <div class="user-banner">
         <div class="profile-header">
             <!-- Profile Picture -->
@@ -61,9 +52,33 @@
                     allowfullscreen></iframe>
             </div>
         </div>
+        <br>
+        <template x-if="userData.CmdStats">
+            <template x-for="key in cmdKeys" :key="key">
+                <div class="cmd-badge">
+                    <span class="cmd" x-text="key"></span>
+                    <span class="count" x-text="userData.CmdStats[key]"></span>
+                </div>
+            </template>
+        </template>
     </div>
 </div>
 <style>
+    .cmd-badge{
+        display: flex;
+        justify-content: space-between;
+        width: fit-content;
+        gap: 5px;
+        background-color: #555;
+        padding:5px 10px;
+        border-radius: 5px;
+    }
+    .cmd-badge> .cmd{
+        color: white;
+    }
+    .cmd-badge> .count{
+        color: rgb(253, 230, 230);
+    }
     .user-banner {
         width: 100%;
         max-width: 1200px;
