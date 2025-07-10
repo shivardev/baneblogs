@@ -19,7 +19,6 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
-    "hugo-bin": "^0.133.2",
     "micromodal": "^0.4.10",
     "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
