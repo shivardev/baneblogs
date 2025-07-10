@@ -53,32 +53,37 @@
             </div>
         </div>
         <br>
-        <template x-if="userData.CmdStats">
-            <template x-for="key in cmdKeys" :key="key">
-                <div class="cmd-badge">
-                    <span class="cmd" x-text="key"></span>
-                    <span class="count" x-text="userData.CmdStats[key]"></span>
-                </div>
+        <div style="display: flex;justify-content: center;align-items: center;flex-direction: row; gap:10px">
+            <template x-if="userData.CmdStats">
+                <template x-for="key in cmdKeys" :key="key">
+                    <div class="cmd-badge">
+                        <span class="cmd" x-text="key"></span>
+                        <span class="count" x-text="userData.CmdStats[key]"></span>
+                    </div>
+                </template>
             </template>
-        </template>
+        </div>
     </div>
 </div>
 <style>
-    .cmd-badge{
+    .cmd-badge {
         display: flex;
         justify-content: space-between;
         width: fit-content;
         gap: 5px;
         background-color: #555;
-        padding:5px 10px;
+        padding: 5px 10px;
         border-radius: 5px;
     }
-    .cmd-badge> .cmd{
+
+    .cmd-badge>.cmd {
         color: white;
     }
-    .cmd-badge> .count{
+
+    .cmd-badge>.count {
         color: rgb(253, 230, 230);
     }
+
     .user-banner {
         width: 100%;
         max-width: 1200px;

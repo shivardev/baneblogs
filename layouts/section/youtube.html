@@ -3,14 +3,12 @@
 <script>
 
 </script>
-<div class="ml-3">
-    <p class="text-base text-black leading-relaxed" style="color: white;">
-        Click here for live streaming related content <a href="/chatcmds" style="color: #800000;">Chat Commands</a>
-    </p>
-</div>
 
+{{ .Page.RenderString `{{< notice idea HeadsUp >}}
+Click here for live streaming related content <a href="/chatcmds" style="color: #f3e247;">Chat Commands</a>
+    {{< /notice>}}`
+        }}
 
-<!-- Search Bar Section -->
 <section class="search-section">
 
     <!-- Users List -->
@@ -56,7 +54,7 @@
         // Get top 5 viewers based on points
         getTopViewers(users) {
             return users
-                .sort((a, b) => b.Points - a.Points)  // Sort users by points in descending order
+                .sort((a, b) => b.CommentCount - a.CommentCount)  // Sort users by points in descending order
                 .slice(0, 5);  // Limit to top 5
         },
     
@@ -81,15 +79,15 @@
         <div x-show="loading">Loading...</div>
 
         <!-- Top Viewers Section -->
-        <h2>Top Viewers (By Points)</h2>
+        <h2>Top Viewers (By Comments)</h2>
         <div class="user-list">
             <template x-for="user in topViewers" :key="user.UserId">
-                <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId"  target="_blank">
+                <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId" target="_blank">
                     <div class="user-card">
                         <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
                         <div>
-                            <h3 x-text="user.UserName"></h3>
-                            <p>Points: <span x-text="user.Points"></span></p>
+                            <h3 x-text="toTitleCase(user.UserName)"></h3>
+                            <p>Comments: <span x-text="user.CommentCount"></span></p>
                         </div>
                     </div>
                 </a>
@@ -104,7 +102,7 @@
                     <div class="user-card">
                         <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
                         <div>
-                            <h3 x-text="user.UserName"></h3>
+                            <h3 x-text="toTitleCase(user.UserName)"></h3>
                             <p>Joined: <span x-text="formatDate(user.JoinedDate)"></span></p>
                         </div>
                     </div>
@@ -120,7 +118,7 @@
                     <div class="user-card">
                         <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
                         <div>
-                            <h3 x-text="user.UserName"></h3>
+                            <h3 x-text="toTitleCase(user.UserName)"></h3>
                             <p>Joined: <span x-text="formatDate(user.JoinedDate)"></span></p>
                         </div>
                     </div>
@@ -138,16 +136,17 @@
                 <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId"
                     style="display:relative;width: fit-content;" target="_blank">
                     <div class="user-card" style=" background-color: white;color: black;
-        width: 250px;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                        <div>
-                            <img :src="user.ProfilePic" alt="UserIcon" style="border-radius:25px; height:50px; width:50px;">
-                            <div>
+                                width: 250px;
+                                padding: 20px;
+                                border-radius: 8px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <div style="display: flex;justify-content: center;align-items: center;flex-direction: row">
+                            <img :src="user.ProfilePic" alt="UserIcon"
+                                style="border-radius:25px; height:50px; width:50px;">
+                            <div style="display: flex;flex-direction: column;justify-content: center;align-items: center">
                                 <h3 style="text-overflow: ellipsis;overflow: hidden;
-white-space: nowrap;
-" x-text="user.UserName"></h3>
+                                    white-space: nowrap;
+                                    " x-text="toTitleCase(user.UserName)"></h3>
                                 <p>Points: <span x-text="user.Points"></span></p>
                             </div>
                         </div>
@@ -238,7 +237,7 @@ white-space: nowrap;
 
     .search-bar-container {
         display: flex;
-        color:black;
+        color: black;
         text-align: center;
         justify-content: center;
         margin-bottom: 30px;
@@ -257,6 +256,9 @@ white-space: nowrap;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 20px;
+        justify-content: center;
+        max-height: 400px;
+        overflow-y: auto;
     }
 
 
@@ -269,5 +271,28 @@ white-space: nowrap;
     .user-card p {
         color: #555;
     }
+    ::-webkit-scrollbar {
+        width: 22px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #1e1e1e; /* Dark background */
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background-color: #444;   /* Dark gray thumb */
+        border-radius: 6px;
+        border: 3px solid #1e1e1e; /* Matches track for padding */
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #666;
+      }
+      
+      /* Firefox */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: #444 #1e1e1e;
+      }
 </style>
 {{ end }}
