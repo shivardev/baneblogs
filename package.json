@@ -9,9 +9,7 @@
     "deploy": "hugo build && npx -y pagefind --site public",
     "pagefind": "pagefind --site public --output-subdir ../static/pagefind"
   },
-  "hugo-bin": {
-    "buildTags": "extended"
-  },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
