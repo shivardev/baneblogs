@@ -1,10 +1,8 @@
 {{ define "main" }}
-{{- .Content }}
-<script>
-
-</script>
-
-{{ .Page.RenderString `{{< notice idea HeadsUp >}}
+  <article class="flex-grow md:pl-8 prose dark:prose-invert lg:prose-xl prose-a:text-accent-500" data-pagefind-body>
+       {{- .Content -}}
+     </article>
+{{ .Page.RenderString `{{<notice idea HeadsUp >}}
 Click here for live streaming related content <a href="/youtube/chatcmds" style="color: #f3e247;">Chat Commands</a>
     {{< /notice>}}`
         }}
@@ -86,7 +84,7 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
                     <div class="user-card">
                         <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
                         <div>
-                            <h3 x-text="toTitleCase(user.UserName)"></h3>
+                            <h3 x-text="user.UserName"></h3>
                             <p>Comments: <span x-text="user.CommentCount"></span></p>
                         </div>
                     </div>
@@ -102,7 +100,7 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
                     <div class="user-card">
                         <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
                         <div>
-                            <h3 x-text="toTitleCase(user.UserName)"></h3>
+                            <h3 x-text="user.UserName"></h3>
                             <p>Joined: <span x-text="formatDate(user.JoinedDate)"></span></p>
                         </div>
                     </div>
@@ -118,7 +116,7 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
                     <div class="user-card">
                         <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
                         <div>
-                            <h3 x-text="toTitleCase(user.UserName)"></h3>
+                            <h3 x-text="user.UserName"></h3>
                             <p>Joined: <span x-text="formatDate(user.JoinedDate)"></span></p>
                         </div>
                     </div>
@@ -146,7 +144,7 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
                             <div style="display: flex;flex-direction: column;justify-content: center;align-items: center">
                                 <h3 style="text-overflow: ellipsis;overflow: hidden;
                                     white-space: nowrap;
-                                    " x-text="toTitleCase(user.UserName)"></h3>
+                                    " x-text="user.UserName"></h3>
                                 <p>Points: <span x-text="user.Points"></span></p>
                             </div>
                         </div>

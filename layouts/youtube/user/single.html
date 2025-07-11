@@ -32,7 +32,7 @@
             <!-- Profile Picture -->
             <img :src="userData.ProfilePic" :alt="userData.UserName" class="profile-pic" />
             <div class="profile-info">
-                <h2 style="color: rgb(23, 21, 31);" x-text="userData.UserName"></h2>
+                <h2 style="color: rgb(255, 255, 255);font-weight: bolder;" x-text="userData.UserName"></h2>
                 <p>Points: <span x-text="userData.Points"></span>💲</p>
                 <p>Joined: <span x-text="formatDate(userData.JoinedDate)"></span></p>
                 <p>Last Comment: <span x-text="userData.LastComment"></span></p>
@@ -89,7 +89,7 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
-        background-color: #f4f4f9;
+        background-color: #353535;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
@@ -120,19 +120,18 @@
     .profile-info p {
         font-size: 1.2em;
         margin: 5px 0;
-        color: #555;
+        color: #b8b8b8;
     }
 
     .video-section {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         gap: 20px;
     }
 
     .video {
         color: black;
-        flex: 1;
-        background-color: #fff;
+        background-color: #999898;
         padding: 15px;
         border-radius: 8px;
         width: fit-content;
