@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<script>
+  function removeLoading() {
+    const loader = document.getElementById('loader')
+    loader.style.display = 'none'
+    console.log('loaded')
+  }
+</script>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta author="blazingbane">
+  <title>Bane Blogs</title>
+  <meta name="description" content="A site for all my internet activities.I post blogs, notes, articles, and other projects.">
+  <meta name="keywords" content="blazingbane, blog, notes, articles, projects, personal">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:url" content="https://building.robinvanderknaap.dev/blog/opt-reporting-northwest-missouri/">
+  <meta property="og:site_name" content="Bane Blogs">
+  <meta property="og:title" content="OPT REPORTING – NORTHWEST MISSOURI STATE UNIVERSITY">
+  <meta property="og:description" content="Step-by-step clear guide regarding how to opt report to the IIC portal at Northwest Missouri State University after getting an offer letter.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-09-03T16:09:45+02:00">
+    <meta property="article:modified_time" content="2024-09-03T16:09:45+02:00">
+    <meta property="article:tag" content="IIC Portal">
+    <meta property="article:tag" content="Opt">
+    <meta property="article:tag" content="Opt Reporting">
+    <meta property="article:tag" content="Uscis">
+    <meta property="article:tag" content="Northwest Missouri State University">
+    <meta property="article:tag" content="Internation Student">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OPT REPORTING – NORTHWEST MISSOURI STATE UNIVERSITY">
+  <meta name="twitter:description" content="Step-by-step clear guide regarding how to opt report to the IIC portal at Northwest Missouri State University after getting an offer letter.">
+
+  
+  
+  
+  
+  
+  
+  
+  <link href="/css/styles.min.61042d0221554446d91887d49d642e1614953ab454cb333dd3191072b2b695f0.css" rel="stylesheet">
+  
+  <link href="/css/asset-global.css" type="text/css" rel="stylesheet">
+  
+  <link href="/css/tailwind.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/global.css">
+  
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+  <script src="/pagefind/pagefind-ui.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+</head>
+
+<body onload="removeLoading()" class=" text-black antialiased dark:bg-gray-950 dark:text-white flex">
+  <div id="loader">
+    <div>
+      <img id="imgLoad" src="/logo.png" style="height: 100px;" width="100px">
+    </div>
+
+  </div>
+
+  <section class="xl:max-w-5xl min-h-dvh mx-auto px-4 xl:px-0 flex flex-col grow">
+
+    <header class="flex items-center justify-between py-3 sm:py-10">
+  <div>
+    <a aria-label="baneblogs" href="/">
+      <div class="flex items-center justify-between">
+        <div class="mr-3 p-3">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="59" height="59">
+            <path
+              d="M0 0 C0.83015625 -0.02900391 1.6603125 -0.05800781 2.515625 -0.08789062 C10.11692493 -0.16533334 14.89681905 2.26865033 21.0625 6.5 C24.60423521 10.04173521 26.67516562 13.85148128 28.875 18.3125 C29.37 19.3025 29.37 19.3025 29.875 20.3125 C30.16623419 23.34695945 30.15298167 26.39068232 30.1875 29.4375 C30.21650391 30.26765625 30.24550781 31.0978125 30.27539062 31.953125 C30.35283334 39.55442493 27.91884967 44.33431905 23.6875 50.5 C20.14576479 54.04173521 16.33601872 56.11266562 11.875 58.3125 C10.885 58.8075 10.885 58.8075 9.875 59.3125 C6.84054055 59.60373419 3.79681768 59.59048167 0.75 59.625 C-0.08015625 59.65400391 -0.9103125 59.68300781 -1.765625 59.71289062 C-9.36692493 59.79033334 -14.14681905 57.35634967 -20.3125 53.125 C-23.85423521 49.58326479 -25.92516562 45.77351872 -28.125 41.3125 C-28.455 40.6525 -28.785 39.9925 -29.125 39.3125 C-29.41623419 36.27804055 -29.40298167 33.23431768 -29.4375 30.1875 C-29.46650391 29.35734375 -29.49550781 28.5271875 -29.52539062 27.671875 C-29.60283334 20.07057507 -27.16884967 15.29068095 -22.9375 9.125 C-19.39576479 5.58326479 -15.58601872 3.51233438 -11.125 1.3125 C-7.668398 -0.415801 -3.80940765 0.04315794 0 0 Z M-19.125 11.3125 C-24.30461564 18.90419155 -27.16671128 25.038376 -26.125 34.3125 C-23.83650333 42.58342546 -20.11288517 48.76805643 -12.5625 53.125 C-6.13887409 56.56503536 0.41774071 57.58883686 7.5078125 55.55859375 C16.83684961 52.00799007 21.38357191 47.18164914 25.875 38.3125 C28.4858266 30.08917791 26.68120341 22.83239492 22.875 15.3125 C19.34187746 9.63426735 13.91778914 6.67204408 7.9375 4 C-1.73941495 1.82763134 -12.0989038 3.89606512 -19.125 11.3125 Z "
+              fill="#FFFFFF" transform="translate(29.125,-0.3125)" />
+            <path
+              d="M0 0 C1.65 0 3.3 0 5 0 C5 1.65 5 3.3 5 5 C5.66 4.67 6.32 4.34 7 4 C10.87214182 3.56976202 12.52496371 3.68330914 15.8125 5.875 C18.79857385 8.77575746 18.95683819 9.56118825 19.375 13.8125 C19.30791111 17.16084564 18.97938747 18.03191618 17.0625 21 C13.53169453 23.30583214 11.3973206 23.62403329 7.28125 23.76171875 C3.70008437 22.56595283 1.70214657 20.25670573 0 17 C-0.5672099 14.00444464 -0.47965946 11.15958719 -0.3125 8.125 C-0.28994141 7.34125 -0.26738281 6.5575 -0.24414062 5.75 C-0.18568018 3.8324974 -0.09601283 1.9159894 0 0 Z M6.6875 10.6875 C4.72489921 12.8305797 4.72489921 12.8305797 5.25 15.25 C5.4975 15.8275 5.745 16.405 6 17 C8.90073181 17.67801034 8.90073181 17.67801034 12 18 C12.66 17.34 13.32 16.68 14 16 C13.67801034 12.90073181 13.67801034 12.90073181 13 10 C10.02715111 8.7259219 9.37703962 8.72486298 6.6875 10.6875 Z "
+              fill="#FFFFFF" transform="translate(10,18)" />
+            <path
+              d="M0 0 C1.65 0 3.3 0 5 0 C5.33 1.32 5.66 2.64 6 4 C7.3303125 3.9071875 7.3303125 3.9071875 8.6875 3.8125 C12.42581453 4.02410271 14.06716504 4.71890614 17 7 C19.12822731 9.61191533 19.11561921 11.7576561 18.875 15 C18.42384239 17.68689423 17.93000779 19.11665368 16.5 21.5 C13.33379932 23.39972041 10.95185247 23.52142349 7.31640625 23.62890625 C3.64506367 22.63213364 2.23777936 21.05151731 0 18 C-0.58957276 14.86691481 -0.47531398 11.86112016 -0.3125 8.6875 C-0.28994141 7.85154297 -0.26738281 7.01558594 -0.24414062 6.15429688 C-0.1855061 4.10208851 -0.09583215 2.05080798 0 0 Z M6.1875 10.125 C4.71600254 12.01353208 4.71600254 12.01353208 5.3125 14.6875 C5.539375 15.450625 5.76625 16.21375 6 17 C8.34533951 17.76956136 8.34533951 17.76956136 11 18 C12.8354799 16.66621425 12.8354799 16.66621425 14 15 C13.29660434 12.49034386 13.29660434 12.49034386 12 10 C9.47229891 8.69538008 8.61646972 8.61736362 6.1875 10.125 Z "
+              fill="#FFFFFF" transform="translate(30,18)" />
+          </svg>
+        </div>
+        <div class="hidden text-xl font-bold sm:block font-mono"></div>
+      </div>
+    </a>
+  </div>
+  <nav class="flex items-center space-x-4 leading-5 sm:space-x-6">
+    <a class="hidden font-medium text-gray-900 dark:text-gray-100 hover:text-accent-500 sm:block" href="/blog">Blogs</a>
+    <a class="hidden font-medium text-gray-900 dark:text-gray-100 hover:text-accent-500 sm:block" href="/youtube">Youtube</a>
+    
+
+    <button class="hover:text-accent-500" aria-label="Search" data-micromodal-trigger="search-modal">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="h-6 w-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+      </svg>
+    </button>
+
+    <button data-menu-toggle aria-label="Toggle Menu" class="sm:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+        class="h-8 w-8 text-gray-900 dark:text-gray-100">
+        <path fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <div id="mobileMenu"
+      class="fixed left-0 top-0 z-10 h-full w-full transform bg-white opacity-95 duration-300 ease-in-out dark:bg-gray-950 dark:opacity-[0.98] translate-x-full">
+
+      <nav class="fixed h-full">
+        <div class="px-12 py-4">
+          <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="/blog">Blog</a>
+        </div>
+        <div class="px-12 py-4">
+          <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="/youtube">Youtube</a>
+        </div>
+       
+      </nav>
+    </div>
+  </nav>
+</header>
+    <main class="grow">
+
+   <div class="mt-16 mb-20">
+    <img class="mx-auto max-w-96 max-h-56" src="https://i.ibb.co/fMd5m7q/northwest-missouri-state-university-logo-usa.jpg" alt="Header image">
+  </div>
+
+
+<h1 class="text-3xl lg:text-4xl font-righteous mb-8 text-center break-anywhere text-wrap">OPT REPORTING – NORTHWEST MISSOURI STATE UNIVERSITY</h1>
+<div class="badge" href="#">
+  <p id="viewcount" style="font-size:18x">10</p>
+  <span></span>
+</div>
+
+<style>
+  .badge {
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    text-decoration: none;
+    padding: 8px 16px;
+    color: white;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  
+    border-radius: 999px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    user-select: none;
+  }
+  
+  .badge span {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -12px;
+    right: -2px;
+    transform: rotate(-20deg);
+    filter: blur(0.5px);
+  }
+  
+  .badge span:before,
+  .badge span:after {
+    content: "";
+    position: absolute;
+  }
+  
+  .badge span:before {
+    width: 1px;
+    height: 100%;
+    left: 12px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    );
+  }
+  
+  .badge span:after {
+    width: 100%;
+    height: 1px;
+    top: 12px;
+    background: linear-gradient(
+      to left,
+      transparent,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    );
+  }
+  
+  .badge:hover span:after {
+    display: block;
+    animation: rotate 3s ease-in-out;  
+  }
+  .badge:hover span::before {
+    display: block;
+    animation: rotate 3s ease-in-out;  
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.8);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  
+  .badge:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(105, 106, 111, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border-radius: 999px;
+  }
+  
+  .inspired {
+    position: absolute;
+    bottom: 8%;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .inspired:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+</style>
+<h2 class="text-center lg:text-lg font-mono font-medium text-gray-500 dark:text-gray-400 mb-8 mt-4">September 03, 2024</h2>
+<div class="flex flex-row justify-center">
+  
+    <div class="mx-3 text-center px-2 py-1 bg-slate-500 lg:text-lg font-mono font-medium text-white-500 dark:text-white-400 mb-8">NWmissori</div>
+  
+    <div class="mx-3 text-center px-2 py-1 bg-slate-500 lg:text-lg font-mono font-medium text-white-500 dark:text-white-400 mb-8">guide</div>
+  
+</div>
+<div>
+  <article class="prose dark:prose-invert lg:prose-xl break-anywhere prose-a:text-accent-500 mx-auto [&_code]:text-wrap" data-pagefind-body>
+    <h3 id="things-to-keep-before-we-proceed">Things to keep before we proceed</h3>
+<ul>
+<li>Sevis portal – login info</li>
+<li>University IIC portal login information</li>
+<li>An offer letter – what are you doing here if you don’t have one?</li>
+</ul>
+<style type="text/css">
+     
+    .notice {
+        --notice-bg: #ffffff;
+        --notice-text: #000000;
+        --notice-code-bg: #f5f5f5;
+        --notice-code-text: #24292e;
+        --notice-blockquote-border: #e0e0e0;
+        --notice-shadow: rgba(0, 0, 0, 0.12);
+        --notice-header-border: rgba(0, 0, 0, 0.1);
+
+        margin: 1rem 0;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px var(--notice-shadow);
+        transition: all 0.3s ease;
+    }
+
+     
+    @media (prefers-color-scheme: dark) {
+        .notice {
+            --notice-bg: #1D1E20;
+            --notice-text: #cdd6f4;
+            --notice-code-bg: #313244;
+            --notice-code-text: #cdd6f4;
+            --notice-blockquote-border: #45475a;
+            --notice-shadow: rgba(0, 0, 0, 0.5);
+            --notice-header-border: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+     
+    body.dark .notice {
+        --notice-bg: #1D1E20;
+        --notice-text: #cdd6f4;
+        --notice-code-bg: #313244;
+        --notice-code-text: #cdd6f4;
+        --notice-blockquote-border: #45475a;
+        --notice-shadow: rgba(0, 0, 0, 0.5);
+        --notice-header-border: rgba(255, 255, 255, 0.1);
+    }
+
+    .notice-header {
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        border-bottom: 1px solid var(--notice-header-border);
+        font-size: 1.1rem;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .notice-header svg {
+        width: 1.1em;
+        height: 1.1em;
+        margin-right: 0.5rem;
+        fill: currentColor;
+    }
+
+    .notice-content {
+        padding: 1rem;
+        background-color: var(--notice-bg);
+        color: var(--notice-text);
+        border-radius: 0 0 4px 4px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .notice-content p {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .notice-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .notice-content ul,
+    .notice-content ol {
+        margin: 0 0 0.5rem 0;
+        padding-left: 1.2rem;
+        color: var(--notice-text);
+    }
+
+    .notice-content ul:last-child,
+    .notice-content ol:last-child {
+        margin-bottom: 0;
+    }
+
+    .notice-content blockquote {
+        margin: 0 0 0.5rem 0;
+        padding-left: 1rem;
+        border-left: 3px solid var(--notice-blockquote-border);
+        color: var(--notice-text);
+    }
+
+    .notice-content blockquote:last-child {
+        margin-bottom: 0;
+    }
+
+    .notice-content code {
+        background-color: var(--notice-code-bg);
+        color: var(--notice-code-text);
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 0.9em;
+    }
+
+     
+    .notice.info {
+        background: transparent;
+        border-left: 4px solid #04a5e5;
+    }
+    .notice.info .notice-header {
+        background: rgba(4, 165, 229, 0.1);
+        color: #04a5e5;
+    }
+
+     
+    .notice.notify {
+        background: transparent;
+        border-left: 4px solid #1e66f5;
+    }
+    .notice.notify .notice-header {
+        background: rgba(30, 102, 245, 0.1);
+        color: #1e66f5;
+    }
+
+     
+    .notice.success {
+        background: transparent;
+        border-left: 4px solid #40a02b;
+    }
+    .notice.success .notice-header {
+        background: rgba(64, 160, 43, 0.1);
+        color: #40a02b;
+    }
+
+     
+    .notice.warning {
+        background: transparent;
+        border-left: 4px solid #df8e1d;
+    }
+    .notice.warning .notice-header {
+        background: rgba(223, 142, 29, 0.1);
+        color: #df8e1d;
+    }
+
+     
+    .notice.danger {
+        background: transparent;
+        border-left: 4px solid #fe640b;
+    }
+    .notice.danger .notice-header {
+        background: rgba(254, 100, 11, 0.1);
+        color: #fe640b;
+    }
+
+     
+    .notice.error {
+        background: transparent;
+        border-left: 4px solid #d20f39;
+    }
+    .notice.error .notice-header {
+        background: rgba(210, 15, 57, 0.1);
+        color: #d20f39;
+    }
+
+     
+    .notice.task {
+        background: transparent;
+        border-left: 4px solid #8839ef;
+    }
+    .notice.task .notice-header {
+        background: rgba(136, 57, 239, 0.1);
+        color: #8839ef;
+    }
+
+     
+    .notice.tip {
+        background: transparent;
+        border-left: 4px solid #179299;
+    }
+    .notice.tip .notice-header {
+        background: rgba(23, 146, 153, 0.1);
+        color: #179299;
+    }
+
+     
+    .notice.abstract {
+        background: transparent;
+        border-left: 4px solid #209fb5;
+    }
+    .notice.abstract .notice-header {
+        background: rgba(32, 159, 181, 0.1);
+        color: #209fb5;
+    }
+
+     
+    .notice.conclusion {
+        background: transparent;
+        border-left: 4px solid #dd7878;
+    }
+    .notice.conclusion .notice-header {
+        background: rgba(221, 120, 120, 0.1);
+        color: #dd7878;
+    }
+
+     
+    .notice.memo {
+        background: transparent;
+        border-left: 4px solid #e64553;
+    }
+    .notice.memo .notice-header {
+        background: rgba(230, 69, 83, 0.1);
+        color: #e64553;
+    }
+
+     
+    .notice.question {
+        background: transparent;
+        border-left: 4px solid #179299;
+    }
+    .notice.question .notice-header {
+        background: rgba(23, 146, 153, 0.1);
+        color: #179299;
+    }
+
+     
+    .notice.quote {
+        background: transparent;
+        border-left: 4px solid #7287fd;
+    }
+    .notice.quote .notice-header {
+        background: rgba(114, 135, 253, 0.1);
+        color: #7287fd;
+    }
+
+     
+    .notice.example {
+        background: transparent;
+        border-left: 4px solid #dc8a78;
+    }
+    .notice.example .notice-header {
+        background: rgba(220, 138, 120, 0.1);
+        color: #dc8a78;
+    }
+
+     
+    .notice.experiment {
+        background: transparent;
+        border-left: 4px solid #dc8a78;
+    }
+    .notice.experiment .notice-header {
+        background: rgba(220, 138, 120, 0.1);
+        color: #dc8a78;
+    }
+
+     
+    .notice.goal {
+        background: transparent;
+        border-left: 4px solid #e64553;
+    }
+    .notice.goal .notice-header {
+        background: rgba(230, 69, 83, 0.1);
+        color: #e64553;
+    }
+
+     
+    .notice.code {
+        background: transparent;
+        border-left: 4px solid #7287fd;
+    }
+    .notice.code .notice-header {
+        background: rgba(114, 135, 253, 0.1);
+        color: #7287fd;
+    }
+
+     
+    .notice.idea {
+        background: transparent;
+        border-left: 4px solid #df8e1d;
+    }
+    .notice.idea .notice-header {
+        background: rgba(223, 142, 29, 0.1);
+        color: #df8e1d;
+    }
+</style><div class="notice warning">
+    <div class="notice-header"><svg height="48" preserveAspectRatio="xMidYMid" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><g stroke-width="1.28451"><path d="m4.2865653 46c-2.3660713 0-3.40909523-1.718677-2.3198289-3.818855l20.0499506-38.606012c1.090551-2.1001773 2.874738-2.1001773 3.965289 0l20.04995 38.607297c1.091835 2.098893.04753 3.81757-2.318545 3.81757z" fill="#ffcc4d"/><path d="m20.893407 35.549048a3.1098039 3.1098039 0 0 1 3.107235-3.10595 3.1098039 3.1098039 0 0 1 3.10595 3.10595 3.1110884 3.1110884 0 0 1 -3.10595 3.107235 3.1110884 3.1110884 0 0 1 -3.107235-3.107235zm.238919-23.497581c0-1.672434 1.234416-2.7077505 2.867031-2.7077505 1.59408 0 2.868316 1.0751365 2.868316 2.7077505v15.334506c0 1.632615-1.274236 2.707752-2.868316 2.707752-1.632615 0-2.867031-1.036601-2.867031-2.707752z" fill="#231f20"/></g></svg>Warning
+    </div>
+    <div class="notice-content">
+        The joining date mentioned in the offer letter is crucial. For instance, if your joining date is October 1st, you have a window of 10 days after the joining date to update the SEVIS portal, until October 10th. If you miss this deadline, there’s no need to worry. Our university will take care of the SEVIS update process.
+    </div>
+</div>
+<h3 id="keep-note-of-this-information">Keep note of this information</h3>
+<ul>
+<li>Job Role</li>
+<li>Company name</li>
+<li>Company Address</li>
+<li>EIN</li>
+</ul>
+<p>In case you don’t have the EIN number it’s alright as it’s not mandatory to submit. Yet it is better to contact the HR department of the company so that they will give me all the information regarding the EIN.</p>
+<h2 id="navigating-to-iic-portal">Navigating to IIC Portal</h2>
+<p>Open University IIC portal. For Northwest Missouri State University</p>
+<p>You can go to nwmissouri.edu, and search for the IIC portal in the search bar.</p>
+<p>For those lazy people out there just click this – <a href="https://www.nwmissouri.edu/international/">https://www.nwmissouri.edu/international/</a></p>
+<p>This is a portal link ( this might change from time to time, that’s why I want you to search for the IIC portal in the menu search bar on the right)</p>
+<p><a href="https://nwmissouri-isss.terradotta.com/index.cfm?FuseAction=Security.AngLogin">https://nwmissouri-isss.terradotta.com/index.cfm?FuseAction=Security.AngLogin</a></p>
+<p>You will be greeted with a similar-looking site.
+<div class="p-1">
+    <img loading="lazy" class="w-1.5 sm:w-1.5 sm:h-full h-1.5 object-cover cursor-pointer" src='https://img.perceptpixel.com/kzrjrvuf/opt-reporting/1.png'
+        alt="Img could not load" onclick="showModal(this)" />
+</div>
+
+<div id="modal" style="z-index: 10000;" class="hidden fixed top-0 left-0 w-screen h-screen bg-black/70 flex justify-center items-center"
+    onclick="closeModal(event)">
+
+    <button class="fixed z-1000 top-6 right-8 text-white text-5xl font-bold focus:outline-none"
+        onclick="closeModal(event)">&times;</button>
+
+    <img id="modal-img" loading="lazy" class="max-w-[90vw] max-h-[90vh] object-cover" />
+</div>
+
+<script>
+    var modal = document.getElementById("modal");
+    var modalImg = document.getElementById("modal-img");
+
+    function showModal(imgElement) {
+        var url = imgElement.src;
+        window.open(url,'_blank')
+        
+    }
+
+    function closeModal(event) {
+        if (event.target === modal || event.target.tagName === 'BUTTON') {
+            modal.classList.add('hidden');  
+        }
+    }
+</script>
+
+<style>
+ 
+    #modal {
+        transition: opacity 0.3s ease;
+    }
+
+    #modal-img {
+        transition: transform 0.3s ease;
+    }
+
+    #modal:hover #modal-img {
+        transform: scale(1.05);
+      
+    }
+</style></p>
+<h2 id="log-in-with-your-personal-email">Log in with your Personal Email</h2>
+<p>Wait! You don’t have a login? Dude why? Okay, get it somehow.</p>
+<p>Once you log in with your personal email you will be greeted with something similar to this Page. The purpose of this site visit is to report an OPT offer letter. for this, click on the Requests section on the screen’s right side.
+<img src="https://img.perceptpixel.com/kzrjrvuf/opt-reporting/2.png" alt="" loading="lazy" />
+
+if you did everything right you should be facing a website with loads of buttons and sections. Don’t mind them just try to find a section like this or similar. Moreover, the section in the below image will be located on the right side.
+<img src="https://img.perceptpixel.com/kzrjrvuf/opt-reporting/3.png" alt="" loading="lazy" />
+</p>
+<p>Click on the OPT reporting section in the Dead Center.  As of now, you might have your OPT EAD card. which will show up here in the section</p>
+<p>The section should look something like this,.</p>
+<p>Click on the first-row section anyway does not matter</p>
+<p>similar to the below image a new pop section will come out and will list all the employers you have added in the past</p>
+<p>As I have already submitted my request I can see it. But in your case, it will be empty</p>
+<p>Just click on the Black + icon.</p>
+<p>Here is the important section, where we report our employment details.</p>
+<h2 id="submitting-details">Submitting details</h2>
+<h3 id="section-1">Section 1</h3>
+<p>Initial OPT means the First period before extension. As this might be your first time reporting we click yes and check the first option indicating that if in case you have any previous employer details you are going to end it.</p>
+<h3 id="section-2">Section 2</h3>
+<p>This is the actual reporting section here we give the Company information where you are hired copy and paste it from the offer letter, and all the details will be given on it.</p>
+<p>All the required information will be available in your Offer letter. Employer name is the company name, and the Start date is your Joining date ( NOT OPT START DATE )</p>
+<p>Scroll down and more fields will be visible, fill out all the required fields which are marked as *</p>
+<p>You will be facing a section similar to this</p>
+<p>Here we have to give a justification stating why the Job is relevant to the course, you are free to use creativity and make your own statement.</p>
+<p>If you are lazy edit this. Please don’t copy-paste directly 😠</p>
+<div class="highlight" title="Text"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>My master&#39;s in Applied Computer Science has equipped me with a specialized skill set and knowledge directly relevant to various professional roles and industries. The courses I completed during my academic program have honed my expertise in areas such as programming, data analysis, and software development. This knowledge not only prepares me for specific professions but also offers a solid foundation for gaining practical, real-world experience. It enables me to bridge the gap between theory and application, making me well-suited for careers in technology, data analysis, software development, and related fields where the skills acquired during my studies directly translate into valuable contributions.
+</span></span></code></pre></div><p>After this click NEXT and there will be a questionnaire section.</p>
+<h3 id="section-3--questionnaire">Section 3 – Questionnaire</h3>
+<p>DO NOT HURRY, READ THIS</p>
+<p>Make sure you select YES for the new I20 this is important.</p>
+<p>Depending on your preference you can choose to pick up or deliver the I20.</p>
+<p>As the image above is not exactly for the first time reporting ignore the option below.</p>
+<p>After this step, we move to uploading our Offer letter.</p>
+<h3 id="section-4">Section 4</h3>
+<p>Fill in the details by uploading the offer letter make sure you digitally sign it.</p>
+<p>You may also find sections for i-983 ETC that are not necessary leave them blank, you know what? Better not touch them</p>
+<h3 id="section-5">Section 5</h3>
+<p>Is filling out the personal address verification thing. Just fill it out don’t be lazy.</p>
+<p>Thats it. You have now submitted the opt reporting section.</p>
+<h2 id="what-now">What now?</h2>
+<p>There will be An auto-generated email should be received to your personal email ( or the mail you have used to create the IIC portal account ) which means the submission has been completed. you would probably wont receive any more information but hand tight the process has been started.</p>
+<p>Northwest Missouri State University requires us to update our employment details in the sevis portal as well.</p>
+<p>If you have already updated  the sevis portal for the employment section, reply to the Auto-generated email such as this “ I have updated my employment in sevis portal”</p>
+<div class="notice warning">
+    <div class="notice-header"><svg height="48" preserveAspectRatio="xMidYMid" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><g stroke-width="1.28451"><path d="m4.2865653 46c-2.3660713 0-3.40909523-1.718677-2.3198289-3.818855l20.0499506-38.606012c1.090551-2.1001773 2.874738-2.1001773 3.965289 0l20.04995 38.607297c1.091835 2.098893.04753 3.81757-2.318545 3.81757z" fill="#ffcc4d"/><path d="m20.893407 35.549048a3.1098039 3.1098039 0 0 1 3.107235-3.10595 3.1098039 3.1098039 0 0 1 3.10595 3.10595 3.1110884 3.1110884 0 0 1 -3.10595 3.107235 3.1110884 3.1110884 0 0 1 -3.107235-3.107235zm.238919-23.497581c0-1.672434 1.234416-2.7077505 2.867031-2.7077505 1.59408 0 2.868316 1.0751365 2.868316 2.7077505v15.334506c0 1.632615-1.274236 2.707752-2.868316 2.707752-1.632615 0-2.867031-1.036601-2.867031-2.707752z" fill="#231f20"/></g></svg>Warning
+    </div>
+    <div class="notice-content">
+        Make sure you check your emails regularly. Personally, it took me 25 days. I submitted my initial reporting on Nov 1st and got my I20 Pickup email on Nov 27th. This process takes time be patient.
+    </div>
+</div>
+
+  </article>
+</div>
+<script>
+  const endpoint = "https://server.blazingbane.com";
+  url = endpoint + "/views"; 
+  const uuid = "71cb892f-1463-4483-9d07-647958c1b703";       
+  const pageTitle = "OPT REPORTING – NORTHWEST MISSOURI STATE UNIVERSITY"
+  const viewCountKey = `view_count_${uuid}`; 
+  console.log(uuid);
+  let requestType = 'POST';
+  
+  function animateCount(start, end, element, duration) {
+    const stepTime = 50;  
+    const steps = duration / stepTime;  
+    let currentStep = 0;
+  
+    function updateCount() {
+      currentStep++;
+      const progress = currentStep / steps;
+      const currentValue = Math.round(start + (end - start) * progress);
+      
+      
+      element.innerHTML = `<strong>${currentValue}</strong>👀`;
+  
+      if (currentStep < steps) {
+        requestAnimationFrame(updateCount); 
+      }
+    }
+  
+    requestAnimationFrame(updateCount);
+  }
+  
+  function sendPostRequest() {
+    
+    if (localStorage.getItem(viewCountKey)) {
+      console.log("View count already recorded for this post.");
+      url = endpoint + "/getviews";  
+    }
+  
+    const data = {
+      uuid: uuid,
+      pageTitle:pageTitle
+    };
+  
+    const xhr = new XMLHttpRequest();
+    xhr.open(requestType, url, true); 
+    xhr.setRequestHeader("Content-Type", "application/json");
+  
+    
+    const timeout = 2000; 
+    const timeoutId = setTimeout(() => {
+      xhr.abort();  
+      console.log("Request timed out");
+    }, timeout);
+  
+    xhr.onload = function () {
+      clearTimeout(timeoutId); 
+      if (xhr.status === 200) {
+        console.log("Request successful:", xhr.responseText);
+  
+        
+        const response = JSON.parse(xhr.responseText);  
+        const count = response || 0;  
+        console.log(response);
+  
+        
+        const viewCountElement = document.getElementById("viewcount");
+  
+        
+        const currentCount = parseInt(viewCountElement.innerText.replace(/\D/g, '')) || 0; 
+        animateCount(currentCount, count, viewCountElement, 1000); 
+  
+        
+        localStorage.setItem(viewCountKey, 'counted');
+      } else {
+        console.log("Request failed with status:", xhr.status);
+        document.getElementById("viewcount").innerText = 'Error loading view count.☹️';
+      }
+    };
+  
+    xhr.onerror = function () {
+      clearTimeout(timeoutId); 
+      console.error("Request error");
+      document.getElementById("viewcount").innerText = 'Error loading view count.☹️';
+    };
+  
+    xhr.send(JSON.stringify(data));
+  }
+  sendPostRequest()
+</script>
+</main>
+    <footer>
+  <div class="mt-16 flex flex-col items-center bottom-">
+    <p class="mb-8">I am dedicated to sharing the knowledge and insights I have acquired through personal experiences on
+      this blog. I hope you find value in these lessons, and I encourage you to share them with those who may benefit
+      from the content.</p>
+    <nav class="mb-3 flex space-x-4">
+  <a class="text-sm transition" target="_blank" rel="noopener noreferrer" href="https://github.com/shivardev">
+    <span class="sr-only">GitHub</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      class="fill-current hover:text-accent-500 dark:text-gray-200 h-6 w-6">
+      <path
+        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+      </path>
+    </svg>
+  </a>
+  <a class="text-sm transition" target="_blank" rel="noopener noreferrer"
+    href="https://www.youtube.com/@blazingbane5565">
+    <span class="sr-only">Youtube</span>
+    <svg class="fill-current hover:text-accent-500 dark:text-gray-200 h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 576 512">
+      <path
+        d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z" />
+    </svg>
+  </a>
+</nav>
+    <div class="mb-3 text-sm text-gray-500 dark:text-gray-400">
+      <div>Copyright ©  BlazingBane 🔥2025</div>
+    </div>
+  </div>
+</footer>
+  </section>
+  
+  <aside class="text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-900 hidden xl:block">
+    <nav style="width: 350px;"
+      class=" p-8 overflow-y-scroll hide-scrollbar max-h-screen [&_a]:text-primary-500 [&_nav]:leading-loose [&_li_li]:ps-4 [&_li]:truncate hover:[&_a]:text-accent-500 sticky top-0">
+      <h2 class="text-xl font-semibold">Contents</h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#things-to-keep-before-we-proceed">Things to keep before we proceed</a></li>
+        <li><a href="#keep-note-of-this-information">Keep note of this information</a></li>
+      </ul>
+    </li>
+    <li><a href="#navigating-to-iic-portal">Navigating to IIC Portal</a></li>
+    <li><a href="#log-in-with-your-personal-email">Log in with your Personal Email</a></li>
+    <li><a href="#submitting-details">Submitting details</a>
+      <ul>
+        <li><a href="#section-1">Section 1</a></li>
+        <li><a href="#section-2">Section 2</a></li>
+        <li><a href="#section-3--questionnaire">Section 3 – Questionnaire</a></li>
+        <li><a href="#section-4">Section 4</a></li>
+        <li><a href="#section-5">Section 5</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-now">What now?</a></li>
+  </ul>
+</nav>
+    </nav>
+  </aside>
+
+  <div id="search-modal" aria-hidden="true" class="hidden">
+  <div tabindex="-1" data-micromodal-close class="absolute inset-0 bg-opacity-60 bg-black flex items-center justify-center">
+    <div role="dialog" aria-modal="true" aria-labelledby="search-title" class="w-full sm:w-3/4 xl:w-1/3 bg-white dark:bg-slate-800 p-5 rounded-lg max-h-[80vh] overflow-y-auto" >
+      <header class="flex justify-between mb-6">
+        <h2 id="search-title" class="text-2xl font-righteous">
+          Search
+        </h2>
+        <button aria-label="Close modal" data-micromodal-close class="font-bold before:content-['\2715']"></button>
+      </header>
+      <div id="search"></div>
+    </div>
+  </div>
+</div>
+<script src="/js/bundle.min.98e752103845733e4a6b160e39cc28635b893a0536bd55f28bc851224a390654.js" integrity="sha256-mOdSEDhFcz5KaxYOOcwoY1uJOgU2vVXyi8hRIko5BlQ=" defer></script>
+
+</body>
+
+</html>
