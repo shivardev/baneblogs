@@ -1,6 +1,6 @@
 ---
 title: 'FROM Layout'
-description: 'Personal website of Robin van der Knaap'
+description: 'Blazing Bane Website'
 layout: 'single'
 ---
 

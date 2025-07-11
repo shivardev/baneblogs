@@ -2,7 +2,7 @@
 title: 'List of commands to use while I live stream on YouTube'
 description: 'All commands for my youtube live stream.'
 draft: 'false'
-type: 'singlePage'
+type: 'chatcmd'
 showToc : 'true'
 ---
 

@@ -53,3 +53,8 @@ npm run deploy
 ### Important links
 - [Get Time stamps for the blogs](https://www.unixtimestamp.com/)
 - [Generate UUID for unique blog ID](https://www.uuidgenerator.net/) 
+
+
+#### learnings 
+- _index.md needs to be used to show a list kind of a thing and needs to have list.html in the same folderstucture in layouts
+- to show a single page or static page we need to use index.md and have a single.html to show content for a single static simple page
