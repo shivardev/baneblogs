@@ -2,8 +2,8 @@
 title: 'List of commands to use while I live stream on YouTube'
 description: 'All commands for my youtube live stream.'
 draft: 'false'
-type: 'chatcmd'
 showToc : 'true'
+layout: "youtube/chatcmds"
 ---
 
 ### 1) Face Filter Commands
