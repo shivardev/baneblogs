@@ -2,10 +2,10 @@
   <article class="flex-grow md:pl-8 prose dark:prose-invert lg:prose-xl prose-a:text-accent-500" data-pagefind-body>
        {{- .Content -}}
      </article>
-{{ .Page.RenderString `{{<notice idea HeadsUp >}}
+
+{{<notice idea "HeadsUp" >}}
 Click here for live streaming related content <a href="/youtube/chatcmds" style="color: #f3e247;">Chat Commands</a>
-    {{< /notice>}}`
-        }}
+{{</notice >}}`
 
 <section class="search-section">
 
@@ -138,7 +138,7 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
                                 padding: 20px;
                                 border-radius: 8px;
                                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                        <div style="display: flex;justify-content: center;align-items: center;flex-direction: row">
+                        <div style="display: flex;justify-content: space-evenly;align-items: center;flex-direction: row">
                             <img :src="user.ProfilePic" alt="UserIcon"
                                 style="border-radius:25px; height:50px; width:50px;">
                             <div style="display: flex;flex-direction: column;justify-content: center;align-items: center">
@@ -252,11 +252,10 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
     .user-list {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 20px;
         justify-content: center;
-        max-height: 400px;
-        overflow-y: auto;
+        overflow: auto;
     }
 
 
