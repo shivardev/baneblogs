@@ -5,8 +5,14 @@ date: 2024-12-10T04:43:24.997Z
 slug: top-go-packages-i-use
 preview: ""
 draft: false
-tags: ["golang", "go packages", "developer tools", "productivity", "backend"]
-categories: ["Go", "Development"]
+tags: 
+    - golang
+    - go packages
+    - developer tools
+    - productivity
+    - backend
+
+category: ["Go", "Development"]
 image: "https://i.ibb.co/4Rjy7Yp8/Listen-in-your-PC.png"
 showTOC: true
 uuid: "8d0053cc-5047-47ff-b391-3b51ff7e9eda"
