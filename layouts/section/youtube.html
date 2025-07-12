@@ -3,9 +3,11 @@
        {{- .Content -}}
      </article>
 
-{{<notice idea "HeadsUp" >}}
+
+{{ .Page.RenderString `{{<notice idea HeadsUp >}}
 Click here for live streaming related content <a href="/youtube/chatcmds" style="color: #f3e247;">Chat Commands</a>
-{{</notice >}}`
+    {{< /notice>}}`
+        }}
 
 <section class="search-section">
 
