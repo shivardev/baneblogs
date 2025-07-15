@@ -93,6 +93,6 @@ Here are the PCspecs:
 
 
 ## Conclusion
-There you go fellas, That sumps up my setup tour. I have build this entire setu piece by piece small steps at a time. I carried most of my setup 70% from India while moving to US in 2 23Kg bags, This includes my streaming PC, keyword, mouse,camera and even mmousepad Yes, I'm using the same XXL mouse pad which got in 2019. I love my setup, It is where I be most of my time.
+There you go fellas, That sumps up my setup tour. I have build this entire setup piece by piece small steps at a time. I carried most of my setup 70% from India while moving to US in 2 23Kg bags, This includes my streaming PC, keyword, mouse,camera and even mmousepad Yes, I'm using the same XXL mouse pad which got in 2019. I love my setup, It is where I be most of my time.
 
 
