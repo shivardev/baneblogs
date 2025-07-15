@@ -30,7 +30,6 @@ date: ${date}
 preview: ""
 draft: true
 tags: []
-categories: []
 category: []
 image: ""
 showTOC: false
