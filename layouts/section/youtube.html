@@ -1,37 +1,32 @@
 {{ define "main" }}
-  <article class="flex-grow md:pl-8 prose dark:prose-invert lg:prose-xl prose-a:text-accent-500" data-pagefind-body>
-       {{- .Content -}}
-     </article>
-
+<article class="flex-grow md:pl-8 prose dark:prose-invert lg:prose-xl prose-a:text-accent-500" data-pagefind-body>
+    {{- .Content -}}
+</article>
 
 {{ .Page.RenderString `{{<notice idea HeadsUp >}}
 Click here for live streaming related content <a href="/youtube/chatcmds" style="color: #f3e247;">Chat Commands</a>
-    {{< /notice>}}`
-        }}
+{{< /notice>}}` }}
 
 <section class="search-section">
+    <div class="section-container"  x-data="{
+        users: [],
+        filteredUsers: [],
+        topViewers: [],
+        newestViewers: [],
+        oldestViewers: [],
+        searchQuery: '',
+        loading: true,
 
-    <!-- Users List -->
-    <div x-data="{
-        users: [],               // All fetched users
-        filteredUsers: [],       // Filtered list based on search
-        topViewers: [],          // Top viewers based on points
-        newestViewers: [],       // Newest viewers based on JoinedDate
-        oldestViewers: [],       // Oldest viewers based on JoinedDate
-        searchQuery: '',         // Search query input
-        loading: true,           // Loading state
-    
-        // Fetch users from the API
         getAllUsers() {
-            fetch('https://streaming.blazingbane.com/allusers')  // Change this URL to your actual API endpoint
+            fetch('https://streaming.blazingbane.com/allusers')
                 .then(response => response.json())
                 .then(data => {
-                    this.users = data;  // Store the fetched users
-                    this.filteredUsers = data;  // Initially show all users
-                    this.topViewers = this.getTopViewers(data);  // Get top viewers
-                    this.newestViewers = this.getNewestViewers(data);  // Get newest viewers
-                    this.oldestViewers = this.getOldestViewers(data);  // Get oldest viewers
-                    this.loading = false;  // Hide loading state
+                    this.users = data;
+                    this.filteredUsers = data;
+                    this.topViewers = this.getTopViewers(data);
+                    this.newestViewers = this.getNewestViewers(data);
+                    this.oldestViewers = this.getOldestViewers(data);
+                    this.loading = false;
                 })
                 .catch(error => {
                     console.error('Error fetching user data:', error);
@@ -39,52 +34,45 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
                     this.loading = false;
                 });
         },
-    
-        // Search users based on query
+
         search() {
             if (this.searchQuery === '') {
-                this.filteredUsers = this.users;  // Show all users if search is empty
+                this.filteredUsers = this.users;
             } else {
                 this.filteredUsers = this.users.filter(user =>
                     user.UserName.toLowerCase().includes(this.searchQuery.toLowerCase())
                 );
             }
         },
-    
-        // Get top 5 viewers based on points
+
         getTopViewers(users) {
             return users
-                .sort((a, b) => b.CommentCount - a.CommentCount)  // Sort users by points in descending order
-                .slice(0, 5);  // Limit to top 5
+                .sort((a, b) => b.CommentCount - a.CommentCount)
+                .slice(0, 5);
         },
-    
-        // Get the 5 newest viewers based on JoinedDate
+
         getNewestViewers(users) {
             return users
-                .sort((a, b) => b.JoinedDate - a.JoinedDate)  // Sort by JoinedDate in descending order (newest first)
-                .slice(0, 5);  // Limit to top 5
+                .sort((a, b) => b.JoinedDate - a.JoinedDate)
+                .slice(0, 5);
         },
-    
-        // Get the 5 oldest viewers based on JoinedDate
+
         getOldestViewers(users) {
             return users
-                .sort((a, b) => a.JoinedDate - b.JoinedDate)  // Sort by JoinedDate in ascending order (oldest first)
-                .slice(0, 5);  // Limit to top 5
+                .sort((a, b) => a.JoinedDate - b.JoinedDate)
+                .slice(0, 5);
         }
-     
     }" x-init="getAllUsers()">
 
-
-        <!-- Loading State -->
         <div x-show="loading">Loading...</div>
 
-        <!-- Top Viewers Section -->
+        <!-- Top Viewers -->
         <h2>Top Viewers (By Comments)</h2>
         <div class="user-list">
             <template x-for="user in topViewers" :key="user.UserId">
                 <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId" target="_blank">
                     <div class="user-card">
-                        <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
+                        <img :src="user.ProfilePic" alt="UserIcon">
                         <div>
                             <h3 x-text="user.UserName"></h3>
                             <p>Comments: <span x-text="user.CommentCount"></span></p>
@@ -94,13 +82,13 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
             </template>
         </div>
 
-        <!-- Newest Viewers Section -->
+        <!-- Newest Users -->
         <h2>New Users</h2>
         <div class="user-list">
             <template x-for="user in newestViewers" :key="user.UserId">
                 <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId" target="_blank">
                     <div class="user-card">
-                        <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
+                        <img :src="user.ProfilePic" alt="UserIcon">
                         <div>
                             <h3 x-text="user.UserName"></h3>
                             <p>Joined: <span x-text="formatDate(user.JoinedDate)"></span></p>
@@ -110,13 +98,13 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
             </template>
         </div>
 
-        <!-- Oldest Viewers Section -->
+        <!-- Oldest Users -->
         <h2>Old Users</h2>
         <div class="user-list">
             <template x-for="user in oldestViewers" :key="user.UserId">
                 <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId" target="_blank">
                     <div class="user-card">
-                        <img :src="user.ProfilePic" alt="UserIcon" style="border-radius: 25px;">
+                        <img :src="user.ProfilePic" alt="UserIcon">
                         <div>
                             <h3 x-text="user.UserName"></h3>
                             <p>Joined: <span x-text="formatDate(user.JoinedDate)"></span></p>
@@ -125,30 +113,21 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
                 </a>
             </template>
         </div>
-        <!-- Search Bar -->
+
+        <!-- Search -->
         <div class="search-bar-container">
-            <input type="text" placeholder="Search by username..." id="search-bar" x-model="searchQuery"
-                @input="search">
+            <input type="text" placeholder="Search by username..." id="search-bar" x-model="searchQuery" @input="search">
         </div>
-        <!-- Display filtered user list -->
-        <div class="user-list" id="user-list">
+
+        <!-- Filtered List -->
+        <div class="user-list scrollable-list">
             <template x-for="user in filteredUsers" :key="user.UserId">
-                <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId"
-                    style="display:relative;width: fit-content;" target="_blank">
-                    <div class="user-card" style=" background-color: white;color: black;
-                                width: 250px;
-                                padding: 20px;
-                                border-radius: 8px;
-                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                        <div style="display: flex;justify-content: space-evenly;align-items: center;flex-direction: row">
-                            <img :src="user.ProfilePic" alt="UserIcon"
-                                style="border-radius:25px; height:50px; width:50px;">
-                            <div style="display: flex;flex-direction: column;justify-content: center;align-items: center">
-                                <h3 style="text-overflow: ellipsis;overflow: hidden;
-                                    white-space: nowrap;
-                                    " x-text="user.UserName"></h3>
-                                <p>Points: <span x-text="user.Points"></span></p>
-                            </div>
+                <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId" target="_blank">
+                    <div class="user-card compact">
+                        <img :src="user.ProfilePic" alt="UserIcon">
+                        <div>
+                            <h3 x-text="user.UserName"></h3>
+                            <p>Points: <span x-text="user.Points"></span></p>
                         </div>
                     </div>
                 </a>
@@ -157,141 +136,160 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
     </div>
 </section>
 
-<!-- Include Alpine.js -->
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 
+<!-- Styles -->
 <style>
-    .badge-container {
-        margin: 20px;
-        text-align: center;
-    }
-
-    .text-link {
-        text-decoration: underline;
-        padding: 10px 20px;
-        color: rgb(238, 168, 168);
-        font-size: 16px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-
-    .badge:hover {
-        background-color: #0056b3;
-    }
-
-    /* Top Viewers Section */
-    .top-viewers {
-        padding: 40px 20px;
-        background-color: #f4f4f4;
-    }
-
-    .top-viewers h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .viewer-cards-container {
-        display: flex;
-        justify-content: center;
-        overflow-x: auto;
-        padding: 10px 0;
-    }
-
-    .viewer-cards {
-        display: flex;
-        gap: 20px;
-    }
-
-    .viewer-card {
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 200px;
-        text-align: center;
-    }
-
-    .viewer-card img {
-        width: 100%;
-        border-radius: 50%;
-        margin-bottom: 10px;
-    }
-
-    .viewer-card h3 {
-        margin: 10px 0;
-        font-size: 18px;
-    }
-
-    .viewer-card p {
-        color: #555;
-    }
-
-    /* Search Bar Section */
     .search-section {
-        padding: 40px 20px;
+        padding: 2rem 1rem;
     }
 
-    .search-section h2 {
+    h2 {
+        font-size: 1.5rem;
         text-align: center;
-        margin-bottom: 20px;
+        margin: 2rem 0 1rem;
     }
 
     .search-bar-container {
         display: flex;
-        color: black;
-        text-align: center;
         justify-content: center;
-        margin-bottom: 30px;
+        margin: 1.5rem 0;
     }
 
     #search-bar {
-        width: 300px;
+        width: 100%;
+        max-width: 400px;
         padding: 10px;
-        font-size: 16px;
+        color:black;
+        text-align: center;
+        font-size: 1rem;
         border: 2px solid #ccc;
         border-radius: 5px;
     }
 
+   /* Main user list styling */
+.user-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/* This will only apply horizontal scroll to the search result list */
+.scrollable-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* User cards */
+.user-card {
+    background: #fff;
+    color: #111;
+    width: 220px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 200px;
+    transition: transform 0.2s ease-in-out;
+    flex-shrink: 0;
+}
+
+.user-card:hover {
+    transform: translateY(-4px);
+}
+
+.user-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-card.compact {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 300px;
+}
+
+.user-card.compact img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0;
+}
+
+.user-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.user-card p {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 6px;
+}
+
+.section-container {
+    margin: 0 auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .user-card {
+        width: 100%;
+        max-width: 90vw;
+    }
+    .section-container {
+        max-width: 83vw;}
+    .user-card.compact {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Make filtered list horizontally scrollable, others vertical */
+    .scrollable-list {
+        overflow-x: auto;
+        justify-content: unset;
+    }
+
+    .user-list:not(.scrollable-list) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
     .user-list {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        gap: 20px;
-        justify-content: center;
-        overflow: auto;
+        max-width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
     }
+}
 
-
-
-    .user-card h3 {
-        margin: 10px 0;
-        font-size: 18px;
-    }
-
-    .user-card p {
-        color: #555;
-    }
-    ::-webkit-scrollbar {
-        width: 22px;
-      }
-      
-      ::-webkit-scrollbar-track {
-        background: #1e1e1e; /* Dark background */
-      }
-      
-      ::-webkit-scrollbar-thumb {
-        background-color: #444;   /* Dark gray thumb */
-        border-radius: 6px;
-        border: 3px solid #1e1e1e; /* Matches track for padding */
-      }
-      
-      ::-webkit-scrollbar-thumb:hover {
-        background-color: #666;
-      }
-      
-      /* Firefox */
-      * {
-        scrollbar-width: thin;
-        scrollbar-color: #444 #1e1e1e;
-      }
 </style>
 {{ end }}
