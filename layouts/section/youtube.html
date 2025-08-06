@@ -120,7 +120,7 @@ Click here for live streaming related content <a href="/youtube/chatcmds" style=
         </div>
 
         <!-- Filtered List -->
-        <div class="user-list scrollable-list">
+        <div class="user-list scrollable-list" style="justify-content: start;">
             <template x-for="user in filteredUsers" :key="user.UserId">
                 <a :href="'{{ .Page.RelPermalink }}/user/?userId=' + user.UserId" target="_blank">
                     <div class="user-card compact">
