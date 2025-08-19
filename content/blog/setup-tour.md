@@ -35,7 +35,7 @@ I got a decent yet powerful gaming PC and here are the specs:
   - Nothing fancy, got it for 90$.
 - **Keyboard**: AntEsports 60% wited mechanical keyboard.Got it in 2021.
 - **Mouse**: Some cheap wireless gaming mouse. no complaints so far.
-- **Headphones**: Redgear 7.1ch Headphones. Got it in 2020. 
+- **Headphones**: Redgear Thunder-B 7.1 . Got it in 2020. 
 
 ## Streaming Setup
 
@@ -73,8 +73,16 @@ Here are the PCspecs:
 
 ### Honarable mention
 
-- **keyword**: wireless multi connet ( wifi, 2 bluetooth) low profile mechanical keyboard.
-- **keylight**: For streaming lighting is important, But I don't have money for Elagato keylights. I got a buld holder and coverd that with a whitish cover from a store. WORKS PERFECTLY.
+- **Keyboards**
+  - **Seenda Low Profile Mechanical Keyboard**: Wireless multi connet ( wifi, 2 bluetooth) low profile mechanical keyboard.
+  {{<image url="https://i.ibb.co/4bsQfSV/sweenda-Keyboard.jpg" >}}
+  - **Ant Esports MK1200**: Wired Mechanical Keyboard Blue switches, My first mechanical keyboard 
+  {{<image url="https://i.ibb.co/FbMYML5j/1000302280-600x600.jpg" >}}
+  {{<image url="https://i.ibb.co/xtsm0pCd/5186-MP85x-L-SY250.jpg" >}} 
+  - **JamesDonkey J2**: By far my favorite mechanical keyboard. Silent, buttery feeling and great for typing.
+  {{<image url="https://i.ibb.co/HDMnZ95W/71-Dy-L5-EBb7-L-AC-SL1500.jpgg" >}}
+
+- **Keylight**: For streaming lighting is important, But I don't have money for Elagato keylights. I got a buld holder and coverd that with a whitish cover from a store. WORKS PERFECTLY.
 - **Standing Desk**: Works great for me, feels fun to stand and code.
 - **Gaming Chair**: Some regular gaming chair got it like 50$.
 - **Raspberry Pi Zero 2** 
