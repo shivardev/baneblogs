@@ -6,44 +6,22 @@ showToc : 'true'
 layout: "youtube/chatcmds"
 ---
 
-### 1) Face Filter Commands
+### List of commands to use while I live stream on YouTube
 
-Using these commands a viewer can control what appears on my face.,
+| Command | Description | Paid  | Example |
+| ------- | ----------- | ----- | ------- |
+| !speak [text] | Speaks the text | Yes | !speak Hello World |
+| !spiderman | A gif of spiderman | Yes | !spiderman |
+| !gif [text] | A gif of text | Yes | !gif Hello World |
+| !kiss | try it hahaha  | Yes | !kiss |
+| !respect | trigger a respect | Yes | !respect |
+| !points | A bot message which has the count of points for a viewer| No | !points |
+| !cmds / !cmd   | List of all commands      | No        | !cmds                 |
+| !discord       | Link to Discord server    | No        | !discord              |
+| !setup         | Setup tour link           | No        | !setup                |
+| !blog          | Blog link                 | No        | !blog                 |
+| !git           | GitHub profile link       | No        | !git                  |
+| !insta         | Instagram link            | No        | !insta                |
+| !x / !twitter  | Twitter handle link       | No        | !x                    |
+| !link          | Links to my social media  | No        | !link                 |
 
-| Command | Description |
-| ------- | ----------- |
-| put ironman | Puts Ironman on my face. |
-| put batman | Puts batman filter on my face. |
-| put eye | Puts a wobbly eyes on my face. |
-| put joker | Puts joker on my face. |
-| put frog | Puts Frog on my face.
-
-### 2) Speak Command
-
-Using these commands a viewer can control what appears on my face.,
-
-| Command | Description |
-| ------- | ----------- |
-| !speak **** | An alerts will be shown with viewer Profile icon and will read out the message. |
-
-### 4) like the stream 
-
-Will trigger a overlay in OBS with a cat filter on face! along with a catchy song.
-
-### 5) Unlike the stream 
-
-Will trigger a sad cry filter on face! along with a sad song.
-
-> NOT DISLIKE
-
-#### steps to try this out:
-- like the stream 
-- remove the like by pressing the like button again.
-
-
-#### Generic Commands
-
-| Command | Description |
-| ------- | ----------- |
-| !points | A bot message which has the count of points for a viewer |
-Example: Shiva -> 100 Points
