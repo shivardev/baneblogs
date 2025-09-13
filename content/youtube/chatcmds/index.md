@@ -6,7 +6,6 @@ showToc : 'true'
 layout: "youtube/chatcmds"
 ---
 
-### List of commands to use while I live stream on YouTube
 
 | Command | Description | Paid  | Example |
 | ------- | ----------- | ----- | ------- |
