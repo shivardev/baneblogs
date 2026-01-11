@@ -82,7 +82,7 @@ Here are the PCspecs:
   - **JamesDonkey J2**: By far my favorite mechanical keyboard. Silent, buttery feeling and great for typing.
   {{<image url="https://i.ibb.co/HDMnZ95W/71-Dy-L5-EBb7-L-AC-SL1500.jpgg" >}}
 
-- **Keylight**: For streaming lighting is important, But I don't have money for Elagato keylights. I got a buld holder and coverd that with a whitish cover from a store. WORKS PERFECTLY.
+- **Keylight**: For streaming lighting is important, As keylights are so expensive. I got a bulb holder and coverd that with a white cover from a store. WORKS PERFECTLY.
 - **Standing Desk**: Works great for me, feels fun to stand and code.
 - **Gaming Chair**: Some regular gaming chair got it like 50$.
 - **Raspberry Pi Zero 2** 
