@@ -11,6 +11,10 @@ showTOC: false
 uuid: "3e82fe05-07bb-43aa-af18-185b1fb5dbd0"
 ---
 
+
+{{< figure src="https://i.ibb.co/G3bbH1fv/PXL-20260117-023337713.jpg" 
+    caption="Setup as of Jan 17, 2026" class="image-caption">}}
+
 ## Introduction 
 
 You are here to know about my setup, I have split that into sections with respective information. This content is subect to change and I have listed our all the hardware and software I use. From pc to camera including my raspberry pi. 
