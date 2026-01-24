@@ -36,9 +36,40 @@ The providers listed below offer budget-friendly plans starting from $5, providi
 Check your phone network capabilites before proceeding. These providers work best with a proper T-Mobilenetwork available area.
 .{{< /warning >}}
 
-1.  #### Hello Mobile -- SIM Review
+1. #### Helium Mobile — SIM / eSIM Review
+
+{{< figure src="https://play-lh.googleusercontent.com/S8APbbDUYy4TPOaHrKxckiPD_GoKC7Ko9PyIscFh0_eYC7g-05HiH3cwzpgWQ-laIKg" 
+   class="figure-small">}}
+
+Helium Mobile is a surprisingly solid option if you’re looking for a **“free” mobile plan**. The base plan includes **3GB of data, 100 minutes of talk time, and 300 SMS**, which is more than enough for light usage.
+
+While the service itself is advertised as free, there are a couple of things to keep in mind:
+
+- You still need to **pay for the physical SIM**
+- **eSIM is completely free**
+- **Taxes and regulatory fees apply**, even on the free plan (both national and state taxes)
+
+In real-world usage, Helium performs exceptionally well. I regularly see **400+ Mbps speeds**, and both call and text quality have been consistently reliable. For a zero-cost plan, the experience honestly feels premium.
+
+Definitely worth trying if Helium coverage is available in your area.
+
+[Know More](https://hellohelium.com/)
+
+| Pros 👍                              | Cons 👎                               |
+| ----------------------------------- | ------------------------------------- |
+| ✅ Free base plan                   | ❌ Taxes and fees still apply          |
+| ✅ 3GB high-speed data              | ❌ Physical SIM is paid                |
+| ✅ Excellent speeds (400+ Mbps)     |                                       |
+| ✅ Good call and text quality       |                                       |
+| ✅ Free eSIM support                |                                       |
+| ✅ Coverage is based on T-mobile    |                                       |
+
+2. #### Hello Mobile -- SIM Review
 
 {{< image url="https://cache.bestmvno.com/wp-content/uploads/2019/07/Hello-Mobile-Logo.png" >}}
+{{< warning >}}
+They are no longer operational.
+.{{< /warning >}}
 
 For some reason calling to an other country the person receiving the call will not be getting the call from US number instead a local number respective to that nation the number is generated. bit weird.
 
@@ -60,7 +91,7 @@ More over, in an instance where u want to upgrade your plan there is no way to d
 | ✅ Unlimited Talk and Text   | ❌ Customer support is almost useless.                    |
 | ✅ E-sim support             | ❌ Internet speed is slow even with better signals.       |
 
-2.  #### Tello Mobile -- SIM/ E-SIM Review
+3.  #### Tello Mobile -- SIM/ E-SIM Review
 
 {{< image url="https://i.pinimg.com/originals/31/13/f5/3113f5ccdf89565e334338e6427495dd.png" >}}
 
@@ -91,7 +122,7 @@ I'm personally using Tello mobile and never faced any problem with it. highly re
 | ✅ E-sim support                                              |                          |
 | ✅ Referral System for easy points                            |                          |
 
-3.  #### TextNow -- SIM Version / VOIP 0$
+4.  #### TextNow -- SIM Version / VOIP 0$
 
 {{< image url="https://cdn.freelogovectors.net/wp-content/uploads/2021/09/textnow-logo-freelogovectors.net_.png" >}}
 
@@ -120,7 +151,7 @@ if you dont need a physical sim then its fine just install the app , get a numbe
 | ✅ Flexible data plans (hourly unlimited)  | ❌ Can use phone and SMS as normal, must do within the app. |
 | ✅ Can use website for calling and texting | ❌ Can't use for Banking; 2-step auth doesn't work.         |
 
-4.  #### Google Voice -- VOIP
+5.  #### Google Voice -- VOIP
 
 {{< image url="https://logowik.com/content/uploads/images/google-voice8556.jpg" >}}
 
@@ -137,7 +168,7 @@ The ability to obtain a secondary phone number directly from the app, without th
 | ✅ Flexible data plans (hourly unlimited)  | ❌ Can use phone and SMS as normal, must do within the app. |
 | ✅ Can use website for calling and texting | ❌ Can't use for Banking; 2-step auth doesn't work.         |
 
-5.  #### TextFree 
+6.  #### TextFree 
 
 I felt TextNow is a lot better than this as it supports web version as well. so i didnt wanted to mention this. Just use TextNow its a lot better compared to TextFree.
 

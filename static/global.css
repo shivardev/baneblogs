@@ -71,7 +71,20 @@
         display: none;
     }
 }
+/* hugo figure */
+.figure-medium img {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+}
 
+.figure-small img {
+  max-width: 200px;
+}
+
+.figure-large img {
+  max-width: 1000px;
+}
 .image-caption {
     text-align: center;
     font-style: italic;
