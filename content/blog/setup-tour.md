@@ -12,99 +12,99 @@ uuid: "3e82fe05-07bb-43aa-af18-185b1fb5dbd0"
 ---
 
 
-
 ## Introduction 
 
-You are here to know about my setup, I have split that into sections with respective information. This content is subect to change and I have listed our all the hardware and software I use. From pc to camera including my raspberry pi. 
+You are here to learn about my setup. I have divided everything into sections with detailed information. This content is subject to change, and I have listed all the hardware and software I use — from my PC to my camera, including my Raspberry Pi.
 
 {{< figure alt="Gaming Setup" src="https://i.ibb.co/G3bbH1fv/PXL-20260117-023337713.jpg"
     caption="Setup as of Jan 17, 2026" class="image-caption">}}
+
 ## Gaming Setup
 
-I got a decent yet powerful gaming PC and here are the specs:
+I have a decent yet powerful gaming PC, and here are the specifications:
 
-- **CPU**: Intel Core i5-13600k @ 4.65GHz
-- **GPU**: NVIDIA GeForce RTX 3080 10GB OC Asus strix Gaming RRB
+- **CPU**: Intel Core i5-13600K @ 4.65GHz
+- **GPU**: NVIDIA GeForce RTX 3080 10GB OC ASUS Strix Gaming
 - **RAM**: 32GB DDR4 3200MHz
-- **Storage**: A bit complicated,
-  - Windows: SSD 256GB
-    - This is main storage for Windows OS for alomost 6 years now. which means this was my first SSD which i got when I would my First PC ( spoiler alerts - I converted this as my Streaming PC).
-  - Drive 2: SSD 256GB
-  - Drive 3: HDD 1TB 
+- **Storage**: A bit complicated:
+  - Windows Drive: SSD 256GB  
+    - This is the main storage for the Windows operating system and has been in use for almost 6 years. This was the first SSD I bought when I built my first PC (spoiler alert — I later converted that system into my streaming PC).
+  - Drive 2: SSD 256GB  
+  - Drive 3: HDD 1TB  
   - Drive 4: SSD 2TB (for games)
-- **OS**: Windows 11 Pro 
-  - Got this for like 5$ from G2A and it's still working fine.
-- **Power Supply**: 1000W Don't know much about this but it's a good power supply.
-- **Monitor**: GTek 1080p 24inch, 165hz IPS. 
-  - Nothing fancy, got it for 90$.
-- **Keyboard**: AntEsports 60% wited mechanical keyboard.Got it in 2021.
-- **Mouse**: Some cheap wireless gaming mouse. no complaints so far.
-- **Headphones**: Redgear Thunder-B 7.1 . Got it in 2020. 
+- **OS**: Windows 11 Pro  
+  - Purchased for around $5 from G2A, and it is still working fine.
+- **Power Supply**: 1000W power supply  
+  - I do not know much about it, but it has been reliable.
+- **Monitor**: GTEK 1080p 24-inch, 165Hz IPS  
+  - Nothing fancy — I got it for $90.
+- **Keyboard**: Ant Esports 60% wired mechanical keyboard. Purchased in 2021.
+- **Mouse**: An affordable wireless gaming mouse. No complaints so far.
+- **Headphones**: Redgear Thunder-B 7.1. Purchased in 2020.
 
 ## Streaming Setup
 
-This was actually my first PC and I bought in 2018, After I got my current Gaming PC, I decided to convert this into a streaming PC / Server.
+This was actually my first PC, which I bought in 2018. After upgrading to my current gaming PC, I decided to convert this system into a dedicated streaming PC and home server.
 
-Here are the PCspecs:
+Here are the streaming PC specifications:
 
-- **CPU**: Intel Core i7-8700k @ 4.0GHz
-- **GPU**: NVIDIA GeForce GTX 1070 8GB OC gigabyte
+- **CPU**: Intel Core i7-8700K @ 4.0GHz
+- **GPU**: NVIDIA GeForce GTX 1070 8GB OC Gigabyte
 - **RAM**: 16GB DDR4 3200MHz
-- **Storage**: SSD 512GB ( Got it free from microcenter)
+- **Storage**: SSD 512GB (received for free from Micro Center)
 - **OS**: Windows 11 Pro
-- **Power Supply**: 650W Power Supply
+- **Power Supply**: 650W power supply
 
 ### Audio
 
-- **wireless mic**: hollyland Lark C1
-- **Streaming Mic**: Fifine Am8T 
+- **Wireless Microphone**: Hollyland Lark C1
+- **Streaming Microphone**: Fifine AM8T XLR / USB Microphone
 
-    - #### Softwares
-        - **AudioReplay**: for audio transimission Streaming PC to Gaming PC. 
-        - **Voicemeter Banana**: for sending the audio from Gaming PC to Streaming PC.
+    - #### Software
+        - **AudioReplay**: For transmitting audio from the streaming PC to the gaming PC.  
+        - **Voicemeeter Banana**: For routing audio from the gaming PC to the streaming PC.
 
 ### Video 
 
-- Elgato HD60s 
-- 4k capture card (Not elagato something else whic was 30$). 
-- Canon EOS M50 Mark II - with Sigma 16 F1.4 lens.
+- Elgato HD60S  
+- 4K capture card (not Elgato, another brand that cost $30)  
+- Canon EOS M50 Mark II with Sigma 16mm f/1.4 lens  
 
-    - #### Softwares
-        - **OBS**: for streaming and recording.
-        - **SnapCam**: for snapchat face filters.
-        - **StreamerBot**: To handle and operate OBS with all actions and commands.
+    - #### Software
+        - **OBS**: For streaming and recording.  
+        - **Snap Camera**: For Snapchat face filters.  
+        - **Streamer.bot**: To control and automate OBS actions and commands.
 
-
-### Honarable mention
+### Honorable Mention
 
 - **Keyboards**
-  - **Seenda Low Profile Mechanical Keyboard**: Wireless multi connet ( wifi, 2 bluetooth) low profile mechanical keyboard.
+  - **Seenda Low Profile Mechanical Keyboard**: Wireless multi-connect (Wi-Fi, 2 Bluetooth) low-profile mechanical keyboard.  
   {{<image url="https://i.ibb.co/4bsQfSV/sweenda-Keyboard.jpg" >}}
-  - **Ant Esports MK1200**: Wired Mechanical Keyboard Blue switches, My first mechanical keyboard 
+  - **Ant Esports MK1200**: Wired mechanical keyboard with blue switches. My first mechanical keyboard.  
   {{<image url="https://i.ibb.co/FbMYML5j/1000302280-600x600.jpg" >}}
   {{<image url="https://i.ibb.co/xtsm0pCd/5186-MP85x-L-SY250.jpg" >}} 
-  - **JamesDonkey J2**: By far my favorite mechanical keyboard. Silent, buttery feeling and great for typing.
+  - **JamesDonkey J2**: By far my favorite mechanical keyboard. Quiet, smooth typing experience, and great for long typing sessions.  
   {{<image url="https://i.ibb.co/HDMnZ95W/71-Dy-L5-EBb7-L-AC-SL1500.jpgg" >}}
 
-- **Keylight**: For streaming lighting is important, As keylights are so expensive. I got a bulb holder and coverd that with a white cover from a store. WORKS PERFECTLY.
-- **Standing Desk**: Works great for me, feels fun to stand and code.
-- **Gaming Chair**: Some regular gaming chair got it like 50$.
-- **Raspberry Pi Zero 2** 
-  - This is a little ripper, works great for all my servers no issues. Runs Caddy and many GOlang services and few Node and python services.
-- **Chromebook**: Its a E-Waste from HP, supposed to be touch but got a crack on speeds. works fine for a chromebook. apart from writing blogs. and casual browsing now use. well i do use it to SSH into my raspberry pi.
-- **RedMagic 10 Pro**
-  - This is a great gaming Phone. I just love it.
+- **Key Light**: Lighting is important for streaming. Since professional key lights are expensive, I bought a simple bulb holder and covered it with a white diffuser from a local store. It works perfectly.
+- **Standing Desk**: Works great for me. It feels refreshing to stand while coding.
+- **Gaming Chair**: A standard gaming chair that cost around $50.
+- **Raspberry Pi Zero 2**  
+  - This small device works great for all my server needs without any issues. It runs Caddy, several Go services, and a few Node.js and Python services.
+- **Chromebook**: An old HP Chromebook that was essentially electronic waste. It was originally a touchscreen device but has a crack on the screen. It still works fine for basic use. I mainly use it for SSH access to my Raspberry Pi.
+- **RedMagic 10 Pro**  
+  - A great gaming smartphone. I absolutely love it.
 - **Docker**:
-  - I use docker for all my servers containers 
-  -  immich
-  - hugoblogs
-  - jellyfin
-  - filebrowser
-  - SRT server
-  - RMTP server
-
+  - I use Docker to run all my server containers:
+    - Immich  
+    - Hugo blogs  
+    - Jellyfin  
+    - File Browser  
+    - SRT server  
+    - RTMP server  
 
 ## Conclusion
-There you go fellas, That sumps up my setup tour. I have build this entire setup piece by piece small steps at a time. I carried most of my setup 70% from India while moving to US in 2 23Kg bags, This includes my streaming PC, keyword, mouse,camera and even mmousepad Yes, I'm using the same XXL mouse pad which got in 2019. I love my setup, It is where I be most of my time.
 
+There you have it — that sums up my setup tour. I built this entire setup piece by piece, taking small steps over time. I carried around 70% of my equipment from India when moving to the United States in two 23kg bags. This included my streaming PC, keyboard, mouse, camera, and even my mouse pad. Yes, I am still using the same XXL mouse pad that I bought in 2019.
 
+I truly love my setup. It is where I spend most of my time.
