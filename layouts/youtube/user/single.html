@@ -25,126 +25,636 @@
     },
     get cmdKeys() {
         return this.userData.CmdStats ? Object.keys(this.userData.CmdStats) : [];
+    },
+    get acknowledgments() {
+        return Array.isArray(this.userData.Acknowledgments) ? this.userData.Acknowledgments : [];
     }
 }" x-init="fetchUserData()">
     <div class="user-banner">
-        <div class="profile-header">
-            <!-- Profile Picture -->
-            <img :src="userData.ProfilePic" :alt="userData.UserName" class="profile-pic" />
-            <div class="profile-info">
-                <h2 style="color: rgb(255, 255, 255);font-weight: bolder;" x-text="userData.UserName"></h2>
-                <p>Points: <span x-text="userData.Points"></span>💲</p>
-                <p>Comments: <span x-text="userData.CommentCount"></span>💫</p>
-                <p>Joined: <span x-text="formatDate(userData.JoinedDate)"></span></p>
-                <p>Last Comment: <span x-text="userData.LastComment"></span></p>
-                <p>First Comment: <span x-text="userData.FirstComment"></span></p>
-                <p>Last Seen: <span x-text="formatDate(userData.LastSeen)"></span></p>
-            </div>
-        </div>
-
-        <!-- YouTube Video Section -->
-        <div class="video-section">
-            <div class="video">
-                <h3>First live stream</h3>
-                <iframe :src="'https://www.youtube.com/embed/' + userData.FirstVideoLink" frameborder="0"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="video">
-                <h3>Last comment was left on this live stream</h3>
-                <iframe :src="'https://www.youtube.com/embed/' + userData.LastVideoLink" frameborder="0"
-                    allowfullscreen></iframe>
-            </div>
-        </div>
-        <br>
-        <div style="display: flex;justify-content: center;align-items: center;flex-direction: row; gap:10px">
-            <template x-if="userData.CmdStats">
-                <template x-for="key in cmdKeys" :key="key">
-                    <div class="cmd-badge">
-                        <span class="cmd" x-text="key"></span>
-                        <span class="count" x-text="userData.CmdStats[key]"></span>
+        <section class="profile-hero">
+            <div class="hero-main">
+                <div class="profile-avatar-shell">
+                    <img :src="userData.ProfilePic" :alt="userData.UserName" class="profile-pic" />
+                </div>
+                <div class="profile-info">
+                    <p class="profile-kicker">Viewer Profile</p>
+                    <h1 class="profile-name" x-text="userData.UserName"></h1>
+                    <p class="profile-summary">
+                        A snapshot of this viewer's presence across the stream archive.
+                    </p>
+                    <div class="hero-badges">
+                        <span class="hero-badge" x-text="`${cmdKeys.length} command types`"></span>
+                        <span class="hero-badge" x-text="`${acknowledgments.length} acknowledgements`"></span>
                     </div>
-                </template>
-            </template>
-        </div>
+                </div>
+            </div>
+
+            <div class="profile-stats">
+                <div class="profile-stat">
+                    <span class="profile-stat-label">Points</span>
+                    <span class="profile-stat-value"><span x-text="userData.Points"></span> 💲</span>
+                </div>
+                <div class="profile-stat">
+                    <span class="profile-stat-label">Comments</span>
+                    <span class="profile-stat-value"><span x-text="userData.CommentCount"></span> 💫</span>
+                </div>
+                <div class="profile-stat">
+                    <span class="profile-stat-label">Joined</span>
+                    <span class="profile-stat-value" x-text="formatDate(userData.JoinedDate)"></span>
+                </div>
+                <div class="profile-stat">
+                    <span class="profile-stat-label">Last Seen</span>
+                    <span class="profile-stat-value" x-text="formatDate(userData.LastSeen)"></span>
+                </div>
+            </div>
+
+            <div class="profile-meta-grid">
+                <article class="meta-card meta-card-wide">
+                    <span class="detail-label">Last Comment</span>
+                    <p class="detail-value" x-text="userData.LastComment || 'No recent comment recorded.'"></p>
+                </article>
+                <article class="meta-card meta-card-wide">
+                    <span class="detail-label">First Comment</span>
+                    <p class="detail-value" x-text="userData.FirstComment || 'No first comment recorded yet.'"></p>
+                </article>
+                <article class="meta-card">
+                    <span class="detail-label">Viewer ID</span>
+                    <p class="detail-value detail-value-code" x-text="userData.UserId"></p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-grid">
+            <div class="main-column">
+                <section class="content-panel stream-panel">
+                    <div class="panel-header">
+                        <h2>Stream History</h2>
+                        <p>Where this viewer first appeared and where they were last active.</p>
+                    </div>
+
+                    <div class="video-section">
+                        <div class="video">
+                            <h3>First live stream</h3>
+                            <div class="video-frame">
+                                <iframe :src="'https://www.youtube.com/embed/' + userData.FirstVideoLink"
+                                    frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="video">
+                            <h3>Last active stream</h3>
+                            <div class="video-frame">
+                                <iframe :src="'https://www.youtube.com/embed/' + userData.LastVideoLink" frameborder="0"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar-column">
+                <section class="content-panel command-panel" x-show="cmdKeys.length">
+                    <div class="panel-header">
+                        <h2>Command Activity</h2>
+                        <p>Commands this viewer has used in chat.</p>
+                    </div>
+                    <div class="cmd-badge-list">
+                        <template x-if="userData.CmdStats">
+                            <template x-for="key in cmdKeys" :key="key">
+                                <div class="cmd-badge">
+                                    <span class="cmd" x-text="key"></span>
+                                    <span class="count" x-text="userData.CmdStats[key]"></span>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                </section>
+
+                <section class="content-panel acknowledgments-section">
+                    <div class="panel-header">
+                        <h2>Acknowledgements</h2>
+                        <p>Things this viewer did that genuinely helped out.</p>
+                    </div>
+
+                    <div class="acknowledgments-list" x-show="acknowledgments.length">
+                        <template x-for="(acknowledgment, index) in acknowledgments"
+                            :key="`${index}-${acknowledgment}`">
+                            <article class="acknowledgment-card">
+                                <span class="acknowledgment-mark"></span>
+                                <p x-text="acknowledgment"></p>
+                            </article>
+                        </template>
+                    </div>
+
+                    <div class="empty-state" x-show="!acknowledgments.length">
+                        No acknowledgements added for this viewer yet.
+                    </div>
+                </section>
+            </aside>
+        </section>
     </div>
 </div>
 <style>
-    .cmd-badge {
-        display: flex;
-        justify-content: space-between;
-        width: fit-content;
-        gap: 5px;
-        background-color: #555;
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
-
-    .cmd-badge>.cmd {
-        color: white;
-    }
-
-    .cmd-badge>.count {
-        color: rgb(253, 230, 230);
-    }
-
     .user-banner {
+        --surface-soft: rgba(255, 255, 255, 0.04);
+        --surface-faint: rgba(255, 255, 255, 0.028);
+        --surface-deep: rgba(15, 15, 15, 0.18);
+        --border-soft: rgba(255, 255, 255, 0.08);
+        --border-faint: rgba(255, 255, 255, 0.05);
+        --text-main: #f5f5f4;
+        --text-muted: #b8b8b8;
+        --text-dim: #9ca3af;
+        --accent: #7fd39a;
         width: 100%;
-        max-width: 1200px;
+        max-width: 1180px;
         margin: 0 auto;
-        padding: 20px;
-        background-color: #353535;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 28px;
+        background:
+            radial-gradient(circle at top left, rgba(255, 255, 255, 0.09), transparent 26%),
+            radial-gradient(circle at 85% 15%, rgba(127, 211, 154, 0.07), transparent 22%),
+            linear-gradient(180deg, rgba(62, 61, 60, 0.98), rgba(46, 46, 46, 0.99));
+        border: 1px solid var(--border-soft);
+        border-radius: 28px;
+        box-shadow:
+            0 32px 80px rgba(0, 0, 0, 0.32),
+            inset 0 1px 0 rgba(255, 255, 255, 0.03);
     }
 
-    .profile-header {
-        display: flex;
+    .profile-hero {
+        position: relative;
+        overflow: hidden;
+        padding: 34px;
+        border-radius: 24px;
+        background:
+            linear-gradient(135deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent);
+        border: 1px solid var(--border-soft);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .profile-hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -10% -35% auto;
+        width: 320px;
+        height: 320px;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(127, 211, 154, 0.08), transparent 68%);
+        pointer-events: none;
+    }
+
+    .hero-main {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 148px minmax(0, 1fr);
+        gap: 32px;
         align-items: center;
-        margin-bottom: 20px;
+    }
+
+    .profile-avatar-shell {
+        position: relative;
+        width: 148px;
+        height: 148px;
+        padding: 9px;
+        border-radius: 999px;
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02)),
+            rgba(0, 0, 0, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow:
+            0 18px 30px rgba(0, 0, 0, 0.18),
+            0 0 0 12px rgba(255, 255, 255, 0.018);
     }
 
     .profile-pic {
-        width: 120px;
-        height: 120px;
+        width: 100%;
+        height: 100%;
         border-radius: 50%;
-        margin-right: 20px;
-        border: 3px solid #ddd;
+        display: block;
+        border: 3px solid rgba(255, 255, 255, 0.84);
     }
 
     .profile-info {
-        max-width: 500px;
+        min-width: 0;
     }
 
-    .profile-info h2 {
-        font-size: 2em;
+    .profile-kicker {
+        margin: 0 0 10px;
+        font-size: 0.76rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+    }
+
+    .profile-name {
         margin: 0;
+        max-width: 100%;
+        color: var(--text-main);
+        font-size: clamp(2.5rem, 4.4vw, 4rem);
+        font-weight: 900;
+        line-height: 0.94;
+        letter-spacing: -0.04em;
+        overflow-wrap: anywhere;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
     }
 
-    .profile-info p {
-        font-size: 1.2em;
-        margin: 5px 0;
-        color: #b8b8b8;
+    .profile-summary {
+        margin: 14px 0 0;
+        max-width: 560px;
+        font-size: 1rem;
+        line-height: 1.75;
+        color: var(--text-muted);
+    }
+
+    .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 14px;
+        border-radius: 999px;
+        background: rgba(18, 18, 18, 0.16);
+        border: 1px solid rgba(127, 211, 154, 0.16);
+        color: #dbf6e4;
+        font-size: 0.84rem;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+
+    .hero-badge::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px rgba(127, 211, 154, 0.08);
+    }
+
+    .profile-stats {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 30px;
+    }
+
+    .profile-stat {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 18px 18px 16px;
+        border-radius: 16px;
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.022));
+        border: 1px solid var(--border-faint);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    }
+
+    .profile-stat-label {
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+    }
+
+    .profile-stat-value {
+        color: var(--text-main);
+        font-size: 1.22rem;
+        font-weight: 700;
+    }
+
+    .profile-meta-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr) minmax(0, 0.9fr);
+        gap: 16px;
+        margin-top: 18px;
+    }
+
+    .meta-card {
+        padding: 18px 20px;
+        border-radius: 16px;
+        background: rgba(18, 18, 18, 0.16);
+        border: 1px solid var(--border-faint);
+    }
+
+    .meta-card-wide {
+        grid-column: span 1;
+    }
+
+    .content-panel {
+        padding: 24px;
+        border-radius: 22px;
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.02));
+        border: 1px solid var(--border-soft);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    }
+
+    .panel-header {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .panel-header h2 {
+        margin: 0;
+        color: var(--text-main);
+        font-size: 1.55rem;
+        letter-spacing: -0.03em;
+    }
+
+    .panel-header p {
+        margin: 0;
+        color: #aeaeae;
+        line-height: 1.6;
+    }
+
+    .detail-label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.76rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+    }
+
+    .detail-value {
+        margin: 0;
+        color: #e5e7eb;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .detail-value-code {
+        word-break: break-all;
+        color: #d1d5db;
+        font-family: monospace;
+        font-size: 0.88rem;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.9fr);
+        gap: 22px;
+        margin-top: 22px;
+    }
+
+    .main-column,
+    .sidebar-column {
+        display: grid;
+        gap: 22px;
+        align-content: start;
+    }
+
+    .stream-panel {
+        padding-bottom: 26px;
     }
 
     .video-section {
-        display: flex;
-        justify-content: space-evenly;
-        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
     }
 
     .video {
-        color: black;
-        background-color: #999898;
-        padding: 15px;
-        border-radius: 8px;
-        width: fit-content;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 18px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border-faint);
     }
 
-    video iframe {
+    .video h3 {
+        margin: 0 0 12px;
+        color: #f3f4f6;
+        font-size: 1.02rem;
+    }
+
+    .video-frame {
+        overflow: hidden;
+        border-radius: 14px;
+        background: #111111;
+        aspect-ratio: 16 / 9;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+    }
+
+    .video iframe {
         width: 100%;
-        height: auto;
-        border-radius: 8px;
+        height: 100%;
+        display: block;
+    }
+
+    .command-panel {
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.018)),
+            rgba(0, 0, 0, 0.02);
+    }
+
+    .command-panel .panel-header h2,
+    .acknowledgments-section .panel-header h2 {
+        font-size: 1.32rem;
+    }
+
+    .cmd-badge-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .cmd-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--border-soft);
+    }
+
+    .cmd-badge>.cmd {
+        color: var(--text-main);
+        font-weight: 600;
+    }
+
+    .cmd-badge>.count {
+        display: inline-flex;
+        min-width: 26px;
+        height: 26px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 8px;
+        border-radius: 999px;
+        background: rgba(127, 211, 154, 0.12);
+        color: #e9fff0;
+        font-size: 0.9rem;
+    }
+
+    .acknowledgments-section {
+        display: flex;
+        flex-direction: column;
+        background:
+            radial-gradient(circle at top right, rgba(127, 211, 154, 0.08), transparent 45%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    }
+
+    .acknowledgments-list {
+        display: grid;
+        gap: 14px;
+    }
+
+    .acknowledgment-card {
+        position: relative;
+        padding: 18px 18px 18px 48px;
+        border-radius: 16px;
+        background: rgba(15, 15, 15, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .acknowledgment-mark {
+        position: absolute;
+        top: 21px;
+        left: 18px;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: var(--accent);
+        box-shadow: 0 0 0 6px rgba(127, 211, 154, 0.08);
+    }
+
+    .acknowledgment-card p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #e6e6e6;
+    }
+
+    .empty-state {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 180px;
+        border-radius: 18px;
+        border: 1px dashed rgba(255, 255, 255, 0.12);
+        color: var(--text-dim);
+        text-align: center;
+        line-height: 1.6;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.08);
+    }
+
+    @media (max-width: 1080px) {
+        .profile-stats {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .profile-meta-grid,
+        .content-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .user-banner {
+            padding: 16px;
+            border-radius: 22px;
+        }
+
+        .profile-hero {
+            padding: 22px;
+        }
+
+        .hero-main,
+        .video-section {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-main {
+            gap: 18px;
+            align-items: start;
+        }
+
+        .profile-avatar-shell {
+            width: 120px;
+            height: 120px;
+        }
+
+        .content-panel {
+            padding: 18px;
+            border-radius: 18px;
+        }
+
+        .profile-name {
+            font-size: clamp(2rem, 10vw, 3rem);
+            line-height: 0.98;
+        }
+
+        .profile-summary {
+            font-size: 0.98rem;
+        }
+
+        .hero-badges {
+            gap: 8px;
+        }
+
+        .hero-badge {
+            font-size: 0.8rem;
+        }
+
+        .profile-stats {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .profile-stat,
+        .meta-card {
+            padding: 16px;
+        }
+
+        .profile-meta-grid {
+            gap: 12px;
+        }
+
+        .panel-header h2 {
+            font-size: 1.45rem;
+        }
+
+        .panel-header p {
+            font-size: 0.98rem;
+        }
+
+        .video {
+            padding: 14px;
+        }
+
+        .acknowledgment-card {
+            padding: 16px 16px 16px 42px;
+        }
+
+        .acknowledgment-mark {
+            left: 16px;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .profile-stats {
+            grid-template-columns: 1fr;
+        }
+
+        .profile-name {
+            font-size: clamp(1.9rem, 11vw, 2.6rem);
+        }
+
+        .hero-badges,
+        .cmd-badge-list {
+            gap: 10px;
+        }
     }
 </style>
 {{ end }}
