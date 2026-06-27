@@ -1,0 +1,10 @@
+services:
+  hugo-dev:
+    build: .
+    ports:
+      - "8443:8443"
+      - "1313:1313"
+    environment:
+      PASSWORD: baneblogs
+    volumes:
+      - .:/workspace/baneblogs
