@@ -55,6 +55,14 @@ Here are the streaming PC specifications:
 - **OS**: Windows 11 Pro
 - **Power Supply**: 650W power supply
 
+## 24/7 Server
+
+  **Raspberry Pi Zero 2**  
+  
+  This small device works great for all my server needs without any issues. It runs Caddy, several Go services, and a few Node.js and Python services.
+  {{<image url="https://i.ibb.co/84KfQH5K/PXL-20250629-160529072-MP.jpg" >}}
+
+
 ### Audio
 
 - **Wireless Microphone**: Hollyland Lark C1
@@ -89,8 +97,6 @@ Here are the streaming PC specifications:
 - **Key Light**: Lighting is important for streaming. Since professional key lights are expensive, I bought a simple bulb holder and covered it with a white diffuser from a local store. It works perfectly.
 - **Standing Desk**: Works great for me. It feels refreshing to stand while coding.
 - **Gaming Chair**: A standard gaming chair that cost around $50.
-- **Raspberry Pi Zero 2**  
-  - This small device works great for all my server needs without any issues. It runs Caddy, several Go services, and a few Node.js and Python services.
 - **Chromebook**: An old HP Chromebook that was essentially electronic waste. It was originally a touchscreen device but has a crack on the screen. It still works fine for basic use. I mainly use it for SSH access to my Raspberry Pi.
 - **RedMagic 10 Pro**  
   - A great gaming smartphone. I absolutely love it.
