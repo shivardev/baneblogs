@@ -2,9 +2,21 @@ services:
   hugo-dev:
     build: .
     ports:
+      - "2222:22"
       - "8443:8443"
       - "1313:1313"
     environment:
+      DEV_USER: dev
+      DEV_PASSWORD: baneblogs
+      GIT_USER_NAME: Shivaradhan
+      GIT_USER_EMAIL: kondashivaradhan007@gmail.com
       PASSWORD: baneblogs
+      ENABLE_CODE_SERVER: "true"
+      # Optional: set this instead of using DEV_PASSWORD.
+      # SSH_PUBLIC_KEY: "ssh-ed25519 AAAA..."
     volumes:
       - .:/workspace/baneblogs
+      - dev-home:/home/dev
+
+volumes:
+  dev-home:
