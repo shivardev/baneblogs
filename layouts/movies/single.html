@@ -3,7 +3,7 @@
 <article class="movie-detail">
   <a class="movie-back" href="/movies/">← Back to Movies & Series</a>
   <div class="movie-detail-grid">
-    <div class="movie-detail-poster">{{ with .Params.poster }}<img src="{{ . }}" alt="Poster for {{ $.Title }}">{{ else }}<span aria-hidden="true">✦</span>{{ end }}</div>
+    <div class="movie-detail-poster"><img src="{{ .Params.poster | default "/images/movie-placeholder.png" }}" alt="Poster for {{ .Title }}" onerror="this.onerror=null;this.src='/images/movie-placeholder.png'"></div>
     <div>
       <p class="movies-eyebrow">{{ .Params.screentype | default "Movie" }} {{ with .Params.year }} · {{ . }}{{ end }}</p>
       <h1>{{ .Title }}</h1>

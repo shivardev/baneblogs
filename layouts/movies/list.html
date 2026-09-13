@@ -34,7 +34,7 @@
     {{ $languages := .Params.languages | default (slice) }}
     <article class="movie-card" data-title="{{ .Title }}" data-description="{{ .Params.description }}" data-kind="{{ .Params.screentype }}" data-genres="{{ delimit $genres "|" }}" data-languages="{{ delimit $languages "|" }}" data-country="{{ .Params.country }}" data-year="{{ .Params.year }}" data-status="{{ .Params.watchstatus }}" data-rating="{{ .Params.rating }}" data-watched="{{ .Params.watchedon }}" data-recommended="{{ .Params.recommended | default false }}">
       <a class="movie-poster" href="{{ .RelPermalink }}" aria-label="Read about {{ .Title }}">
-        {{ with .Params.poster }}<img src="{{ . }}" alt="Poster for {{ $movie.Title }}" loading="lazy">{{ else }}<span class="movie-poster-placeholder" aria-hidden="true">✦</span>{{ end }}
+        <img src="{{ .Params.poster | default "/images/movie-placeholder.png" }}" alt="Poster for {{ $movie.Title }}" loading="lazy" onerror="this.onerror=null;this.src='/images/movie-placeholder.png'">
         <span class="movie-format">{{ .Params.screentype | default "Movie" }}</span>
       </a>
       <div class="movie-card-body">

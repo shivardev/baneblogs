@@ -24,7 +24,6 @@
 .movie-card[hidden], .movies-empty[hidden] { display: none !important; }
 .movie-poster { position: relative; display: flex; height: 13rem; align-items: center; justify-content: center; overflow: hidden; background: radial-gradient(circle at 72% 20%, #8b5e43, transparent 45%), linear-gradient(135deg, #1e293b, #111827); }
 .movie-poster img { width: 100%; height: 100%; object-fit: cover; }
-.movie-poster-placeholder { color: #fbbf24; font-size: 5rem; opacity: .8; }
 .movie-format { position: absolute; top: .8rem; left: .8rem; border-radius: 999px; padding: .3rem .65rem; background: #111827e8; color: #fff; font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
 .movie-card-body { padding: 1.1rem; }
 .movie-meta { display: flex; flex-wrap: wrap; gap: .35rem; color: #64748b; font-size: .78rem; }
