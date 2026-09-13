@@ -1,0 +1,27 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/movies.css">
+<article class="movie-detail">
+  <a class="movie-back" href="/movies/">← Back to Movies & Series</a>
+  <div class="movie-detail-grid">
+    <div class="movie-detail-poster">{{ with .Params.poster }}<img src="{{ . }}" alt="Poster for {{ $.Title }}">{{ else }}<span aria-hidden="true">✦</span>{{ end }}</div>
+    <div>
+      <p class="movies-eyebrow">{{ .Params.screentype | default "Movie" }} {{ with .Params.year }} · {{ . }}{{ end }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ if .Params.recommended }}<p class="movie-recommendation">★ Recommended</p>{{ end }}
+      {{ with .Params.description }}<p class="movie-detail-description">{{ . }}</p>{{ end }}
+      <dl class="movie-facts">
+        {{ with .Params.watchstatus }}<div><dt>Status</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.watchedon }}<div><dt>Watched</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.rating }}<div><dt>My rating</dt><dd>★ {{ . }}/10</dd></div>{{ end }}
+        {{ with .Params.genres }}<div><dt>Genres</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
+        {{ with .Params.languages }}<div><dt>Languages</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
+        {{ with .Params.country }}<div><dt>Country / region</dt><dd>{{ . }}</dd></div>{{ end }}
+      </dl>
+      {{ with .Params.infourl }}<a class="movie-info-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">More about this title ↗</a>{{ end }}
+    </div>
+  </div>
+  {{ with .Params.notes }}<section class="movie-notes"><h2>My notes</h2><div>{{ . | markdownify }}</div></section>{{ end }}
+  {{ with .Content }}<section class="movie-notes">{{ . }}</section>{{ end }}
+</article>
+{{ end }}
+

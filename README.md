@@ -7,6 +7,12 @@ This repository is configured for [Pages CMS](https://pagescms.org/) in `.pages.
 To publish through Cloudflare Pages, connect this GitHub repository to a Pages project, set the production branch to `main`, the build command to `npm run deploy`, and the output directory to `public`. Install Hugo Extended (at least 0.112.0) and Node.js in the build environment. Every CMS save commits to GitHub and triggers a new Pages build; posts marked `draft: true` remain unpublished. If the Cloudflare project uses Direct Upload instead of Git integration, CMS commits will not trigger deployments.
 
 Pages CMS edits content and media. For Hugo layouts, Alpine.js, vanilla JavaScript, or new shortcodes, edit the repository in your development environment or [GitHub's browser editor](https://github.dev/shivardev/baneblogs), then commit to `main`. Those code changes go through the same Cloudflare build. Decap CMS could place a content editor at `/admin`, but on Cloudflare Pages its GitHub login needs an OAuth service or Pages Function, which adds server-side code and secret management.
+
+### Movies & Series
+
+The **Movies & series** collection in Pages CMS creates one Markdown file per title in `content/movies`. On your phone, select **Add an entry**, enter the title, choose Movie or Series, and fill in whichever details you know. Add multiple genres and languages as separate values. Poster images can be external URLs or files uploaded through the Media library (`/uploads/...`). The **Watchlist** status works for titles you have not watched; ratings and dates watched can be left blank. The four included titles are clearly marked examples and can be deleted once you add your own.
+
+The public `/movies/` page filters by text, format, genre, language, country or region, release year, watch status, minimum rating, and recommendation. It sorts by title, release year, rating, or watch date. These controls run in the visitor's browser; no API or database is involved. The page and individual title templates live in `layouts/movies/`, with their JavaScript and CSS under `static/`.
 Public repository containing the end result of my blog article [Everything I learned about Hugo: Building robinvanderknaap.dev](https://robinvanderknaap.dev/blog/building-robinvanderknaap-dev/).
 
 ## Prerequisites

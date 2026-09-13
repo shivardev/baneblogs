@@ -65,3 +65,76 @@ content:
         type: rich-text
         options:
           switcher: true
+
+  - name: movies
+    label: Movies & series
+    type: collection
+    path: content/movies
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    exclude: ["_index.md"]
+    view:
+      fields: [title, screenType, year, watchStatus, rating, recommended]
+      primary: title
+      sort: [title, year, rating]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: screenType
+        label: Format
+        type: select
+        required: true
+        options:
+          values: [Movie, Series]
+      - name: year
+        label: Release year
+        type: number
+      - name: genres
+        label: Genres
+        type: string
+        list: true
+        description: Add more than one, such as Horror and Comedy.
+      - name: languages
+        label: Languages
+        type: string
+        list: true
+      - name: country
+        label: Country or region
+        type: string
+      - name: watchStatus
+        label: Watch status
+        type: select
+        default: Watched
+        options:
+          values: [Watched, Watching, Watchlist]
+      - name: watchedOn
+        label: Date watched
+        type: date
+        default: ""
+      - name: rating
+        label: My rating (0–10)
+        type: number
+        options:
+          min: 0
+          max: 10
+      - name: recommended
+        label: I recommend this
+        type: boolean
+        default: false
+      - name: description
+        label: Short description
+        type: text
+      - name: poster
+        label: Poster or banner URL
+        type: string
+        description: Paste an image URL or upload to Media and paste its /uploads/ path.
+      - name: infoUrl
+        label: More information URL
+        type: string
+        description: For example, a Wikipedia or official page.
+      - name: notes
+        label: My notes
+        type: rich-text
+        required: false

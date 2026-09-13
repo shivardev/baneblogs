@@ -1,0 +1,54 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/movies.css">
+<section class="movies-page" id="movies-catalog">
+  <div class="movies-intro">
+    <p class="movies-eyebrow">THE WATCH SHELF</p>
+    <h1>Movies <span>&</span> Series</h1>
+    <p>{{ .Description }}</p>
+    <div class="movies-intro-note">Browse the shelf, or narrow it down to your next watch.</div>
+  </div>
+
+  <form class="movies-filters" id="movies-filters" role="search" aria-label="Filter movies and series">
+    <div class="movies-search-wrap">
+      <label for="movie-search">Search titles and descriptions</label>
+      <input id="movie-search" name="search" type="search" placeholder="Search the shelf…" autocomplete="off">
+    </div>
+    <div class="movies-filter-grid">
+      <div><label for="movie-kind">Format</label><select id="movie-kind" name="kind"><option value="">All formats</option><option>Movie</option><option>Series</option></select></div>
+      <div><label for="movie-genre">Genre</label><select id="movie-genre" name="genre"><option value="">All genres</option></select></div>
+      <div><label for="movie-language">Language</label><select id="movie-language" name="language"><option value="">All languages</option></select></div>
+      <div><label for="movie-country">Country / region</label><select id="movie-country" name="country"><option value="">All regions</option></select></div>
+      <div><label for="movie-year">Release year</label><select id="movie-year" name="year"><option value="">All years</option></select></div>
+      <div><label for="movie-status">Watch status</label><select id="movie-status" name="status"><option value="">Any status</option><option>Watched</option><option>Watching</option><option>Watchlist</option></select></div>
+      <div><label for="movie-rating">Minimum rating</label><select id="movie-rating" name="rating"><option value="">Any rating</option><option value="6">6+</option><option value="7">7+</option><option value="8">8+</option><option value="9">9+</option></select></div>
+      <div><label for="movie-sort">Sort by</label><select id="movie-sort" name="sort"><option value="title">Title A–Z</option><option value="title-desc">Title Z–A</option><option value="year-desc">Newest release</option><option value="year-asc">Oldest release</option><option value="rating-desc">Highest rated</option><option value="watched-desc">Recently watched</option></select></div>
+      <div class="movies-check-wrap"><label class="movies-check"><input id="movie-recommended" name="recommended" type="checkbox"> Recommended only</label></div>
+    </div>
+    <div class="movies-filter-bottom"><p id="movies-count" aria-live="polite"></p><button type="reset" id="movies-reset">Clear filters</button></div>
+  </form>
+
+  <div class="movies-grid" id="movies-grid">
+    {{ range .RegularPages }}
+    {{ $movie := . }}
+    {{ $genres := .Params.genres | default (slice) }}
+    {{ $languages := .Params.languages | default (slice) }}
+    <article class="movie-card" data-title="{{ .Title }}" data-description="{{ .Params.description }}" data-kind="{{ .Params.screentype }}" data-genres="{{ delimit $genres "|" }}" data-languages="{{ delimit $languages "|" }}" data-country="{{ .Params.country }}" data-year="{{ .Params.year }}" data-status="{{ .Params.watchstatus }}" data-rating="{{ .Params.rating }}" data-watched="{{ .Params.watchedon }}" data-recommended="{{ .Params.recommended | default false }}">
+      <a class="movie-poster" href="{{ .RelPermalink }}" aria-label="Read about {{ .Title }}">
+        {{ with .Params.poster }}<img src="{{ . }}" alt="Poster for {{ $movie.Title }}" loading="lazy">{{ else }}<span class="movie-poster-placeholder" aria-hidden="true">✦</span>{{ end }}
+        <span class="movie-format">{{ .Params.screentype | default "Movie" }}</span>
+      </a>
+      <div class="movie-card-body">
+        <div class="movie-meta"><span>{{ .Params.year | default "Year unknown" }}</span><span>·</span><span>{{ .Params.watchstatus | default "Watchlist" }}</span>{{ with .Params.rating }}<span>·</span><span>★ {{ . }}/10</span>{{ end }}</div>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <p class="movie-description">{{ .Params.description | default "No description yet." }}</p>
+        <div class="movie-tags">{{ range $genres }}<span>{{ . }}</span>{{ end }}</div>
+        {{ if .Params.recommended }}<p class="movie-recommendation">★ Recommended</p>{{ end }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
+  <p class="movies-empty" id="movies-empty" hidden>No titles match those filters. Try clearing one or two.</p>
+</section>
+<script src="/movies.js" defer></script>
+{{ end }}
+
