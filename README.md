@@ -1,4 +1,12 @@
 # Building robinvanderknaap.dev
+
+## Browser-based editing
+
+This repository is configured for [Pages CMS](https://pagescms.org/) in `.pages.yml`. It is a hosted GitHub editor, so there is no CMS server or database to deploy. Sign in at [app.pagescms.org](https://app.pagescms.org/), authorize the `shivardev/baneblogs` repository, and open the `main` branch. The **Blog posts** collection edits `content/blog/*.md`; uploads go to `static/uploads` and appear at `/uploads/` on the built site. New posts start as drafts. The body editor has a source mode for Hugo shortcodes and custom HTML.
+
+To publish through Cloudflare Pages, connect this GitHub repository to a Pages project, set the production branch to `main`, the build command to `npm run deploy`, and the output directory to `public`. Install Hugo Extended (at least 0.112.0) and Node.js in the build environment. Every CMS save commits to GitHub and triggers a new Pages build; posts marked `draft: true` remain unpublished. If the Cloudflare project uses Direct Upload instead of Git integration, CMS commits will not trigger deployments.
+
+Pages CMS edits content and media. For Hugo layouts, Alpine.js, vanilla JavaScript, or new shortcodes, edit the repository in your development environment or [GitHub's browser editor](https://github.dev/shivardev/baneblogs), then commit to `main`. Those code changes go through the same Cloudflare build. Decap CMS could place a content editor at `/admin`, but on Cloudflare Pages its GitHub login needs an OAuth service or Pages Function, which adds server-side code and secret management.
 Public repository containing the end result of my blog article [Everything I learned about Hugo: Building robinvanderknaap.dev](https://robinvanderknaap.dev/blog/building-robinvanderknaap-dev/).
 
 ## Prerequisites

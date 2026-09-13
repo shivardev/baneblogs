@@ -1,0 +1,67 @@
+media:
+  input: static/uploads
+  output: /uploads
+
+content:
+  - name: blog
+    label: Blog posts
+    type: collection
+    path: content/blog
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    exclude: ["_index.md"]
+    view:
+      fields: [title, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+      - name: date
+        label: Date
+        type: date
+        options:
+          time: true
+          format: "yyyy-MM-dd'T'HH:mm:ssXXX"
+      - name: slug
+        label: URL slug
+        type: string
+        description: Optional. Existing custom URLs are preserved.
+      - name: draft
+        label: Draft
+        type: boolean
+        default: true
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: category
+        label: Categories
+        type: string
+        list: true
+      - name: image
+        label: Cover image URL
+        type: string
+        description: Paste an external URL or a /uploads/ path from the media library.
+      - name: showTOC
+        label: Show table of contents
+        type: boolean
+        default: true
+      - name: uuid
+        label: UUID
+        type: uuid
+        options:
+          editable: false
+      - name: body
+        label: Body
+        type: rich-text
+        options:
+          switcher: true
