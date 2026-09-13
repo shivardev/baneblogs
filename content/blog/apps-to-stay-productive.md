@@ -1,25 +1,25 @@
 ---
-date: 2025-06-02T01:17:45.441Z
-category:
-    - productive
-    - wellbeing
-    - android
+title: Free and Open-Source Android Apps I Use Daily
+description: A list of free and open-source Android apps I regularly use for
+  productivity, media, networking, privacy and managing my self-hosted services.
+date: 2026-09-13T12:05:00Z
 draft: false
 tags:
-    - apps
-    - android
-    - open-source
-    - productivity
-    - self-hosted
-    - privacy
-    - networking
-description: A list of free and open-source Android apps I regularly use for productivity, media, networking, privacy and managing my self-hosted services.
+  - apps
+  - android
+  - open-source
+  - productivity
+  - self-hosted
+  - privacy
+  - networking
+category:
+  - productive
+  - wellbeing
+  - android
 image: https://i.ibb.co/zTLX9MCq/file-00000000a87c61f9af77c379d2aa0d7d.png
-title: Free and Open-Source Android Apps I Use Daily
 showTOC: true
 uuid: c2746cb2-f0b3-45c1-896e-0a22ac157d34
 ---
-
 ### Introduction
 
 There are thousands of apps in the Play Store, but somehow I end up using the same few apps every day. Some of them help me stay productive, some connect to the services running in my homelab and others simply fix small annoyances I regularly face on Android.
@@ -106,7 +106,6 @@ However, it is not distributed through the Play Store, and there are many copied
 
 Because of that, I would not recommend downloading it from a random APK website. I will add a direct link here only after confirming the exact version and source I use.
 
-
 ## File Sharing and App Discovery
 
 ### 10) [LocalSend](https://github.com/localsend/localsend)
@@ -167,7 +166,7 @@ The app does not work by itself. A Mobility Print server must first be installed
 
 Once configured, the printer appears through Android's normal print menu. This is useful for older or network printers that do not have a good Android application of their own.
 
-### 17) [WiFi FTP Server]https://play.google.com/store/apps/details?id=com.medhaapps.wififtpserver&pcampaignid=web_share)
+### 17) [WiFi FTP Server][https://play.google.com/store/apps/details?id=com.medhaapps.wififtpserver&pcampaignid=web_share](https://play.google.com/store/apps/details?id=com.medhaapps.wififtpserver&pcampaignid=web_share))
 
 WiFi FTP Server lets me access files on my phone using an FTP client while both devices are connected to the same Wi-Fi network.
 
@@ -175,13 +174,11 @@ It is useful when I need access to an entire folder rather than sending a few fi
 
 FTP is not something I would expose to the internet. I only use it temporarily on a trusted local network and stop the server after the transfer is complete.
 
+### 18) ZeroTier VPN
 
-### 18) Zero VPN
-
-I use Zero VPN when I need a quick VPN connection from my phone.
+I use VPN when I need a quick VPN connection from my phone.
 
 However, I need to confirm the exact app because several unrelated Android applications use the Zero VPN name. Free VPN applications can also have unclear logging, advertising and data-handling policies, so this section should not be published without verifying the developer and privacy policy.
-
 
 ## YouTube and App Patching
 
@@ -240,5 +237,5 @@ Not every app here will be useful to everyone. Immich and Jellyfin only make sen
 The apps I recommend to almost everyone are Mindful, LocalSend and a proper habit tracker. The others depend more on what you do with your phone.
 
 {{< notice info >}}
-If you have a better app recommendation, please forward it to blazingbane007@gmail.com. I will check it out and provide credit wherever it is due.
+If you have a better app recommendation, please forward it to [blazingbane007@gmail.com](mailto:blazingbane007@gmail.com). I will check it out and provide credit wherever it is due.
 {{< /notice >}}
