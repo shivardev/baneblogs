@@ -8,11 +8,6 @@ To publish through Cloudflare Pages, connect this GitHub repository to a Pages p
 
 Pages CMS edits content and media. For Hugo layouts, Alpine.js, vanilla JavaScript, or new shortcodes, edit the repository in your development environment or [GitHub's browser editor](https://github.dev/shivardev/baneblogs), then commit to `main`. Those code changes go through the same Cloudflare build. Decap CMS could place a content editor at `/admin`, but on Cloudflare Pages its GitHub login needs an OAuth service or Pages Function, which adds server-side code and secret management.
 
-### Movies & Series
-
-The **Movies & series** collection in Pages CMS creates one Markdown file per title in `content/movies`. On your phone, select **Add an entry**, enter the title, choose Movie or Series, and fill in whichever details you know. Add multiple genres and languages as separate values. Poster images can be external URLs; a missing or broken URL displays the single local fallback at `/images/movie-placeholder.png`. The **Watchlist** status works for titles you have not watched; ratings and dates watched can be left blank. The four included titles are clearly marked examples and can be deleted once you add your own.
-
-The public `/movies/` page filters by text, format, genre, language, country or region, release year, watch status, minimum rating, and recommendation. It sorts by title, release year, rating, or watch date. These controls run in the visitor's browser; no API or database is involved. The page and individual title templates live in `layouts/movies/`, with their JavaScript and CSS under `static/`.
 Public repository containing the end result of my blog article [Everything I learned about Hugo: Building robinvanderknaap.dev](https://robinvanderknaap.dev/blog/building-robinvanderknaap-dev/).
 
 ## Prerequisites
